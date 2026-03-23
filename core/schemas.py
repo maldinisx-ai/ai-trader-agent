@@ -273,7 +273,7 @@ class SurvivalState(BaseModel):
     level: SurvivalLevel = Field(..., description="生存等级")
     drawdown: float = Field(..., ge=0, description="当前回撤率")
     max_position: float = Field(..., ge=0, le=1, description="最大仓位")
-    trading_interval: int = Field(..., gt=0, description="交易间隔（秒）")
+    trading_interval: int = Field(..., ge=0, description="交易间隔（秒）")
     last_update: datetime = Field(default_factory=datetime.now, description="更新时间")
 
 
