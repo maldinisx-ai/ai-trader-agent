@@ -246,6 +246,15 @@ class AgentContext(BaseModel):
 # 记忆相关模型
 # ============================================
 
+class DecisionChain(BaseModel):
+    """决策链路"""
+    trade_id: str = Field(..., description="关联交易ID")
+    thought_process: str = Field(..., description="思考过程")
+    tool_calls: List[Dict[str, Any]] = Field(default_factory=list, description="工具调用记录")
+    observations: List[Dict[str, Any]] = Field(default_factory=list, description="观察结果")
+    final_decision: Dict[str, Any] = Field(..., description="最终决策")
+
+
 class ReflectionRecord(BaseModel):
     """反思记录"""
     reflection_id: str = Field(..., description="反思ID")
