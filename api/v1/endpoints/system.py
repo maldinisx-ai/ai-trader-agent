@@ -187,6 +187,10 @@ async def get_system_statistics():
                 tables = cursor.fetchall()
 
                 for (table_name,) in tables:
+                    # Validate table_name against whitelist to prevent SQL injection
+                    if not table_name.replace('_', '').isalnum():
+                        logger.warning(f"跳过无效表名: {table_name}")
+                        continue
                     try:
                         cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
                         count = cursor.fetchone()[0]

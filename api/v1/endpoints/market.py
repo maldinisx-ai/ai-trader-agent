@@ -351,11 +351,6 @@ async def search_stocks(
         "total": len(results),
     }
 
-    return {
-        "stocks": [],
-        "total": 0,
-    }
-
 
 # ==================== 市场概览 API ====================
 
