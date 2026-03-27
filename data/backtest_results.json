@@ -1,0 +1,4991 @@
+{
+  "initial_cash": 500000,
+  "final_value": 597456.7061999999,
+  "total_return": 19.49134123999998,
+  "trades": [
+    {
+      "date": "2025-05-12",
+      "symbol": "300015",
+      "action": "buy",
+      "quantity": 11700,
+      "price": 12.73,
+      "reasoning": "MA10(12.78)上穿MA30(12.76)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "300149",
+      "action": "buy",
+      "quantity": 16800,
+      "price": 6.23,
+      "reasoning": "MA10(6.01)上穿MA30(5.98)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "300274",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 65.14,
+      "reasoning": "MA10(59.79)上穿MA30(59.75)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 7600,
+      "price": 6.87,
+      "reasoning": "MA10(6.65)上穿MA30(6.62)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 2900,
+      "price": 12.28,
+      "reasoning": "MA10(11.68)上穿MA30(11.59)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 400,
+      "price": 56.9,
+      "reasoning": "MA10(55.56)上穿MA30(55.54)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "600036",
+      "action": "buy",
+      "quantity": 400,
+      "price": 40.79,
+      "reasoning": "MA10(39.27)上穿MA30(39.18)，金叉买入"
+    },
+    {
+      "date": "2025-05-12",
+      "symbol": "603259",
+      "action": "buy",
+      "quantity": 200,
+      "price": 57.73,
+      "reasoning": "MA10(57.07)上穿MA30(56.54)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "002142",
+      "action": "buy",
+      "quantity": 400,
+      "price": 24.28,
+      "reasoning": "MA10(23.52)上穿MA30(23.46)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "300014",
+      "action": "buy",
+      "quantity": 100,
+      "price": 43.73,
+      "reasoning": "MA10(41.71)上穿MA30(41.71)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "300433",
+      "action": "buy",
+      "quantity": 200,
+      "price": 22.05,
+      "reasoning": "MA10(20.83)上穿MA30(20.61)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "300623",
+      "action": "buy",
+      "quantity": 100,
+      "price": 29.9,
+      "reasoning": "MA10(29.54)上穿MA30(29.46)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "300638",
+      "action": "buy",
+      "quantity": 100,
+      "price": 29.31,
+      "reasoning": "MA10(26.99)上穿MA30(26.65)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "600030",
+      "action": "buy",
+      "quantity": 100,
+      "price": 25.52,
+      "reasoning": "MA10(24.97)上穿MA30(24.94)，金叉买入"
+    },
+    {
+      "date": "2025-05-13",
+      "symbol": "601901",
+      "action": "buy",
+      "quantity": 300,
+      "price": 7.54,
+      "reasoning": "MA10(7.42)上穿MA30(7.39)，金叉买入"
+    },
+    {
+      "date": "2025-05-14",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 100,
+      "price": 15.53,
+      "reasoning": "MA10(15.14)上穿MA30(15.12)，金叉买入"
+    },
+    {
+      "date": "2025-05-15",
+      "symbol": "000725",
+      "action": "buy",
+      "quantity": 300,
+      "price": 3.84,
+      "reasoning": "MA10(3.83)上穿MA30(3.83)，金叉买入"
+    },
+    {
+      "date": "2025-05-15",
+      "symbol": "300639",
+      "action": "buy",
+      "quantity": 200,
+      "price": 5.37,
+      "reasoning": "MA10(5.26)上穿MA30(5.21)，金叉买入"
+    },
+    {
+      "date": "2025-05-22",
+      "symbol": "300015",
+      "action": "sell",
+      "quantity": 11700,
+      "price": 12.44,
+      "reasoning": "MA10(12.67)下穿MA30(12.67)，死叉卖出"
+    },
+    {
+      "date": "2025-05-26",
+      "symbol": "300347",
+      "action": "buy",
+      "quantity": 900,
+      "price": 46.7,
+      "reasoning": "MA10(44.49)上穿MA30(44.49)，金叉买入"
+    },
+    {
+      "date": "2025-05-26",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 400,
+      "price": 52.51,
+      "reasoning": "MA10(53.91)下穿MA30(54.13)，死叉卖出"
+    },
+    {
+      "date": "2025-05-28",
+      "symbol": "300623",
+      "action": "sell",
+      "quantity": 100,
+      "price": 28.44,
+      "reasoning": "MA10(29.26)下穿MA30(29.37)，死叉卖出"
+    },
+    {
+      "date": "2025-05-28",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 100,
+      "price": 14.35,
+      "reasoning": "MA10(14.93)下穿MA30(14.98)，死叉卖出"
+    },
+    {
+      "date": "2025-05-28",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 3500,
+      "price": 10.99,
+      "reasoning": "MA10(11.14)上穿MA30(11.14)，金叉买入"
+    },
+    {
+      "date": "2025-05-28",
+      "symbol": "603707",
+      "action": "buy",
+      "quantity": 2500,
+      "price": 10.77,
+      "reasoning": "MA10(10.89)上穿MA30(10.87)，金叉买入"
+    },
+    {
+      "date": "2025-05-30",
+      "symbol": "000725",
+      "action": "sell",
+      "quantity": 300,
+      "price": 3.75,
+      "reasoning": "MA10(3.80)下穿MA30(3.81)，死叉卖出"
+    },
+    {
+      "date": "2025-05-30",
+      "symbol": "603658",
+      "action": "buy",
+      "quantity": 500,
+      "price": 39.04,
+      "reasoning": "MA10(38.30)上穿MA30(38.24)，金叉买入"
+    },
+    {
+      "date": "2025-06-03",
+      "symbol": "300274",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 58.19,
+      "reasoning": "MA10(59.42)下穿MA30(59.44)，死叉卖出"
+    },
+    {
+      "date": "2025-06-03",
+      "symbol": "300433",
+      "action": "sell",
+      "quantity": 200,
+      "price": 19.61,
+      "reasoning": "MA10(20.36)下穿MA30(20.46)，死叉卖出"
+    },
+    {
+      "date": "2025-06-03",
+      "symbol": "300638",
+      "action": "sell",
+      "quantity": 100,
+      "price": 25.31,
+      "reasoning": "MA10(26.14)下穿MA30(26.32)，死叉卖出"
+    },
+    {
+      "date": "2025-06-04",
+      "symbol": "601788",
+      "action": "buy",
+      "quantity": 2000,
+      "price": 17.66,
+      "reasoning": "MA10(16.24)上穿MA30(16.19)，金叉买入"
+    },
+    {
+      "date": "2025-06-05",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 3500,
+      "price": 11.34,
+      "reasoning": "MA10(11.12)下穿MA30(11.12)，死叉卖出"
+    },
+    {
+      "date": "2025-06-05",
+      "symbol": "603899",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 31.76,
+      "reasoning": "MA10(29.45)上穿MA30(29.31)，金叉买入"
+    },
+    {
+      "date": "2025-06-06",
+      "symbol": "600030",
+      "action": "sell",
+      "quantity": 100,
+      "price": 25.41,
+      "reasoning": "MA10(25.14)下穿MA30(25.16)，死叉卖出"
+    },
+    {
+      "date": "2025-06-09",
+      "symbol": "600030",
+      "action": "buy",
+      "quantity": 1000,
+      "price": 25.86,
+      "reasoning": "MA10(25.21)上穿MA30(25.20)，金叉买入"
+    },
+    {
+      "date": "2025-06-09",
+      "symbol": "600570",
+      "action": "buy",
+      "quantity": 700,
+      "price": 27.1,
+      "reasoning": "MA10(26.26)上穿MA30(26.20)，金叉买入"
+    },
+    {
+      "date": "2025-06-09",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 11.02,
+      "reasoning": "MA10(11.11)上穿MA30(11.11)，金叉买入"
+    },
+    {
+      "date": "2025-06-10",
+      "symbol": "000725",
+      "action": "buy",
+      "quantity": 2400,
+      "price": 3.85,
+      "reasoning": "MA10(3.83)上穿MA30(3.82)，金叉买入"
+    },
+    {
+      "date": "2025-06-10",
+      "symbol": "300122",
+      "action": "buy",
+      "quantity": 300,
+      "price": 19.89,
+      "reasoning": "MA10(19.55)上穿MA30(19.49)，金叉买入"
+    },
+    {
+      "date": "2025-06-10",
+      "symbol": "300323",
+      "action": "sell",
+      "quantity": 7600,
+      "price": 6.54,
+      "reasoning": "MA10(6.67)下穿MA30(6.70)，死叉卖出"
+    },
+    {
+      "date": "2025-06-11",
+      "symbol": "002601",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 16.28,
+      "reasoning": "MA10(16.02)上穿MA30(16.02)，金叉买入"
+    },
+    {
+      "date": "2025-06-11",
+      "symbol": "300474",
+      "action": "buy",
+      "quantity": 100,
+      "price": 71.1,
+      "reasoning": "MA10(68.67)上穿MA30(68.52)，金叉买入"
+    },
+    {
+      "date": "2025-06-11",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 600,
+      "price": 18.79,
+      "reasoning": "MA10(18.56)上穿MA30(18.55)，金叉买入"
+    },
+    {
+      "date": "2025-06-13",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 600,
+      "price": 17.4,
+      "reasoning": "MA10(18.50)下穿MA30(18.50)，死叉卖出"
+    },
+    {
+      "date": "2025-06-16",
+      "symbol": "300014",
+      "action": "sell",
+      "quantity": 100,
+      "price": 42.43,
+      "reasoning": "MA10(44.20)下穿MA30(44.48)，死叉卖出"
+    },
+    {
+      "date": "2025-06-16",
+      "symbol": "300059",
+      "action": "buy",
+      "quantity": 500,
+      "price": 21.73,
+      "reasoning": "MA10(21.23)上穿MA30(21.20)，金叉买入"
+    },
+    {
+      "date": "2025-06-16",
+      "symbol": "300433",
+      "action": "buy",
+      "quantity": 400,
+      "price": 21.13,
+      "reasoning": "MA10(20.88)上穿MA30(20.87)，金叉买入"
+    },
+    {
+      "date": "2025-06-16",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 300,
+      "price": 17.7,
+      "reasoning": "MA10(18.49)上穿MA30(18.47)，金叉买入"
+    },
+    {
+      "date": "2025-06-17",
+      "symbol": "002841",
+      "action": "buy",
+      "quantity": 100,
+      "price": 33.54,
+      "reasoning": "MA10(33.65)上穿MA30(33.60)，金叉买入"
+    },
+    {
+      "date": "2025-06-17",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 500,
+      "price": 7.29,
+      "reasoning": "MA10(6.82)上穿MA30(6.78)，金叉买入"
+    },
+    {
+      "date": "2025-06-17",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 300,
+      "price": 17.64,
+      "reasoning": "MA10(18.42)下穿MA30(18.44)，死叉卖出"
+    },
+    {
+      "date": "2025-06-18",
+      "symbol": "002475",
+      "action": "buy",
+      "quantity": 100,
+      "price": 32.58,
+      "reasoning": "MA10(31.56)上穿MA30(31.55)，金叉买入"
+    },
+    {
+      "date": "2025-06-18",
+      "symbol": "601398",
+      "action": "buy",
+      "quantity": 500,
+      "price": 6.94,
+      "reasoning": "MA10(6.82)上穿MA30(6.81)，金叉买入"
+    },
+    {
+      "date": "2025-06-18",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 10.73,
+      "reasoning": "MA10(11.04)下穿MA30(11.08)，死叉卖出"
+    },
+    {
+      "date": "2025-06-19",
+      "symbol": "300122",
+      "action": "sell",
+      "quantity": 300,
+      "price": 18.94,
+      "reasoning": "MA10(19.49)下穿MA30(19.50)，死叉卖出"
+    },
+    {
+      "date": "2025-06-19",
+      "symbol": "603658",
+      "action": "sell",
+      "quantity": 500,
+      "price": 36.81,
+      "reasoning": "MA10(38.04)下穿MA30(38.17)，死叉卖出"
+    },
+    {
+      "date": "2025-06-20",
+      "symbol": "002841",
+      "action": "sell",
+      "quantity": 100,
+      "price": 32.76,
+      "reasoning": "MA10(33.47)下穿MA30(33.47)，死叉卖出"
+    },
+    {
+      "date": "2025-06-24",
+      "symbol": "002841",
+      "action": "buy",
+      "quantity": 400,
+      "price": 33.89,
+      "reasoning": "MA10(33.45)上穿MA30(33.40)，金叉买入"
+    },
+    {
+      "date": "2025-06-24",
+      "symbol": "601939",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 9.29,
+      "reasoning": "MA10(8.95)上穿MA30(8.92)，金叉买入"
+    },
+    {
+      "date": "2025-06-25",
+      "symbol": "300639",
+      "action": "sell",
+      "quantity": 200,
+      "price": 5.69,
+      "reasoning": "MA10(5.59)下穿MA30(5.60)，死叉卖出"
+    },
+    {
+      "date": "2025-06-26",
+      "symbol": "601988",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 5.69,
+      "reasoning": "MA10(5.46)上穿MA30(5.43)，金叉买入"
+    },
+    {
+      "date": "2025-06-26",
+      "symbol": "603707",
+      "action": "sell",
+      "quantity": 2500,
+      "price": 10.75,
+      "reasoning": "MA10(10.99)下穿MA30(11.08)，死叉卖出"
+    },
+    {
+      "date": "2025-06-26",
+      "symbol": "688981",
+      "action": "buy",
+      "quantity": 100,
+      "price": 87.28,
+      "reasoning": "MA10(83.82)上穿MA30(83.64)，金叉买入"
+    },
+    {
+      "date": "2025-06-27",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 200,
+      "price": 53.4,
+      "reasoning": "MA10(52.37)上穿MA30(52.29)，金叉买入"
+    },
+    {
+      "date": "2025-06-30",
+      "symbol": "300726",
+      "action": "buy",
+      "quantity": 200,
+      "price": 35.75,
+      "reasoning": "MA10(33.87)上穿MA30(33.73)，金叉买入"
+    },
+    {
+      "date": "2025-06-30",
+      "symbol": "603899",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 28.99,
+      "reasoning": "MA10(30.09)下穿MA30(30.60)，死叉卖出"
+    },
+    {
+      "date": "2025-07-01",
+      "symbol": "300623",
+      "action": "buy",
+      "quantity": 500,
+      "price": 30.19,
+      "reasoning": "MA10(28.57)上穿MA30(28.43)，金叉买入"
+    },
+    {
+      "date": "2025-07-01",
+      "symbol": "300638",
+      "action": "buy",
+      "quantity": 300,
+      "price": 27.64,
+      "reasoning": "MA10(26.13)上穿MA30(26.00)，金叉买入"
+    },
+    {
+      "date": "2025-07-01",
+      "symbol": "600869",
+      "action": "buy",
+      "quantity": 1600,
+      "price": 5.05,
+      "reasoning": "MA10(4.92)上穿MA30(4.92)，金叉买入"
+    },
+    {
+      "date": "2025-07-02",
+      "symbol": "300639",
+      "action": "buy",
+      "quantity": 1000,
+      "price": 5.84,
+      "reasoning": "MA10(5.67)上穿MA30(5.66)，金叉买入"
+    },
+    {
+      "date": "2025-07-02",
+      "symbol": "600089",
+      "action": "buy",
+      "quantity": 300,
+      "price": 12.04,
+      "reasoning": "MA10(11.52)上穿MA30(11.47)，金叉买入"
+    },
+    {
+      "date": "2025-07-02",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 100,
+      "price": 15.56,
+      "reasoning": "MA10(14.65)上穿MA30(14.62)，金叉买入"
+    },
+    {
+      "date": "2025-07-03",
+      "symbol": "300122",
+      "action": "buy",
+      "quantity": 100,
+      "price": 19.84,
+      "reasoning": "MA10(19.48)上穿MA30(19.46)，金叉买入"
+    },
+    {
+      "date": "2025-07-03",
+      "symbol": "600104",
+      "action": "buy",
+      "quantity": 100,
+      "price": 16.19,
+      "reasoning": "MA10(15.90)上穿MA30(15.89)，金叉买入"
+    },
+    {
+      "date": "2025-07-03",
+      "symbol": "601077",
+      "action": "buy",
+      "quantity": 200,
+      "price": 7.05,
+      "reasoning": "MA10(7.10)上穿MA30(7.09)，金叉买入"
+    },
+    {
+      "date": "2025-07-08",
+      "symbol": "300466",
+      "action": "buy",
+      "quantity": 100,
+      "price": 10.27,
+      "reasoning": "MA10(10.33)上穿MA30(10.32)，金叉买入"
+    },
+    {
+      "date": "2025-07-10",
+      "symbol": "300149",
+      "action": "sell",
+      "quantity": 16800,
+      "price": 10.91,
+      "reasoning": "MA10(10.95)下穿MA30(10.99)，死叉卖出"
+    },
+    {
+      "date": "2025-07-10",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 4800,
+      "price": 11.49,
+      "reasoning": "MA10(10.98)上穿MA30(10.96)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "000002",
+      "action": "buy",
+      "quantity": 5700,
+      "price": 6.76,
+      "reasoning": "MA10(6.53)上穿MA30(6.50)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "000333",
+      "action": "buy",
+      "quantity": 300,
+      "price": 71.99,
+      "reasoning": "MA10(71.90)上穿MA30(71.82)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "002821",
+      "action": "buy",
+      "quantity": 200,
+      "price": 97.5,
+      "reasoning": "MA10(89.30)上穿MA30(88.49)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "300124",
+      "action": "buy",
+      "quantity": 200,
+      "price": 64.0,
+      "reasoning": "MA10(63.66)上穿MA30(63.61)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "601566",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 9.02,
+      "reasoning": "MA10(8.76)上穿MA30(8.72)，金叉买入"
+    },
+    {
+      "date": "2025-07-11",
+      "symbol": "601766",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 6.89,
+      "reasoning": "MA10(6.81)上穿MA30(6.81)，金叉买入"
+    },
+    {
+      "date": "2025-07-14",
+      "symbol": "600305",
+      "action": "buy",
+      "quantity": 700,
+      "price": 7.71,
+      "reasoning": "MA10(7.67)上穿MA30(7.65)，金叉买入"
+    },
+    {
+      "date": "2025-07-16",
+      "symbol": "603658",
+      "action": "buy",
+      "quantity": 100,
+      "price": 37.99,
+      "reasoning": "MA10(37.77)上穿MA30(37.76)，金叉买入"
+    },
+    {
+      "date": "2025-07-18",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 100,
+      "price": 18.5,
+      "reasoning": "MA10(18.08)上穿MA30(18.00)，金叉买入"
+    },
+    {
+      "date": "2025-07-21",
+      "symbol": "600789",
+      "action": "buy",
+      "quantity": 200,
+      "price": 10.38,
+      "reasoning": "MA10(10.29)上穿MA30(10.27)，金叉买入"
+    },
+    {
+      "date": "2025-07-22",
+      "symbol": "300323",
+      "action": "sell",
+      "quantity": 500,
+      "price": 7.39,
+      "reasoning": "MA10(7.43)下穿MA30(7.44)，死叉卖出"
+    },
+    {
+      "date": "2025-07-23",
+      "symbol": "601077",
+      "action": "sell",
+      "quantity": 200,
+      "price": 6.74,
+      "reasoning": "MA10(7.06)下穿MA30(7.07)，死叉卖出"
+    },
+    {
+      "date": "2025-07-23",
+      "symbol": "603707",
+      "action": "buy",
+      "quantity": 200,
+      "price": 11.38,
+      "reasoning": "MA10(11.15)上穿MA30(11.09)，金叉买入"
+    },
+    {
+      "date": "2025-07-24",
+      "symbol": "300632",
+      "action": "sell",
+      "quantity": 2900,
+      "price": 12.92,
+      "reasoning": "MA10(13.02)下穿MA30(13.03)，死叉卖出"
+    },
+    {
+      "date": "2025-07-25",
+      "symbol": "300149",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 11.5,
+      "reasoning": "MA10(11.09)上穿MA30(11.00)，金叉买入"
+    },
+    {
+      "date": "2025-07-25",
+      "symbol": "603899",
+      "action": "buy",
+      "quantity": 300,
+      "price": 31.41,
+      "reasoning": "MA10(30.05)上穿MA30(30.01)，金叉买入"
+    },
+    {
+      "date": "2025-07-28",
+      "symbol": "601939",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 9.18,
+      "reasoning": "MA10(9.34)下穿MA30(9.36)，死叉卖出"
+    },
+    {
+      "date": "2025-07-28",
+      "symbol": "601988",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 5.42,
+      "reasoning": "MA10(5.51)下穿MA30(5.54)，死叉卖出"
+    },
+    {
+      "date": "2025-07-29",
+      "symbol": "600036",
+      "action": "sell",
+      "quantity": 400,
+      "price": 43.13,
+      "reasoning": "MA10(43.83)下穿MA30(43.86)，死叉卖出"
+    },
+    {
+      "date": "2025-07-31",
+      "symbol": "000333",
+      "action": "sell",
+      "quantity": 300,
+      "price": 69.7,
+      "reasoning": "MA10(71.89)下穿MA30(72.01)，死叉卖出"
+    },
+    {
+      "date": "2025-07-31",
+      "symbol": "601398",
+      "action": "sell",
+      "quantity": 500,
+      "price": 7.42,
+      "reasoning": "MA10(7.43)下穿MA30(7.44)，死叉卖出"
+    },
+    {
+      "date": "2025-08-01",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 3300,
+      "price": 7.49,
+      "reasoning": "MA10(7.55)上穿MA30(7.55)，金叉买入"
+    },
+    {
+      "date": "2025-08-01",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 4800,
+      "price": 10.89,
+      "reasoning": "MA10(11.02)下穿MA30(11.02)，死叉卖出"
+    },
+    {
+      "date": "2025-08-05",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 2400,
+      "price": 13.71,
+      "reasoning": "MA10(13.33)上穿MA30(13.24)，金叉买入"
+    },
+    {
+      "date": "2025-08-07",
+      "symbol": "000002",
+      "action": "sell",
+      "quantity": 5700,
+      "price": 6.47,
+      "reasoning": "MA10(6.57)下穿MA30(6.57)，死叉卖出"
+    },
+    {
+      "date": "2025-08-07",
+      "symbol": "300433",
+      "action": "sell",
+      "quantity": 400,
+      "price": 23.39,
+      "reasoning": "MA10(22.93)下穿MA30(23.01)，死叉卖出"
+    },
+    {
+      "date": "2025-08-08",
+      "symbol": "300466",
+      "action": "sell",
+      "quantity": 100,
+      "price": 10.58,
+      "reasoning": "MA10(10.58)下穿MA30(10.58)，死叉卖出"
+    },
+    {
+      "date": "2025-08-11",
+      "symbol": "300466",
+      "action": "buy",
+      "quantity": 3400,
+      "price": 10.91,
+      "reasoning": "MA10(10.61)上穿MA30(10.60)，金叉买入"
+    },
+    {
+      "date": "2025-08-11",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 100,
+      "price": 16.01,
+      "reasoning": "MA10(15.99)下穿MA30(16.06)，死叉卖出"
+    },
+    {
+      "date": "2025-08-11",
+      "symbol": "601398",
+      "action": "buy",
+      "quantity": 3500,
+      "price": 7.56,
+      "reasoning": "MA10(7.52)上穿MA30(7.52)，金叉买入"
+    },
+    {
+      "date": "2025-08-12",
+      "symbol": "000725",
+      "action": "sell",
+      "quantity": 2400,
+      "price": 3.99,
+      "reasoning": "MA10(4.03)下穿MA30(4.04)，死叉卖出"
+    },
+    {
+      "date": "2025-08-13",
+      "symbol": "600789",
+      "action": "sell",
+      "quantity": 200,
+      "price": 10.24,
+      "reasoning": "MA10(10.35)下穿MA30(10.37)，死叉卖出"
+    },
+    {
+      "date": "2025-08-13",
+      "symbol": "601788",
+      "action": "sell",
+      "quantity": 2000,
+      "price": 18.26,
+      "reasoning": "MA10(17.98)下穿MA30(18.02)，死叉卖出"
+    },
+    {
+      "date": "2025-08-14",
+      "symbol": "000651",
+      "action": "buy",
+      "quantity": 700,
+      "price": 44.71,
+      "reasoning": "MA10(44.07)上穿MA30(44.04)，金叉买入"
+    },
+    {
+      "date": "2025-08-14",
+      "symbol": "300433",
+      "action": "buy",
+      "quantity": 900,
+      "price": 24.42,
+      "reasoning": "MA10(23.35)上穿MA30(23.26)，金叉买入"
+    },
+    {
+      "date": "2025-08-15",
+      "symbol": "601788",
+      "action": "buy",
+      "quantity": 800,
+      "price": 19.05,
+      "reasoning": "MA10(18.16)上穿MA30(18.09)，金叉买入"
+    },
+    {
+      "date": "2025-08-19",
+      "symbol": "300014",
+      "action": "buy",
+      "quantity": 200,
+      "price": 47.39,
+      "reasoning": "MA10(45.56)上穿MA30(45.37)，金叉买入"
+    },
+    {
+      "date": "2025-08-20",
+      "symbol": "002821",
+      "action": "sell",
+      "quantity": 200,
+      "price": 105.44,
+      "reasoning": "MA10(104.93)下穿MA30(105.26)，死叉卖出"
+    },
+    {
+      "date": "2025-08-20",
+      "symbol": "601398",
+      "action": "sell",
+      "quantity": 3500,
+      "price": 7.43,
+      "reasoning": "MA10(7.53)下穿MA30(7.53)，死叉卖出"
+    },
+    {
+      "date": "2025-08-21",
+      "symbol": "688981",
+      "action": "sell",
+      "quantity": 100,
+      "price": 91.05,
+      "reasoning": "MA10(89.71)下穿MA30(89.72)，死叉卖出"
+    },
+    {
+      "date": "2025-08-22",
+      "symbol": "688981",
+      "action": "buy",
+      "quantity": 200,
+      "price": 103.97,
+      "reasoning": "MA10(91.44)上穿MA30(90.25)，金叉买入"
+    },
+    {
+      "date": "2025-08-25",
+      "symbol": "000333",
+      "action": "buy",
+      "quantity": 200,
+      "price": 73.03,
+      "reasoning": "MA10(71.78)上穿MA30(71.67)，金叉买入"
+    },
+    {
+      "date": "2025-08-25",
+      "symbol": "002821",
+      "action": "buy",
+      "quantity": 100,
+      "price": 110.59,
+      "reasoning": "MA10(106.76)上穿MA30(106.59)，金叉买入"
+    },
+    {
+      "date": "2025-08-26",
+      "symbol": "000002",
+      "action": "buy",
+      "quantity": 1700,
+      "price": 6.99,
+      "reasoning": "MA10(6.63)上穿MA30(6.60)，金叉买入"
+    },
+    {
+      "date": "2025-08-26",
+      "symbol": "002142",
+      "action": "sell",
+      "quantity": 400,
+      "price": 28.04,
+      "reasoning": "MA10(27.81)下穿MA30(27.81)，死叉卖出"
+    },
+    {
+      "date": "2025-08-26",
+      "symbol": "300639",
+      "action": "sell",
+      "quantity": 1000,
+      "price": 6.43,
+      "reasoning": "MA10(6.53)下穿MA30(6.55)，死叉卖出"
+    },
+    {
+      "date": "2025-08-26",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 800,
+      "price": 16.85,
+      "reasoning": "MA10(16.24)上穿MA30(16.18)，金叉买入"
+    },
+    {
+      "date": "2025-08-27",
+      "symbol": "002821",
+      "action": "sell",
+      "quantity": 100,
+      "price": 102.69,
+      "reasoning": "MA10(106.46)下穿MA30(107.01)，死叉卖出"
+    },
+    {
+      "date": "2025-08-27",
+      "symbol": "600438",
+      "action": "buy",
+      "quantity": 600,
+      "price": 20.9,
+      "reasoning": "MA10(20.80)上穿MA30(20.77)，金叉买入"
+    },
+    {
+      "date": "2025-08-28",
+      "symbol": "000725",
+      "action": "buy",
+      "quantity": 2200,
+      "price": 4.21,
+      "reasoning": "MA10(4.08)上穿MA30(4.05)，金叉买入"
+    },
+    {
+      "date": "2025-08-28",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 600,
+      "price": 11.2,
+      "reasoning": "MA10(11.04)上穿MA30(11.02)，金叉买入"
+    },
+    {
+      "date": "2025-08-29",
+      "symbol": "300122",
+      "action": "sell",
+      "quantity": 100,
+      "price": 22.51,
+      "reasoning": "MA10(23.28)下穿MA30(23.28)，死叉卖出"
+    },
+    {
+      "date": "2025-08-29",
+      "symbol": "300466",
+      "action": "sell",
+      "quantity": 3400,
+      "price": 10.0,
+      "reasoning": "MA10(10.67)下穿MA30(10.68)，死叉卖出"
+    },
+    {
+      "date": "2025-08-29",
+      "symbol": "601988",
+      "action": "buy",
+      "quantity": 2800,
+      "price": 5.41,
+      "reasoning": "MA10(5.49)上穿MA30(5.48)，金叉买入"
+    },
+    {
+      "date": "2025-09-01",
+      "symbol": "000651",
+      "action": "sell",
+      "quantity": 700,
+      "price": 40.41,
+      "reasoning": "MA10(43.67)下穿MA30(43.94)，死叉卖出"
+    },
+    {
+      "date": "2025-09-02",
+      "symbol": "300347",
+      "action": "sell",
+      "quantity": 900,
+      "price": 66.25,
+      "reasoning": "MA10(65.59)下穿MA30(65.92)，死叉卖出"
+    },
+    {
+      "date": "2025-09-02",
+      "symbol": "300632",
+      "action": "sell",
+      "quantity": 2400,
+      "price": 12.85,
+      "reasoning": "MA10(13.58)下穿MA30(13.63)，死叉卖出"
+    },
+    {
+      "date": "2025-09-03",
+      "symbol": "300149",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 12.62,
+      "reasoning": "MA10(12.87)下穿MA30(12.90)，死叉卖出"
+    },
+    {
+      "date": "2025-09-03",
+      "symbol": "603899",
+      "action": "sell",
+      "quantity": 300,
+      "price": 30.03,
+      "reasoning": "MA10(31.13)下穿MA30(31.23)，死叉卖出"
+    },
+    {
+      "date": "2025-09-04",
+      "symbol": "600900",
+      "action": "buy",
+      "quantity": 1900,
+      "price": 28.02,
+      "reasoning": "MA10(27.85)上穿MA30(27.81)，金叉买入"
+    },
+    {
+      "date": "2025-09-04",
+      "symbol": "601566",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 8.89,
+      "reasoning": "MA10(9.04)下穿MA30(9.08)，死叉卖出"
+    },
+    {
+      "date": "2025-09-04",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 600,
+      "price": 10.45,
+      "reasoning": "MA10(10.97)下穿MA30(10.97)，死叉卖出"
+    },
+    {
+      "date": "2025-09-05",
+      "symbol": "002142",
+      "action": "buy",
+      "quantity": 1500,
+      "price": 28.43,
+      "reasoning": "MA10(28.11)上穿MA30(28.08)，金叉买入"
+    },
+    {
+      "date": "2025-09-05",
+      "symbol": "601988",
+      "action": "sell",
+      "quantity": 2800,
+      "price": 5.41,
+      "reasoning": "MA10(5.47)下穿MA30(5.48)，死叉卖出"
+    },
+    {
+      "date": "2025-09-08",
+      "symbol": "300474",
+      "action": "sell",
+      "quantity": 100,
+      "price": 76.71,
+      "reasoning": "MA10(81.97)下穿MA30(83.15)，死叉卖出"
+    },
+    {
+      "date": "2025-09-08",
+      "symbol": "603658",
+      "action": "sell",
+      "quantity": 100,
+      "price": 42.36,
+      "reasoning": "MA10(41.11)下穿MA30(41.17)，死叉卖出"
+    },
+    {
+      "date": "2025-09-09",
+      "symbol": "600570",
+      "action": "sell",
+      "quantity": 700,
+      "price": 34.43,
+      "reasoning": "MA10(35.98)下穿MA30(36.19)，死叉卖出"
+    },
+    {
+      "date": "2025-09-09",
+      "symbol": "603707",
+      "action": "sell",
+      "quantity": 200,
+      "price": 11.42,
+      "reasoning": "MA10(11.53)下穿MA30(11.55)，死叉卖出"
+    },
+    {
+      "date": "2025-09-10",
+      "symbol": "002821",
+      "action": "buy",
+      "quantity": 400,
+      "price": 111.0,
+      "reasoning": "MA10(107.81)上穿MA30(107.08)，金叉买入"
+    },
+    {
+      "date": "2025-09-10",
+      "symbol": "300726",
+      "action": "sell",
+      "quantity": 200,
+      "price": 34.77,
+      "reasoning": "MA10(36.33)下穿MA30(36.41)，死叉卖出"
+    },
+    {
+      "date": "2025-09-11",
+      "symbol": "300149",
+      "action": "buy",
+      "quantity": 2600,
+      "price": 12.95,
+      "reasoning": "MA10(13.08)上穿MA30(13.02)，金叉买入"
+    },
+    {
+      "date": "2025-09-11",
+      "symbol": "300623",
+      "action": "sell",
+      "quantity": 500,
+      "price": 31.0,
+      "reasoning": "MA10(31.84)下穿MA30(32.19)，死叉卖出"
+    },
+    {
+      "date": "2025-09-11",
+      "symbol": "601901",
+      "action": "sell",
+      "quantity": 300,
+      "price": 8.45,
+      "reasoning": "MA10(8.33)下穿MA30(8.36)，死叉卖出"
+    },
+    {
+      "date": "2025-09-12",
+      "symbol": "300638",
+      "action": "sell",
+      "quantity": 300,
+      "price": 29.9,
+      "reasoning": "MA10(29.87)下穿MA30(30.05)，死叉卖出"
+    },
+    {
+      "date": "2025-09-12",
+      "symbol": "600030",
+      "action": "sell",
+      "quantity": 1000,
+      "price": 29.49,
+      "reasoning": "MA10(29.68)下穿MA30(29.86)，死叉卖出"
+    },
+    {
+      "date": "2025-09-15",
+      "symbol": "002841",
+      "action": "sell",
+      "quantity": 400,
+      "price": 38.67,
+      "reasoning": "MA10(38.86)下穿MA30(38.91)，死叉卖出"
+    },
+    {
+      "date": "2025-09-16",
+      "symbol": "601788",
+      "action": "sell",
+      "quantity": 800,
+      "price": 18.7,
+      "reasoning": "MA10(19.06)下穿MA30(19.10)，死叉卖出"
+    },
+    {
+      "date": "2025-09-17",
+      "symbol": "002142",
+      "action": "sell",
+      "quantity": 1500,
+      "price": 26.73,
+      "reasoning": "MA10(27.98)下穿MA30(27.98)，死叉卖出"
+    },
+    {
+      "date": "2025-09-18",
+      "symbol": "600900",
+      "action": "sell",
+      "quantity": 1900,
+      "price": 27.1,
+      "reasoning": "MA10(27.66)下穿MA30(27.67)，死叉卖出"
+    },
+    {
+      "date": "2025-09-19",
+      "symbol": "300726",
+      "action": "buy",
+      "quantity": 1900,
+      "price": 39.79,
+      "reasoning": "MA10(36.88)上穿MA30(36.78)，金叉买入"
+    },
+    {
+      "date": "2025-09-19",
+      "symbol": "600104",
+      "action": "sell",
+      "quantity": 100,
+      "price": 19.25,
+      "reasoning": "MA10(18.87)下穿MA30(18.88)，死叉卖出"
+    },
+    {
+      "date": "2025-09-22",
+      "symbol": "600305",
+      "action": "sell",
+      "quantity": 700,
+      "price": 7.91,
+      "reasoning": "MA10(8.13)下穿MA30(8.17)，死叉卖出"
+    },
+    {
+      "date": "2025-09-23",
+      "symbol": "002841",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 39.64,
+      "reasoning": "MA10(39.55)上穿MA30(39.50)，金叉买入"
+    },
+    {
+      "date": "2025-09-23",
+      "symbol": "300059",
+      "action": "sell",
+      "quantity": 500,
+      "price": 26.12,
+      "reasoning": "MA10(27.00)下穿MA30(27.03)，死叉卖出"
+    },
+    {
+      "date": "2025-09-23",
+      "symbol": "300638",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 30.48,
+      "reasoning": "MA10(30.59)上穿MA30(30.51)，金叉买入"
+    },
+    {
+      "date": "2025-09-24",
+      "symbol": "002049",
+      "action": "buy",
+      "quantity": 300,
+      "price": 81.79,
+      "reasoning": "MA10(79.00)上穿MA30(78.88)，金叉买入"
+    },
+    {
+      "date": "2025-09-24",
+      "symbol": "300149",
+      "action": "sell",
+      "quantity": 2600,
+      "price": 11.99,
+      "reasoning": "MA10(12.99)下穿MA30(13.06)，死叉卖出"
+    },
+    {
+      "date": "2025-09-24",
+      "symbol": "300323",
+      "action": "sell",
+      "quantity": 3300,
+      "price": 8.89,
+      "reasoning": "MA10(8.88)下穿MA30(8.89)，死叉卖出"
+    },
+    {
+      "date": "2025-09-25",
+      "symbol": "000333",
+      "action": "sell",
+      "quantity": 200,
+      "price": 72.35,
+      "reasoning": "MA10(73.65)下穿MA30(73.76)，死叉卖出"
+    },
+    {
+      "date": "2025-09-25",
+      "symbol": "601766",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 7.28,
+      "reasoning": "MA10(7.44)下穿MA30(7.45)，死叉卖出"
+    },
+    {
+      "date": "2025-09-25",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 100,
+      "price": 20.2,
+      "reasoning": "MA10(20.83)下穿MA30(20.96)，死叉卖出"
+    },
+    {
+      "date": "2025-09-26",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 3700,
+      "price": 13.33,
+      "reasoning": "MA10(13.43)上穿MA30(13.42)，金叉买入"
+    },
+    {
+      "date": "2025-09-26",
+      "symbol": "600438",
+      "action": "sell",
+      "quantity": 600,
+      "price": 21.74,
+      "reasoning": "MA10(21.90)下穿MA30(21.96)，死叉卖出"
+    },
+    {
+      "date": "2025-10-10",
+      "symbol": "300474",
+      "action": "buy",
+      "quantity": 500,
+      "price": 77.84,
+      "reasoning": "MA10(81.02)上穿MA30(80.99)，金叉买入"
+    },
+    {
+      "date": "2025-10-13",
+      "symbol": "000002",
+      "action": "sell",
+      "quantity": 1700,
+      "price": 6.57,
+      "reasoning": "MA10(6.80)下穿MA30(6.83)，死叉卖出"
+    },
+    {
+      "date": "2025-10-13",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 200,
+      "price": 97.4,
+      "reasoning": "MA10(97.86)下穿MA30(97.92)，死叉卖出"
+    },
+    {
+      "date": "2025-10-13",
+      "symbol": "601077",
+      "action": "buy",
+      "quantity": 5600,
+      "price": 6.56,
+      "reasoning": "MA10(6.29)上穿MA30(6.27)，金叉买入"
+    },
+    {
+      "date": "2025-10-14",
+      "symbol": "002821",
+      "action": "sell",
+      "quantity": 400,
+      "price": 102.0,
+      "reasoning": "MA10(109.29)下穿MA30(109.56)，死叉卖出"
+    },
+    {
+      "date": "2025-10-14",
+      "symbol": "002841",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 36.75,
+      "reasoning": "MA10(39.52)下穿MA30(39.68)，死叉卖出"
+    },
+    {
+      "date": "2025-10-14",
+      "symbol": "603259",
+      "action": "sell",
+      "quantity": 200,
+      "price": 95.92,
+      "reasoning": "MA10(104.96)下穿MA30(105.35)，死叉卖出"
+    },
+    {
+      "date": "2025-10-15",
+      "symbol": "300623",
+      "action": "buy",
+      "quantity": 1800,
+      "price": 31.85,
+      "reasoning": "MA10(32.04)上穿MA30(31.95)，金叉买入"
+    },
+    {
+      "date": "2025-10-15",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 400,
+      "price": 97.66,
+      "reasoning": "MA10(98.71)上穿MA30(98.70)，金叉买入"
+    },
+    {
+      "date": "2025-10-15",
+      "symbol": "600438",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 24.37,
+      "reasoning": "MA10(22.35)上穿MA30(22.33)，金叉买入"
+    },
+    {
+      "date": "2025-10-16",
+      "symbol": "000725",
+      "action": "sell",
+      "quantity": 2200,
+      "price": 4.08,
+      "reasoning": "MA10(4.13)下穿MA30(4.14)，死叉卖出"
+    },
+    {
+      "date": "2025-10-16",
+      "symbol": "300474",
+      "action": "sell",
+      "quantity": 500,
+      "price": 74.45,
+      "reasoning": "MA10(79.20)下穿MA30(79.43)，死叉卖出"
+    },
+    {
+      "date": "2025-10-16",
+      "symbol": "300632",
+      "action": "sell",
+      "quantity": 3700,
+      "price": 13.03,
+      "reasoning": "MA10(13.14)下穿MA30(13.18)，死叉卖出"
+    },
+    {
+      "date": "2025-10-16",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 400,
+      "price": 96.19,
+      "reasoning": "MA10(98.72)下穿MA30(99.09)，死叉卖出"
+    },
+    {
+      "date": "2025-10-16",
+      "symbol": "601766",
+      "action": "buy",
+      "quantity": 7800,
+      "price": 7.76,
+      "reasoning": "MA10(7.50)上穿MA30(7.48)，金叉买入"
+    },
+    {
+      "date": "2025-10-17",
+      "symbol": "300433",
+      "action": "sell",
+      "quantity": 900,
+      "price": 27.25,
+      "reasoning": "MA10(30.77)下穿MA30(30.98)，死叉卖出"
+    },
+    {
+      "date": "2025-10-17",
+      "symbol": "300623",
+      "action": "sell",
+      "quantity": 1800,
+      "price": 30.08,
+      "reasoning": "MA10(31.70)下穿MA30(31.73)，死叉卖出"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "600030",
+      "action": "buy",
+      "quantity": 2300,
+      "price": 28.94,
+      "reasoning": "MA10(29.26)上穿MA30(29.15)，金叉买入"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "600900",
+      "action": "buy",
+      "quantity": 1600,
+      "price": 27.84,
+      "reasoning": "MA10(27.59)上穿MA30(27.54)，金叉买入"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "600919",
+      "action": "buy",
+      "quantity": 3100,
+      "price": 10.46,
+      "reasoning": "MA10(10.17)上穿MA30(10.16)，金叉买入"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "601398",
+      "action": "buy",
+      "quantity": 3100,
+      "price": 7.47,
+      "reasoning": "MA10(7.29)上穿MA30(7.28)，金叉买入"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "601577",
+      "action": "buy",
+      "quantity": 1700,
+      "price": 9.36,
+      "reasoning": "MA10(9.16)上穿MA30(9.14)，金叉买入"
+    },
+    {
+      "date": "2025-10-20",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 10.56,
+      "reasoning": "MA10(10.48)上穿MA30(10.47)，金叉买入"
+    },
+    {
+      "date": "2025-10-21",
+      "symbol": "600789",
+      "action": "buy",
+      "quantity": 800,
+      "price": 10.36,
+      "reasoning": "MA10(9.94)上穿MA30(9.89)，金叉买入"
+    },
+    {
+      "date": "2025-10-21",
+      "symbol": "601566",
+      "action": "buy",
+      "quantity": 600,
+      "price": 8.99,
+      "reasoning": "MA10(8.76)上穿MA30(8.74)，金叉买入"
+    },
+    {
+      "date": "2025-10-21",
+      "symbol": "601939",
+      "action": "buy",
+      "quantity": 400,
+      "price": 9.1,
+      "reasoning": "MA10(8.76)上穿MA30(8.76)，金叉买入"
+    },
+    {
+      "date": "2025-10-23",
+      "symbol": "300124",
+      "action": "sell",
+      "quantity": 200,
+      "price": 79.25,
+      "reasoning": "MA10(80.05)下穿MA30(81.08)，死叉卖出"
+    },
+    {
+      "date": "2025-10-23",
+      "symbol": "300638",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 27.22,
+      "reasoning": "MA10(29.80)下穿MA30(30.23)，死叉卖出"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "002142",
+      "action": "buy",
+      "quantity": 700,
+      "price": 27.46,
+      "reasoning": "MA10(27.08)上穿MA30(27.02)，金叉买入"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "600036",
+      "action": "buy",
+      "quantity": 300,
+      "price": 40.94,
+      "reasoning": "MA10(40.58)上穿MA30(40.57)，金叉买入"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "600305",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 8.03,
+      "reasoning": "MA10(8.06)上穿MA30(8.05)，金叉买入"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "600869",
+      "action": "sell",
+      "quantity": 1600,
+      "price": 7.67,
+      "reasoning": "MA10(7.65)下穿MA30(7.67)，死叉卖出"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "601328",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 7.07,
+      "reasoning": "MA10(6.84)上穿MA30(6.82)，金叉买入"
+    },
+    {
+      "date": "2025-10-24",
+      "symbol": "601988",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 5.42,
+      "reasoning": "MA10(5.26)上穿MA30(5.24)，金叉买入"
+    },
+    {
+      "date": "2025-10-27",
+      "symbol": "601788",
+      "action": "buy",
+      "quantity": 200,
+      "price": 19.02,
+      "reasoning": "MA10(18.78)上穿MA30(18.75)，金叉买入"
+    },
+    {
+      "date": "2025-10-28",
+      "symbol": "002601",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 18.1,
+      "reasoning": "MA10(19.14)下穿MA30(19.16)，死叉卖出"
+    },
+    {
+      "date": "2025-10-28",
+      "symbol": "002841",
+      "action": "buy",
+      "quantity": 200,
+      "price": 43.3,
+      "reasoning": "MA10(39.91)上穿MA30(39.62)，金叉买入"
+    },
+    {
+      "date": "2025-10-29",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 500,
+      "price": 13.78,
+      "reasoning": "MA10(13.29)上穿MA30(13.28)，金叉买入"
+    },
+    {
+      "date": "2025-10-29",
+      "symbol": "601816",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 5.23,
+      "reasoning": "MA10(5.19)上穿MA30(5.18)，金叉买入"
+    },
+    {
+      "date": "2025-10-29",
+      "symbol": "601901",
+      "action": "buy",
+      "quantity": 500,
+      "price": 8.42,
+      "reasoning": "MA10(8.14)上穿MA30(8.13)，金叉买入"
+    },
+    {
+      "date": "2025-10-30",
+      "symbol": "002049",
+      "action": "sell",
+      "quantity": 300,
+      "price": 85.13,
+      "reasoning": "MA10(82.92)下穿MA30(83.03)，死叉卖出"
+    },
+    {
+      "date": "2025-10-30",
+      "symbol": "002304",
+      "action": "buy",
+      "quantity": 100,
+      "price": 70.82,
+      "reasoning": "MA10(69.88)上穿MA30(69.77)，金叉买入"
+    },
+    {
+      "date": "2025-10-30",
+      "symbol": "601888",
+      "action": "buy",
+      "quantity": 100,
+      "price": 72.85,
+      "reasoning": "MA10(70.27)上穿MA30(70.26)，金叉买入"
+    },
+    {
+      "date": "2025-10-31",
+      "symbol": "300639",
+      "action": "buy",
+      "quantity": 1000,
+      "price": 5.84,
+      "reasoning": "MA10(5.72)上穿MA30(5.71)，金叉买入"
+    },
+    {
+      "date": "2025-10-31",
+      "symbol": "601166",
+      "action": "buy",
+      "quantity": 200,
+      "price": 19.67,
+      "reasoning": "MA10(19.77)上穿MA30(19.74)，金叉买入"
+    },
+    {
+      "date": "2025-11-03",
+      "symbol": "300466",
+      "action": "buy",
+      "quantity": 300,
+      "price": 9.97,
+      "reasoning": "MA10(9.69)上穿MA30(9.66)，金叉买入"
+    },
+    {
+      "date": "2025-11-03",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 10.15,
+      "reasoning": "MA10(10.36)下穿MA30(10.39)，死叉卖出"
+    },
+    {
+      "date": "2025-11-04",
+      "symbol": "688981",
+      "action": "sell",
+      "quantity": 200,
+      "price": 119.88,
+      "reasoning": "MA10(128.22)下穿MA30(128.23)，死叉卖出"
+    },
+    {
+      "date": "2025-11-06",
+      "symbol": "300347",
+      "action": "buy",
+      "quantity": 200,
+      "price": 58.69,
+      "reasoning": "MA10(57.48)上穿MA30(56.83)，金叉买入"
+    },
+    {
+      "date": "2025-11-06",
+      "symbol": "600869",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 7.94,
+      "reasoning": "MA10(7.92)上穿MA30(7.91)，金叉买入"
+    },
+    {
+      "date": "2025-11-06",
+      "symbol": "603899",
+      "action": "buy",
+      "quantity": 200,
+      "price": 28.13,
+      "reasoning": "MA10(27.78)上穿MA30(27.71)，金叉买入"
+    },
+    {
+      "date": "2025-11-10",
+      "symbol": "300122",
+      "action": "buy",
+      "quantity": 200,
+      "price": 21.52,
+      "reasoning": "MA10(20.74)上穿MA30(20.68)，金叉买入"
+    },
+    {
+      "date": "2025-11-10",
+      "symbol": "601788",
+      "action": "sell",
+      "quantity": 200,
+      "price": 18.46,
+      "reasoning": "MA10(18.58)下穿MA30(18.64)，死叉卖出"
+    },
+    {
+      "date": "2025-11-11",
+      "symbol": "002475",
+      "action": "sell",
+      "quantity": 100,
+      "price": 56.33,
+      "reasoning": "MA10(61.46)下穿MA30(61.80)，死叉卖出"
+    },
+    {
+      "date": "2025-11-11",
+      "symbol": "600030",
+      "action": "sell",
+      "quantity": 2300,
+      "price": 28.77,
+      "reasoning": "MA10(29.04)下穿MA30(29.09)，死叉卖出"
+    },
+    {
+      "date": "2025-11-11",
+      "symbol": "600869",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 7.71,
+      "reasoning": "MA10(7.89)下穿MA30(7.90)，死叉卖出"
+    },
+    {
+      "date": "2025-11-12",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 20.67,
+      "reasoning": "MA10(20.01)上穿MA30(19.93)，金叉买入"
+    },
+    {
+      "date": "2025-11-13",
+      "symbol": "300683",
+      "action": "buy",
+      "quantity": 500,
+      "price": 34.26,
+      "reasoning": "MA10(33.97)上穿MA30(33.75)，金叉买入"
+    },
+    {
+      "date": "2025-11-13",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 100,
+      "price": 100.68,
+      "reasoning": "MA10(96.47)上穿MA30(96.17)，金叉买入"
+    },
+    {
+      "date": "2025-11-14",
+      "symbol": "600016",
+      "action": "buy",
+      "quantity": 3000,
+      "price": 4.06,
+      "reasoning": "MA10(4.03)上穿MA30(4.02)，金叉买入"
+    },
+    {
+      "date": "2025-11-14",
+      "symbol": "603658",
+      "action": "buy",
+      "quantity": 200,
+      "price": 39.33,
+      "reasoning": "MA10(38.80)上穿MA30(38.75)，金叉买入"
+    },
+    {
+      "date": "2025-11-14",
+      "symbol": "603707",
+      "action": "buy",
+      "quantity": 500,
+      "price": 10.36,
+      "reasoning": "MA10(10.18)上穿MA30(10.17)，金叉买入"
+    },
+    {
+      "date": "2025-11-18",
+      "symbol": "000651",
+      "action": "buy",
+      "quantity": 100,
+      "price": 39.11,
+      "reasoning": "MA10(39.46)上穿MA30(39.43)，金叉买入"
+    },
+    {
+      "date": "2025-11-18",
+      "symbol": "300683",
+      "action": "sell",
+      "quantity": 500,
+      "price": 32.2,
+      "reasoning": "MA10(33.52)下穿MA30(33.65)，死叉卖出"
+    },
+    {
+      "date": "2025-11-18",
+      "symbol": "601766",
+      "action": "sell",
+      "quantity": 7800,
+      "price": 7.44,
+      "reasoning": "MA10(7.70)下穿MA30(7.70)，死叉卖出"
+    },
+    {
+      "date": "2025-11-19",
+      "symbol": "002841",
+      "action": "sell",
+      "quantity": 200,
+      "price": 38.64,
+      "reasoning": "MA10(40.14)下穿MA30(40.21)，死叉卖出"
+    },
+    {
+      "date": "2025-11-19",
+      "symbol": "601077",
+      "action": "sell",
+      "quantity": 5600,
+      "price": 6.52,
+      "reasoning": "MA10(6.74)下穿MA30(6.77)，死叉卖出"
+    },
+    {
+      "date": "2025-11-20",
+      "symbol": "000858",
+      "action": "buy",
+      "quantity": 300,
+      "price": 117.67,
+      "reasoning": "MA10(117.50)上穿MA30(117.33)，金叉买入"
+    },
+    {
+      "date": "2025-11-20",
+      "symbol": "002304",
+      "action": "sell",
+      "quantity": 100,
+      "price": 68.26,
+      "reasoning": "MA10(69.66)下穿MA30(69.69)，死叉卖出"
+    },
+    {
+      "date": "2025-11-20",
+      "symbol": "300726",
+      "action": "sell",
+      "quantity": 1900,
+      "price": 39.93,
+      "reasoning": "MA10(41.26)下穿MA30(41.47)，死叉卖出"
+    },
+    {
+      "date": "2025-11-21",
+      "symbol": "300014",
+      "action": "sell",
+      "quantity": 200,
+      "price": 71.74,
+      "reasoning": "MA10(80.69)下穿MA30(80.93)，死叉卖出"
+    },
+    {
+      "date": "2025-11-21",
+      "symbol": "300347",
+      "action": "sell",
+      "quantity": 200,
+      "price": 49.59,
+      "reasoning": "MA10(55.56)下穿MA30(55.78)，死叉卖出"
+    },
+    {
+      "date": "2025-11-21",
+      "symbol": "601901",
+      "action": "sell",
+      "quantity": 500,
+      "price": 7.79,
+      "reasoning": "MA10(8.15)下穿MA30(8.15)，死叉卖出"
+    },
+    {
+      "date": "2025-11-21",
+      "symbol": "603658",
+      "action": "sell",
+      "quantity": 200,
+      "price": 37.03,
+      "reasoning": "MA10(38.43)下穿MA30(38.48)，死叉卖出"
+    },
+    {
+      "date": "2025-11-24",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 100,
+      "price": 82.16,
+      "reasoning": "MA10(93.03)下穿MA30(93.88)，死叉卖出"
+    },
+    {
+      "date": "2025-11-24",
+      "symbol": "600919",
+      "action": "sell",
+      "quantity": 3100,
+      "price": 10.38,
+      "reasoning": "MA10(10.58)下穿MA30(10.58)，死叉卖出"
+    },
+    {
+      "date": "2025-11-24",
+      "symbol": "601816",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 5.07,
+      "reasoning": "MA10(5.19)下穿MA30(5.19)，死叉卖出"
+    },
+    {
+      "date": "2025-11-25",
+      "symbol": "000651",
+      "action": "sell",
+      "quantity": 100,
+      "price": 39.07,
+      "reasoning": "MA10(39.40)下穿MA30(39.41)，死叉卖出"
+    },
+    {
+      "date": "2025-11-25",
+      "symbol": "002271",
+      "action": "buy",
+      "quantity": 5900,
+      "price": 13.23,
+      "reasoning": "MA10(12.94)上穿MA30(12.90)，金叉买入"
+    },
+    {
+      "date": "2025-11-25",
+      "symbol": "600789",
+      "action": "sell",
+      "quantity": 800,
+      "price": 9.95,
+      "reasoning": "MA10(10.16)下穿MA30(10.17)，死叉卖出"
+    },
+    {
+      "date": "2025-11-25",
+      "symbol": "600900",
+      "action": "sell",
+      "quantity": 1600,
+      "price": 27.82,
+      "reasoning": "MA10(28.04)下穿MA30(28.06)，死叉卖出"
+    },
+    {
+      "date": "2025-11-25",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 800,
+      "price": 18.98,
+      "reasoning": "MA10(20.47)下穿MA30(20.50)，死叉卖出"
+    },
+    {
+      "date": "2025-11-26",
+      "symbol": "600305",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 7.85,
+      "reasoning": "MA10(8.11)下穿MA30(8.13)，死叉卖出"
+    },
+    {
+      "date": "2025-11-26",
+      "symbol": "600438",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 22.86,
+      "reasoning": "MA10(24.33)下穿MA30(24.33)，死叉卖出"
+    },
+    {
+      "date": "2025-11-27",
+      "symbol": "000858",
+      "action": "sell",
+      "quantity": 300,
+      "price": 115.36,
+      "reasoning": "MA10(116.80)下穿MA30(116.84)，死叉卖出"
+    },
+    {
+      "date": "2025-11-27",
+      "symbol": "603707",
+      "action": "sell",
+      "quantity": 500,
+      "price": 9.75,
+      "reasoning": "MA10(10.00)下穿MA30(10.04)，死叉卖出"
+    },
+    {
+      "date": "2025-11-28",
+      "symbol": "002271",
+      "action": "sell",
+      "quantity": 5900,
+      "price": 12.52,
+      "reasoning": "MA10(12.83)下穿MA30(12.84)，死叉卖出"
+    },
+    {
+      "date": "2025-11-28",
+      "symbol": "300122",
+      "action": "sell",
+      "quantity": 200,
+      "price": 20.56,
+      "reasoning": "MA10(20.64)下穿MA30(20.72)，死叉卖出"
+    },
+    {
+      "date": "2025-11-28",
+      "symbol": "300466",
+      "action": "sell",
+      "quantity": 300,
+      "price": 9.94,
+      "reasoning": "MA10(9.92)下穿MA30(9.93)，死叉卖出"
+    },
+    {
+      "date": "2025-11-28",
+      "symbol": "601577",
+      "action": "sell",
+      "quantity": 1700,
+      "price": 9.64,
+      "reasoning": "MA10(9.69)下穿MA30(9.71)，死叉卖出"
+    },
+    {
+      "date": "2025-12-01",
+      "symbol": "002271",
+      "action": "buy",
+      "quantity": 9600,
+      "price": 13.18,
+      "reasoning": "MA10(12.85)上穿MA30(12.84)，金叉买入"
+    },
+    {
+      "date": "2025-12-01",
+      "symbol": "600089",
+      "action": "sell",
+      "quantity": 300,
+      "price": 22.23,
+      "reasoning": "MA10(22.13)下穿MA30(22.18)，死叉卖出"
+    },
+    {
+      "date": "2025-12-01",
+      "symbol": "603899",
+      "action": "sell",
+      "quantity": 200,
+      "price": 28.29,
+      "reasoning": "MA10(28.06)下穿MA30(28.11)，死叉卖出"
+    },
+    {
+      "date": "2025-12-02",
+      "symbol": "300638",
+      "action": "buy",
+      "quantity": 2700,
+      "price": 34.4,
+      "reasoning": "MA10(26.55)上穿MA30(26.55)，金叉买入"
+    },
+    {
+      "date": "2025-12-02",
+      "symbol": "300639",
+      "action": "sell",
+      "quantity": 1000,
+      "price": 5.9,
+      "reasoning": "MA10(5.91)下穿MA30(5.91)，死叉卖出"
+    },
+    {
+      "date": "2025-12-03",
+      "symbol": "000651",
+      "action": "buy",
+      "quantity": 1600,
+      "price": 39.81,
+      "reasoning": "MA10(39.44)上穿MA30(39.40)，金叉买入"
+    },
+    {
+      "date": "2025-12-03",
+      "symbol": "002142",
+      "action": "sell",
+      "quantity": 700,
+      "price": 28.13,
+      "reasoning": "MA10(28.36)下穿MA30(28.39)，死叉卖出"
+    },
+    {
+      "date": "2025-12-08",
+      "symbol": "300474",
+      "action": "buy",
+      "quantity": 700,
+      "price": 73.4,
+      "reasoning": "MA10(73.16)上穿MA30(72.97)，金叉买入"
+    },
+    {
+      "date": "2025-12-08",
+      "symbol": "601398",
+      "action": "sell",
+      "quantity": 3100,
+      "price": 7.85,
+      "reasoning": "MA10(7.96)下穿MA30(7.96)，死叉卖出"
+    },
+    {
+      "date": "2025-12-08",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 19.86,
+      "reasoning": "MA10(20.09)下穿MA30(20.15)，死叉卖出"
+    },
+    {
+      "date": "2025-12-09",
+      "symbol": "000725",
+      "action": "buy",
+      "quantity": 12900,
+      "price": 4.17,
+      "reasoning": "MA10(4.01)上穿MA30(3.99)，金叉买入"
+    },
+    {
+      "date": "2025-12-09",
+      "symbol": "002475",
+      "action": "buy",
+      "quantity": 600,
+      "price": 60.44,
+      "reasoning": "MA10(58.77)上穿MA30(58.66)，金叉买入"
+    },
+    {
+      "date": "2025-12-09",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 3300,
+      "price": 8.11,
+      "reasoning": "MA10(7.92)上穿MA30(7.87)，金叉买入"
+    },
+    {
+      "date": "2025-12-09",
+      "symbol": "601166",
+      "action": "sell",
+      "quantity": 200,
+      "price": 20.16,
+      "reasoning": "MA10(20.47)下穿MA30(20.50)，死叉卖出"
+    },
+    {
+      "date": "2025-12-09",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 1900,
+      "price": 10.33,
+      "reasoning": "MA10(10.21)上穿MA30(10.19)，金叉买入"
+    },
+    {
+      "date": "2025-12-10",
+      "symbol": "300433",
+      "action": "buy",
+      "quantity": 400,
+      "price": 28.9,
+      "reasoning": "MA10(28.52)上穿MA30(28.46)，金叉买入"
+    },
+    {
+      "date": "2025-12-10",
+      "symbol": "600016",
+      "action": "sell",
+      "quantity": 3000,
+      "price": 3.93,
+      "reasoning": "MA10(4.05)下穿MA30(4.05)，死叉卖出"
+    },
+    {
+      "date": "2025-12-10",
+      "symbol": "601888",
+      "action": "sell",
+      "quantity": 100,
+      "price": 82.58,
+      "reasoning": "MA10(81.22)下穿MA30(81.35)，死叉卖出"
+    },
+    {
+      "date": "2025-12-10",
+      "symbol": "601939",
+      "action": "sell",
+      "quantity": 400,
+      "price": 9.0,
+      "reasoning": "MA10(9.27)下穿MA30(9.32)，死叉卖出"
+    },
+    {
+      "date": "2025-12-11",
+      "symbol": "300124",
+      "action": "buy",
+      "quantity": 200,
+      "price": 73.73,
+      "reasoning": "MA10(72.47)上穿MA30(72.15)，金叉买入"
+    },
+    {
+      "date": "2025-12-11",
+      "symbol": "300726",
+      "action": "buy",
+      "quantity": 300,
+      "price": 41.51,
+      "reasoning": "MA10(41.54)上穿MA30(41.23)，金叉买入"
+    },
+    {
+      "date": "2025-12-12",
+      "symbol": "600036",
+      "action": "sell",
+      "quantity": 300,
+      "price": 40.73,
+      "reasoning": "MA10(41.77)下穿MA30(41.84)，死叉卖出"
+    },
+    {
+      "date": "2025-12-12",
+      "symbol": "600869",
+      "action": "buy",
+      "quantity": 1600,
+      "price": 7.89,
+      "reasoning": "MA10(7.38)上穿MA30(7.36)，金叉买入"
+    },
+    {
+      "date": "2025-12-12",
+      "symbol": "601328",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 7.19,
+      "reasoning": "MA10(7.31)下穿MA30(7.32)，死叉卖出"
+    },
+    {
+      "date": "2025-12-12",
+      "symbol": "601988",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 5.59,
+      "reasoning": "MA10(5.76)下穿MA30(5.78)，死叉卖出"
+    },
+    {
+      "date": "2025-12-15",
+      "symbol": "601816",
+      "action": "buy",
+      "quantity": 2900,
+      "price": 5.11,
+      "reasoning": "MA10(5.17)上穿MA30(5.17)，金叉买入"
+    },
+    {
+      "date": "2025-12-16",
+      "symbol": "600104",
+      "action": "buy",
+      "quantity": 600,
+      "price": 15.66,
+      "reasoning": "MA10(15.46)上穿MA30(15.44)，金叉买入"
+    },
+    {
+      "date": "2025-12-17",
+      "symbol": "300323",
+      "action": "sell",
+      "quantity": 3300,
+      "price": 7.46,
+      "reasoning": "MA10(7.81)下穿MA30(7.82)，死叉卖出"
+    },
+    {
+      "date": "2025-12-17",
+      "symbol": "600030",
+      "action": "buy",
+      "quantity": 500,
+      "price": 28.68,
+      "reasoning": "MA10(28.06)上穿MA30(27.94)，金叉买入"
+    },
+    {
+      "date": "2025-12-17",
+      "symbol": "601816",
+      "action": "sell",
+      "quantity": 2900,
+      "price": 5.12,
+      "reasoning": "MA10(5.16)下穿MA30(5.16)，死叉卖出"
+    },
+    {
+      "date": "2025-12-18",
+      "symbol": "002049",
+      "action": "buy",
+      "quantity": 100,
+      "price": 76.49,
+      "reasoning": "MA10(76.18)上穿MA30(76.02)，金叉买入"
+    },
+    {
+      "date": "2025-12-18",
+      "symbol": "600570",
+      "action": "buy",
+      "quantity": 400,
+      "price": 29.02,
+      "reasoning": "MA10(29.30)上穿MA30(29.23)，金叉买入"
+    },
+    {
+      "date": "2025-12-19",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 100,
+      "price": 86.7,
+      "reasoning": "MA10(89.13)上穿MA30(89.11)，金叉买入"
+    },
+    {
+      "date": "2025-12-19",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 1900,
+      "price": 10.09,
+      "reasoning": "MA10(10.18)下穿MA30(10.18)，死叉卖出"
+    },
+    {
+      "date": "2025-12-22",
+      "symbol": "002821",
+      "action": "buy",
+      "quantity": 100,
+      "price": 94.7,
+      "reasoning": "MA10(92.87)上穿MA30(92.72)，金叉买入"
+    },
+    {
+      "date": "2025-12-22",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 100,
+      "price": 87.65,
+      "reasoning": "MA10(88.67)下穿MA30(88.79)，死叉卖出"
+    },
+    {
+      "date": "2025-12-23",
+      "symbol": "300632",
+      "action": "sell",
+      "quantity": 500,
+      "price": 13.88,
+      "reasoning": "MA10(14.38)下穿MA30(14.62)，死叉卖出"
+    },
+    {
+      "date": "2025-12-23",
+      "symbol": "300724",
+      "action": "buy",
+      "quantity": 100,
+      "price": 89.96,
+      "reasoning": "MA10(88.65)上穿MA30(88.52)，金叉买入"
+    },
+    {
+      "date": "2025-12-23",
+      "symbol": "600089",
+      "action": "buy",
+      "quantity": 500,
+      "price": 22.99,
+      "reasoning": "MA10(22.46)上穿MA30(22.45)，金叉买入"
+    },
+    {
+      "date": "2025-12-24",
+      "symbol": "002601",
+      "action": "buy",
+      "quantity": 400,
+      "price": 18.89,
+      "reasoning": "MA10(18.09)上穿MA30(18.06)，金叉买入"
+    },
+    {
+      "date": "2025-12-24",
+      "symbol": "300623",
+      "action": "buy",
+      "quantity": 200,
+      "price": 27.64,
+      "reasoning": "MA10(27.08)上穿MA30(27.08)，金叉买入"
+    },
+    {
+      "date": "2025-12-24",
+      "symbol": "600570",
+      "action": "sell",
+      "quantity": 400,
+      "price": 29.61,
+      "reasoning": "MA10(29.22)下穿MA30(29.23)，死叉卖出"
+    },
+    {
+      "date": "2025-12-24",
+      "symbol": "601816",
+      "action": "buy",
+      "quantity": 1500,
+      "price": 5.18,
+      "reasoning": "MA10(5.15)上穿MA30(5.15)，金叉买入"
+    },
+    {
+      "date": "2025-12-25",
+      "symbol": "300347",
+      "action": "buy",
+      "quantity": 100,
+      "price": 54.85,
+      "reasoning": "MA10(51.17)上穿MA30(51.03)，金叉买入"
+    },
+    {
+      "date": "2025-12-25",
+      "symbol": "600570",
+      "action": "buy",
+      "quantity": 100,
+      "price": 30.09,
+      "reasoning": "MA10(29.33)上穿MA30(29.25)，金叉买入"
+    },
+    {
+      "date": "2025-12-26",
+      "symbol": "002142",
+      "action": "buy",
+      "quantity": 100,
+      "price": 28.0,
+      "reasoning": "MA10(28.33)上穿MA30(28.23)，金叉买入"
+    },
+    {
+      "date": "2025-12-26",
+      "symbol": "300638",
+      "action": "sell",
+      "quantity": 2700,
+      "price": 28.25,
+      "reasoning": "MA10(27.58)下穿MA30(27.65)，死叉卖出"
+    },
+    {
+      "date": "2025-12-26",
+      "symbol": "600305",
+      "action": "buy",
+      "quantity": 3100,
+      "price": 7.92,
+      "reasoning": "MA10(7.99)上穿MA30(7.97)，金叉买入"
+    },
+    {
+      "date": "2025-12-26",
+      "symbol": "601577",
+      "action": "buy",
+      "quantity": 1800,
+      "price": 9.71,
+      "reasoning": "MA10(9.67)上穿MA30(9.65)，金叉买入"
+    },
+    {
+      "date": "2025-12-29",
+      "symbol": "601788",
+      "action": "buy",
+      "quantity": 600,
+      "price": 17.79,
+      "reasoning": "MA10(17.57)上穿MA30(17.53)，金叉买入"
+    },
+    {
+      "date": "2025-12-29",
+      "symbol": "601901",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 7.82,
+      "reasoning": "MA10(7.80)上穿MA30(7.80)，金叉买入"
+    },
+    {
+      "date": "2025-12-30",
+      "symbol": "002841",
+      "action": "buy",
+      "quantity": 100,
+      "price": 38.82,
+      "reasoning": "MA10(38.37)上穿MA30(38.25)，金叉买入"
+    },
+    {
+      "date": "2025-12-30",
+      "symbol": "300059",
+      "action": "buy",
+      "quantity": 200,
+      "price": 23.43,
+      "reasoning": "MA10(23.20)上穿MA30(23.19)，金叉买入"
+    },
+    {
+      "date": "2025-12-30",
+      "symbol": "601166",
+      "action": "buy",
+      "quantity": 100,
+      "price": 20.53,
+      "reasoning": "MA10(20.47)上穿MA30(20.43)，金叉买入"
+    },
+    {
+      "date": "2026-01-05",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 100,
+      "price": 18.49,
+      "reasoning": "MA10(18.35)上穿MA30(18.28)，金叉买入"
+    },
+    {
+      "date": "2026-01-05",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 100,
+      "price": 20.45,
+      "reasoning": "MA10(20.11)上穿MA30(20.03)，金叉买入"
+    },
+    {
+      "date": "2026-01-06",
+      "symbol": "300466",
+      "action": "buy",
+      "quantity": 200,
+      "price": 10.06,
+      "reasoning": "MA10(9.89)上穿MA30(9.87)，金叉买入"
+    },
+    {
+      "date": "2026-01-06",
+      "symbol": "300474",
+      "action": "sell",
+      "quantity": 700,
+      "price": 74.29,
+      "reasoning": "MA10(74.03)下穿MA30(74.25)，死叉卖出"
+    },
+    {
+      "date": "2026-01-07",
+      "symbol": "000651",
+      "action": "sell",
+      "quantity": 1600,
+      "price": 39.44,
+      "reasoning": "MA10(39.68)下穿MA30(39.70)，死叉卖出"
+    },
+    {
+      "date": "2026-01-07",
+      "symbol": "002475",
+      "action": "sell",
+      "quantity": 600,
+      "price": 57.39,
+      "reasoning": "MA10(58.19)下穿MA30(58.22)，死叉卖出"
+    },
+    {
+      "date": "2026-01-07",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 5500,
+      "price": 8.34,
+      "reasoning": "MA10(7.83)上穿MA30(7.79)，金叉买入"
+    },
+    {
+      "date": "2026-01-07",
+      "symbol": "601566",
+      "action": "sell",
+      "quantity": 600,
+      "price": 13.56,
+      "reasoning": "MA10(14.14)下穿MA30(14.26)，死叉卖出"
+    },
+    {
+      "date": "2026-01-08",
+      "symbol": "300638",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 30.06,
+      "reasoning": "MA10(28.91)上穿MA30(28.80)，金叉买入"
+    },
+    {
+      "date": "2026-01-08",
+      "symbol": "600104",
+      "action": "sell",
+      "quantity": 600,
+      "price": 15.37,
+      "reasoning": "MA10(15.38)下穿MA30(15.40)，死叉卖出"
+    },
+    {
+      "date": "2026-01-08",
+      "symbol": "601939",
+      "action": "buy",
+      "quantity": 3000,
+      "price": 9.09,
+      "reasoning": "MA10(9.18)上穿MA30(9.17)，金叉买入"
+    },
+    {
+      "date": "2026-01-08",
+      "symbol": "603658",
+      "action": "buy",
+      "quantity": 500,
+      "price": 36.55,
+      "reasoning": "MA10(36.10)上穿MA30(36.07)，金叉买入"
+    },
+    {
+      "date": "2026-01-09",
+      "symbol": "300149",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 10.95,
+      "reasoning": "MA10(10.01)上穿MA30(9.93)，金叉买入"
+    },
+    {
+      "date": "2026-01-09",
+      "symbol": "600305",
+      "action": "sell",
+      "quantity": 3100,
+      "price": 7.97,
+      "reasoning": "MA10(7.93)下穿MA30(7.94)，死叉卖出"
+    },
+    {
+      "date": "2026-01-09",
+      "symbol": "601816",
+      "action": "sell",
+      "quantity": 1500,
+      "price": 5.11,
+      "reasoning": "MA10(5.15)下穿MA30(5.15)，死叉卖出"
+    },
+    {
+      "date": "2026-01-12",
+      "symbol": "300683",
+      "action": "buy",
+      "quantity": 600,
+      "price": 29.84,
+      "reasoning": "MA10(28.98)上穿MA30(28.95)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "300015",
+      "action": "buy",
+      "quantity": 1200,
+      "price": 11.76,
+      "reasoning": "MA10(11.23)上穿MA30(11.18)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 600,
+      "price": 15.34,
+      "reasoning": "MA10(15.00)上穿MA30(14.91)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "600305",
+      "action": "buy",
+      "quantity": 900,
+      "price": 7.99,
+      "reasoning": "MA10(7.95)上穿MA30(7.94)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "600919",
+      "action": "buy",
+      "quantity": 500,
+      "price": 10.27,
+      "reasoning": "MA10(10.16)上穿MA30(10.15)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "601077",
+      "action": "buy",
+      "quantity": 500,
+      "price": 6.45,
+      "reasoning": "MA10(6.25)上穿MA30(6.25)，金叉买入"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "601577",
+      "action": "sell",
+      "quantity": 1800,
+      "price": 9.5,
+      "reasoning": "MA10(9.63)下穿MA30(9.63)，死叉卖出"
+    },
+    {
+      "date": "2026-01-13",
+      "symbol": "601766",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 7.05,
+      "reasoning": "MA10(6.97)上穿MA30(6.97)，金叉买入"
+    },
+    {
+      "date": "2026-01-14",
+      "symbol": "300122",
+      "action": "buy",
+      "quantity": 200,
+      "price": 20.03,
+      "reasoning": "MA10(19.57)上穿MA30(19.50)，金叉买入"
+    },
+    {
+      "date": "2026-01-14",
+      "symbol": "300639",
+      "action": "buy",
+      "quantity": 700,
+      "price": 6.16,
+      "reasoning": "MA10(5.70)上穿MA30(5.65)，金叉买入"
+    },
+    {
+      "date": "2026-01-14",
+      "symbol": "603707",
+      "action": "buy",
+      "quantity": 300,
+      "price": 9.51,
+      "reasoning": "MA10(9.37)上穿MA30(9.35)，金叉买入"
+    },
+    {
+      "date": "2026-01-16",
+      "symbol": "601166",
+      "action": "sell",
+      "quantity": 100,
+      "price": 19.52,
+      "reasoning": "MA10(20.27)下穿MA30(20.29)，死叉卖出"
+    },
+    {
+      "date": "2026-01-16",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 200,
+      "price": 10.02,
+      "reasoning": "MA10(10.14)上穿MA30(10.14)，金叉买入"
+    },
+    {
+      "date": "2026-01-16",
+      "symbol": "601939",
+      "action": "sell",
+      "quantity": 3000,
+      "price": 8.95,
+      "reasoning": "MA10(9.10)下穿MA30(9.10)，死叉卖出"
+    },
+    {
+      "date": "2026-01-19",
+      "symbol": "600030",
+      "action": "sell",
+      "quantity": 500,
+      "price": 27.62,
+      "reasoning": "MA10(28.37)下穿MA30(28.38)，死叉卖出"
+    },
+    {
+      "date": "2026-01-19",
+      "symbol": "600789",
+      "action": "buy",
+      "quantity": 1500,
+      "price": 9.28,
+      "reasoning": "MA10(9.31)上穿MA30(9.28)，金叉买入"
+    },
+    {
+      "date": "2026-01-20",
+      "symbol": "300122",
+      "action": "sell",
+      "quantity": 200,
+      "price": 17.09,
+      "reasoning": "MA10(19.19)下穿MA30(19.26)，死叉卖出"
+    },
+    {
+      "date": "2026-01-20",
+      "symbol": "600919",
+      "action": "sell",
+      "quantity": 500,
+      "price": 9.81,
+      "reasoning": "MA10(10.04)下穿MA30(10.07)，死叉卖出"
+    },
+    {
+      "date": "2026-01-20",
+      "symbol": "603899",
+      "action": "buy",
+      "quantity": 400,
+      "price": 28.25,
+      "reasoning": "MA10(27.70)上穿MA30(27.64)，金叉买入"
+    },
+    {
+      "date": "2026-01-21",
+      "symbol": "601788",
+      "action": "sell",
+      "quantity": 600,
+      "price": 17.15,
+      "reasoning": "MA10(17.57)下穿MA30(17.62)，死叉卖出"
+    },
+    {
+      "date": "2026-01-22",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 100,
+      "price": 17.59,
+      "reasoning": "MA10(18.24)下穿MA30(18.25)，死叉卖出"
+    },
+    {
+      "date": "2026-01-22",
+      "symbol": "601766",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 6.73,
+      "reasoning": "MA10(6.90)下穿MA30(6.91)，死叉卖出"
+    },
+    {
+      "date": "2026-01-23",
+      "symbol": "600976",
+      "action": "buy",
+      "quantity": 400,
+      "price": 35.21,
+      "reasoning": "MA10(34.86)上穿MA30(34.84)，金叉买入"
+    },
+    {
+      "date": "2026-01-23",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 500,
+      "price": 19.35,
+      "reasoning": "MA10(18.34)上穿MA30(18.28)，金叉买入"
+    },
+    {
+      "date": "2026-01-23",
+      "symbol": "601077",
+      "action": "sell",
+      "quantity": 500,
+      "price": 6.12,
+      "reasoning": "MA10(6.17)下穿MA30(6.18)，死叉卖出"
+    },
+    {
+      "date": "2026-01-26",
+      "symbol": "000002",
+      "action": "buy",
+      "quantity": 1800,
+      "price": 4.82,
+      "reasoning": "MA10(4.83)上穿MA30(4.83)，金叉买入"
+    },
+    {
+      "date": "2026-01-27",
+      "symbol": "300059",
+      "action": "sell",
+      "quantity": 200,
+      "price": 22.9,
+      "reasoning": "MA10(23.57)下穿MA30(23.58)，死叉卖出"
+    },
+    {
+      "date": "2026-01-27",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 100,
+      "price": 19.34,
+      "reasoning": "MA10(20.03)下穿MA30(20.15)，死叉卖出"
+    },
+    {
+      "date": "2026-01-30",
+      "symbol": "300015",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 11.07,
+      "reasoning": "MA10(11.23)下穿MA30(11.24)，死叉卖出"
+    },
+    {
+      "date": "2026-01-30",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 500,
+      "price": 17.88,
+      "reasoning": "MA10(18.36)下穿MA30(18.43)，死叉卖出"
+    },
+    {
+      "date": "2026-02-02",
+      "symbol": "300632",
+      "action": "sell",
+      "quantity": 600,
+      "price": 13.62,
+      "reasoning": "MA10(14.75)下穿MA30(14.80)，死叉卖出"
+    },
+    {
+      "date": "2026-02-02",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 200,
+      "price": 9.97,
+      "reasoning": "MA10(10.09)下穿MA30(10.09)，死叉卖出"
+    },
+    {
+      "date": "2026-02-02",
+      "symbol": "603919",
+      "action": "buy",
+      "quantity": 700,
+      "price": 23.78,
+      "reasoning": "MA10(20.50)上穿MA30(20.38)，金叉买入"
+    },
+    {
+      "date": "2026-02-03",
+      "symbol": "300638",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 29.37,
+      "reasoning": "MA10(30.07)下穿MA30(30.14)，死叉卖出"
+    },
+    {
+      "date": "2026-02-03",
+      "symbol": "300726",
+      "action": "sell",
+      "quantity": 300,
+      "price": 49.86,
+      "reasoning": "MA10(51.70)下穿MA30(51.84)，死叉卖出"
+    },
+    {
+      "date": "2026-02-03",
+      "symbol": "601077",
+      "action": "buy",
+      "quantity": 4300,
+      "price": 6.26,
+      "reasoning": "MA10(6.22)上穿MA30(6.22)，金叉买入"
+    },
+    {
+      "date": "2026-02-03",
+      "symbol": "601901",
+      "action": "sell",
+      "quantity": 1100,
+      "price": 7.74,
+      "reasoning": "MA10(7.88)下穿MA30(7.90)，死叉卖出"
+    },
+    {
+      "date": "2026-02-04",
+      "symbol": "002841",
+      "action": "sell",
+      "quantity": 100,
+      "price": 38.22,
+      "reasoning": "MA10(40.02)下穿MA30(40.34)，死叉卖出"
+    },
+    {
+      "date": "2026-02-04",
+      "symbol": "300124",
+      "action": "sell",
+      "quantity": 200,
+      "price": 75.57,
+      "reasoning": "MA10(76.71)下穿MA30(77.11)，死叉卖出"
+    },
+    {
+      "date": "2026-02-04",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 1400,
+      "price": 19.31,
+      "reasoning": "MA10(18.62)上穿MA30(18.49)，金叉买入"
+    },
+    {
+      "date": "2026-02-04",
+      "symbol": "601577",
+      "action": "buy",
+      "quantity": 1900,
+      "price": 9.67,
+      "reasoning": "MA10(9.54)上穿MA30(9.54)，金叉买入"
+    },
+    {
+      "date": "2026-02-05",
+      "symbol": "002821",
+      "action": "sell",
+      "quantity": 100,
+      "price": 102.5,
+      "reasoning": "MA10(100.04)下穿MA30(100.27)，死叉卖出"
+    },
+    {
+      "date": "2026-02-05",
+      "symbol": "600570",
+      "action": "sell",
+      "quantity": 100,
+      "price": 30.08,
+      "reasoning": "MA10(31.44)下穿MA30(31.63)，死叉卖出"
+    },
+    {
+      "date": "2026-02-05",
+      "symbol": "603899",
+      "action": "sell",
+      "quantity": 400,
+      "price": 27.72,
+      "reasoning": "MA10(27.63)下穿MA30(27.65)，死叉卖出"
+    },
+    {
+      "date": "2026-02-06",
+      "symbol": "300466",
+      "action": "sell",
+      "quantity": 200,
+      "price": 9.84,
+      "reasoning": "MA10(10.23)下穿MA30(10.24)，死叉卖出"
+    },
+    {
+      "date": "2026-02-06",
+      "symbol": "600919",
+      "action": "buy",
+      "quantity": 2000,
+      "price": 10.41,
+      "reasoning": "MA10(10.08)上穿MA30(10.03)，金叉买入"
+    },
+    {
+      "date": "2026-02-09",
+      "symbol": "000333",
+      "action": "buy",
+      "quantity": 100,
+      "price": 79.16,
+      "reasoning": "MA10(78.16)上穿MA30(78.10)，金叉买入"
+    },
+    {
+      "date": "2026-02-09",
+      "symbol": "000858",
+      "action": "buy",
+      "quantity": 100,
+      "price": 107.36,
+      "reasoning": "MA10(106.38)上穿MA30(106.27)，金叉买入"
+    },
+    {
+      "date": "2026-02-09",
+      "symbol": "300149",
+      "action": "sell",
+      "quantity": 1200,
+      "price": 11.02,
+      "reasoning": "MA10(10.80)下穿MA30(10.84)，死叉卖出"
+    },
+    {
+      "date": "2026-02-09",
+      "symbol": "600976",
+      "action": "sell",
+      "quantity": 400,
+      "price": 34.52,
+      "reasoning": "MA10(34.50)下穿MA30(34.58)，死叉卖出"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "000725",
+      "action": "sell",
+      "quantity": 12900,
+      "price": 4.32,
+      "reasoning": "MA10(4.37)下穿MA30(4.40)，死叉卖出"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "002049",
+      "action": "sell",
+      "quantity": 100,
+      "price": 77.94,
+      "reasoning": "MA10(80.61)下穿MA30(80.70)，死叉卖出"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "300433",
+      "action": "sell",
+      "quantity": 400,
+      "price": 35.1,
+      "reasoning": "MA10(36.30)下穿MA30(36.50)，死叉卖出"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "600016",
+      "action": "buy",
+      "quantity": 10300,
+      "price": 3.97,
+      "reasoning": "MA10(3.82)上穿MA30(3.81)，金叉买入"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "600789",
+      "action": "sell",
+      "quantity": 1500,
+      "price": 9.23,
+      "reasoning": "MA10(9.30)下穿MA30(9.34)，死叉卖出"
+    },
+    {
+      "date": "2026-02-10",
+      "symbol": "603658",
+      "action": "sell",
+      "quantity": 500,
+      "price": 36.62,
+      "reasoning": "MA10(36.71)下穿MA30(36.83)，死叉卖出"
+    },
+    {
+      "date": "2026-02-11",
+      "symbol": "000596",
+      "action": "buy",
+      "quantity": 200,
+      "price": 132.01,
+      "reasoning": "MA10(132.85)上穿MA30(132.27)，金叉买入"
+    },
+    {
+      "date": "2026-02-11",
+      "symbol": "601888",
+      "action": "buy",
+      "quantity": 300,
+      "price": 97.0,
+      "reasoning": "MA10(92.77)上穿MA30(92.52)，金叉买入"
+    },
+    {
+      "date": "2026-02-11",
+      "symbol": "601928",
+      "action": "buy",
+      "quantity": 2100,
+      "price": 10.15,
+      "reasoning": "MA10(10.11)上穿MA30(10.11)，金叉买入"
+    },
+    {
+      "date": "2026-02-12",
+      "symbol": "000596",
+      "action": "sell",
+      "quantity": 200,
+      "price": 128.27,
+      "reasoning": "MA10(131.92)下穿MA30(132.06)，死叉卖出"
+    },
+    {
+      "date": "2026-02-12",
+      "symbol": "300323",
+      "action": "sell",
+      "quantity": 5500,
+      "price": 8.47,
+      "reasoning": "MA10(8.52)下穿MA30(8.52)，死叉卖出"
+    },
+    {
+      "date": "2026-02-12",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 1400,
+      "price": 18.49,
+      "reasoning": "MA10(18.51)下穿MA30(18.52)，死叉卖出"
+    },
+    {
+      "date": "2026-02-12",
+      "symbol": "601928",
+      "action": "sell",
+      "quantity": 2100,
+      "price": 10.06,
+      "reasoning": "MA10(10.10)下穿MA30(10.11)，死叉卖出"
+    },
+    {
+      "date": "2026-02-13",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 2800,
+      "price": 18.13,
+      "reasoning": "MA10(18.53)上穿MA30(18.52)，金叉买入"
+    },
+    {
+      "date": "2026-02-24",
+      "symbol": "600036",
+      "action": "buy",
+      "quantity": 900,
+      "price": 38.94,
+      "reasoning": "MA10(39.15)上穿MA30(39.09)，金叉买入"
+    },
+    {
+      "date": "2026-02-24",
+      "symbol": "603259",
+      "action": "buy",
+      "quantity": 200,
+      "price": 100.17,
+      "reasoning": "MA10(99.43)上穿MA30(99.02)，金叉买入"
+    },
+    {
+      "date": "2026-02-25",
+      "symbol": "601888",
+      "action": "sell",
+      "quantity": 300,
+      "price": 82.1,
+      "reasoning": "MA10(92.16)下穿MA30(92.21)，死叉卖出"
+    },
+    {
+      "date": "2026-02-26",
+      "symbol": "600305",
+      "action": "sell",
+      "quantity": 900,
+      "price": 7.93,
+      "reasoning": "MA10(8.06)下穿MA30(8.07)，死叉卖出"
+    },
+    {
+      "date": "2026-02-26",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 2800,
+      "price": 18.27,
+      "reasoning": "MA10(18.49)下穿MA30(18.49)，死叉卖出"
+    },
+    {
+      "date": "2026-02-27",
+      "symbol": "000858",
+      "action": "sell",
+      "quantity": 100,
+      "price": 104.05,
+      "reasoning": "MA10(105.58)下穿MA30(105.60)，死叉卖出"
+    },
+    {
+      "date": "2026-02-27",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 2500,
+      "price": 18.32,
+      "reasoning": "MA10(18.50)上穿MA30(18.48)，金叉买入"
+    },
+    {
+      "date": "2026-03-02",
+      "symbol": "300724",
+      "action": "sell",
+      "quantity": 100,
+      "price": 119.33,
+      "reasoning": "MA10(125.28)下穿MA30(125.86)，死叉卖出"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "300347",
+      "action": "sell",
+      "quantity": 100,
+      "price": 56.88,
+      "reasoning": "MA10(61.44)下穿MA30(61.48)，死叉卖出"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "300639",
+      "action": "sell",
+      "quantity": 700,
+      "price": 6.27,
+      "reasoning": "MA10(6.80)下穿MA30(6.84)，死叉卖出"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "300726",
+      "action": "buy",
+      "quantity": 800,
+      "price": 48.66,
+      "reasoning": "MA10(51.08)上穿MA30(51.01)，金叉买入"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "600900",
+      "action": "buy",
+      "quantity": 1000,
+      "price": 26.97,
+      "reasoning": "MA10(26.24)上穿MA30(26.21)，金叉买入"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "601012",
+      "action": "sell",
+      "quantity": 2500,
+      "price": 17.99,
+      "reasoning": "MA10(18.36)下穿MA30(18.43)，死叉卖出"
+    },
+    {
+      "date": "2026-03-03",
+      "symbol": "601816",
+      "action": "buy",
+      "quantity": 6600,
+      "price": 5.1,
+      "reasoning": "MA10(4.97)上穿MA30(4.96)，金叉买入"
+    },
+    {
+      "date": "2026-03-04",
+      "symbol": "000002",
+      "action": "sell",
+      "quantity": 1800,
+      "price": 4.62,
+      "reasoning": "MA10(4.84)下穿MA30(4.84)，死叉卖出"
+    },
+    {
+      "date": "2026-03-04",
+      "symbol": "603919",
+      "action": "sell",
+      "quantity": 700,
+      "price": 19.66,
+      "reasoning": "MA10(21.05)下穿MA30(21.25)，死叉卖出"
+    },
+    {
+      "date": "2026-03-05",
+      "symbol": "300323",
+      "action": "buy",
+      "quantity": 2900,
+      "price": 10.25,
+      "reasoning": "MA10(8.69)上穿MA30(8.61)，金叉买入"
+    },
+    {
+      "date": "2026-03-05",
+      "symbol": "603259",
+      "action": "sell",
+      "quantity": 200,
+      "price": 92.45,
+      "reasoning": "MA10(97.71)下穿MA30(98.08)，死叉卖出"
+    },
+    {
+      "date": "2026-03-06",
+      "symbol": "000333",
+      "action": "sell",
+      "quantity": 100,
+      "price": 76.52,
+      "reasoning": "MA10(77.91)下穿MA30(78.09)，死叉卖出"
+    },
+    {
+      "date": "2026-03-09",
+      "symbol": "300623",
+      "action": "sell",
+      "quantity": 200,
+      "price": 30.61,
+      "reasoning": "MA10(32.77)下穿MA30(33.06)，死叉卖出"
+    },
+    {
+      "date": "2026-03-09",
+      "symbol": "300632",
+      "action": "buy",
+      "quantity": 2100,
+      "price": 14.5,
+      "reasoning": "MA10(14.41)上穿MA30(14.41)，金叉买入"
+    },
+    {
+      "date": "2026-03-09",
+      "symbol": "601939",
+      "action": "buy",
+      "quantity": 2400,
+      "price": 9.06,
+      "reasoning": "MA10(8.80)上穿MA30(8.80)，金叉买入"
+    },
+    {
+      "date": "2026-03-10",
+      "symbol": "000725",
+      "action": "buy",
+      "quantity": 3500,
+      "price": 4.35,
+      "reasoning": "MA10(4.38)上穿MA30(4.38)，金叉买入"
+    },
+    {
+      "date": "2026-03-10",
+      "symbol": "601577",
+      "action": "sell",
+      "quantity": 1900,
+      "price": 9.54,
+      "reasoning": "MA10(9.67)下穿MA30(9.68)，死叉卖出"
+    },
+    {
+      "date": "2026-03-10",
+      "symbol": "603707",
+      "action": "sell",
+      "quantity": 300,
+      "price": 9.84,
+      "reasoning": "MA10(9.69)下穿MA30(9.70)，死叉卖出"
+    },
+    {
+      "date": "2026-03-11",
+      "symbol": "002601",
+      "action": "sell",
+      "quantity": 400,
+      "price": 20.48,
+      "reasoning": "MA10(21.52)下穿MA30(21.60)，死叉卖出"
+    },
+    {
+      "date": "2026-03-11",
+      "symbol": "601328",
+      "action": "buy",
+      "quantity": 2800,
+      "price": 6.79,
+      "reasoning": "MA10(6.69)上穿MA30(6.68)，金叉买入"
+    },
+    {
+      "date": "2026-03-11",
+      "symbol": "601988",
+      "action": "buy",
+      "quantity": 2500,
+      "price": 5.36,
+      "reasoning": "MA10(5.35)上穿MA30(5.34)，金叉买入"
+    },
+    {
+      "date": "2026-03-12",
+      "symbol": "002271",
+      "action": "sell",
+      "quantity": 9600,
+      "price": 16.64,
+      "reasoning": "MA10(17.30)下穿MA30(17.45)，死叉卖出"
+    },
+    {
+      "date": "2026-03-12",
+      "symbol": "300274",
+      "action": "buy",
+      "quantity": 300,
+      "price": 173.1,
+      "reasoning": "MA10(154.73)上穿MA30(153.25)，金叉买入"
+    },
+    {
+      "date": "2026-03-12",
+      "symbol": "300726",
+      "action": "sell",
+      "quantity": 800,
+      "price": 49.65,
+      "reasoning": "MA10(50.47)下穿MA30(50.72)，死叉卖出"
+    },
+    {
+      "date": "2026-03-13",
+      "symbol": "601166",
+      "action": "buy",
+      "quantity": 2800,
+      "price": 18.83,
+      "reasoning": "MA10(18.50)上穿MA30(18.48)，金叉买入"
+    },
+    {
+      "date": "2026-03-16",
+      "symbol": "000725",
+      "action": "sell",
+      "quantity": 3500,
+      "price": 4.23,
+      "reasoning": "MA10(4.35)下穿MA30(4.36)，死叉卖出"
+    },
+    {
+      "date": "2026-03-16",
+      "symbol": "300014",
+      "action": "buy",
+      "quantity": 600,
+      "price": 69.95,
+      "reasoning": "MA10(64.37)上穿MA30(63.72)，金叉买入"
+    },
+    {
+      "date": "2026-03-17",
+      "symbol": "002142",
+      "action": "sell",
+      "quantity": 100,
+      "price": 30.95,
+      "reasoning": "MA10(31.42)下穿MA30(31.43)，死叉卖出"
+    },
+    {
+      "date": "2026-03-18",
+      "symbol": "600104",
+      "action": "buy",
+      "quantity": 2100,
+      "price": 14.4,
+      "reasoning": "MA10(14.33)上穿MA30(14.31)，金叉买入"
+    },
+    {
+      "date": "2026-03-18",
+      "symbol": "601012",
+      "action": "buy",
+      "quantity": 1100,
+      "price": 18.54,
+      "reasoning": "MA10(18.53)上穿MA30(18.44)，金叉买入"
+    },
+    {
+      "date": "2026-03-18",
+      "symbol": "601398",
+      "action": "buy",
+      "quantity": 2100,
+      "price": 7.39,
+      "reasoning": "MA10(7.19)上穿MA30(7.17)，金叉买入"
+    },
+    {
+      "date": "2026-03-18",
+      "symbol": "601766",
+      "action": "buy",
+      "quantity": 1700,
+      "price": 6.35,
+      "reasoning": "MA10(6.35)上穿MA30(6.35)，金叉买入"
+    },
+    {
+      "date": "2026-03-18",
+      "symbol": "603707",
+      "action": "buy",
+      "quantity": 700,
+      "price": 9.94,
+      "reasoning": "MA10(9.81)上穿MA30(9.76)，金叉买入"
+    },
+    {
+      "date": "2026-03-19",
+      "symbol": "000651",
+      "action": "buy",
+      "quantity": 100,
+      "price": 38.56,
+      "reasoning": "MA10(38.20)上穿MA30(38.20)，金叉买入"
+    },
+    {
+      "date": "2026-03-20",
+      "symbol": "600869",
+      "action": "sell",
+      "quantity": 1600,
+      "price": 12.62,
+      "reasoning": "MA10(13.23)下穿MA30(13.25)，死叉卖出"
+    },
+    {
+      "date": "2026-03-23",
+      "symbol": "600089",
+      "action": "sell",
+      "quantity": 500,
+      "price": 28.15,
+      "reasoning": "MA10(29.54)下穿MA30(29.65)，死叉卖出"
+    },
+    {
+      "date": "2026-03-23",
+      "symbol": "601766",
+      "action": "sell",
+      "quantity": 1700,
+      "price": 6.11,
+      "reasoning": "MA10(6.34)下穿MA30(6.34)，死叉卖出"
+    },
+    {
+      "date": "2026-03-24",
+      "symbol": "600016",
+      "action": "sell",
+      "quantity": 10300,
+      "price": 3.81,
+      "reasoning": "MA10(3.89)下穿MA30(3.89)，死叉卖出"
+    },
+    {
+      "date": "2026-03-24",
+      "symbol": "603707",
+      "action": "sell",
+      "quantity": 700,
+      "price": 9.34,
+      "reasoning": "MA10(9.76)下穿MA30(9.76)，死叉卖出"
+    }
+  ],
+  "daily_values": [
+    {
+      "date": "2025-03-25 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-03-26 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-03-27 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-03-28 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-03-31 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-01 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-02 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-03 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-07 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-08 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-09 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-10 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-11 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-14 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-15 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-16 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-17 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-18 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-21 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-22 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-23 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-24 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-25 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-28 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-29 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-04-30 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-05-06 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-05-07 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-05-08 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-05-09 00:00:00",
+      "total_value": 500000.0,
+      "cash": 500000.0,
+      "position_value": 0.0
+    },
+    {
+      "date": "2025-05-12 00:00:00",
+      "total_value": 499627.3946,
+      "cash": 35922.3946,
+      "position_value": 463705.0
+    },
+    {
+      "date": "2025-05-13 00:00:00",
+      "total_value": 499577.7796,
+      "cash": 6642.7796000000035,
+      "position_value": 492935.0
+    },
+    {
+      "date": "2025-05-14 00:00:00",
+      "total_value": 499572.00310000003,
+      "cash": 5084.0031000000035,
+      "position_value": 494488.0
+    },
+    {
+      "date": "2025-05-15 00:00:00",
+      "total_value": 499560.8901,
+      "cash": 2846.8901000000033,
+      "position_value": 496714.0
+    },
+    {
+      "date": "2025-05-16 00:00:00",
+      "total_value": 499560.8901,
+      "cash": 2846.8901000000033,
+      "position_value": 496714.0
+    },
+    {
+      "date": "2025-05-19 00:00:00",
+      "total_value": 499560.8901,
+      "cash": 2846.8901000000033,
+      "position_value": 496714.0
+    },
+    {
+      "date": "2025-05-20 00:00:00",
+      "total_value": 499560.8901,
+      "cash": 2846.8901000000033,
+      "position_value": 496714.0
+    },
+    {
+      "date": "2025-05-21 00:00:00",
+      "total_value": 499560.8901,
+      "cash": 2846.8901000000033,
+      "position_value": 496714.0
+    },
+    {
+      "date": "2025-05-22 00:00:00",
+      "total_value": 495905.9037,
+      "cash": 148132.9037,
+      "position_value": 347773.0
+    },
+    {
+      "date": "2025-05-23 00:00:00",
+      "total_value": 495905.9037,
+      "cash": 148132.9037,
+      "position_value": 347773.0
+    },
+    {
+      "date": "2025-05-26 00:00:00",
+      "total_value": 494078.4725,
+      "cash": 127035.47249999999,
+      "position_value": 367043.0
+    },
+    {
+      "date": "2025-05-27 00:00:00",
+      "total_value": 494078.4725,
+      "cash": 127035.47249999999,
+      "position_value": 367043.0
+    },
+    {
+      "date": "2025-05-28 00:00:00",
+      "total_value": 493745.74199999997,
+      "cash": 65855.74199999997,
+      "position_value": 427890.0
+    },
+    {
+      "date": "2025-05-29 00:00:00",
+      "total_value": 493745.74199999997,
+      "cash": 65855.74199999997,
+      "position_value": 427890.0
+    },
+    {
+      "date": "2025-05-30 00:00:00",
+      "total_value": 493696.4385,
+      "cash": 47438.43849999997,
+      "position_value": 446258.0
+    },
+    {
+      "date": "2025-06-03 00:00:00",
+      "total_value": 485028.54279999994,
+      "cash": 117765.54279999997,
+      "position_value": 367263.0
+    },
+    {
+      "date": "2025-06-04 00:00:00",
+      "total_value": 485000.2868,
+      "cash": 82417.28679999997,
+      "position_value": 402583.0
+    },
+    {
+      "date": "2025-06-05 00:00:00",
+      "total_value": 486125.89599999995,
+      "cash": 87071.89599999996,
+      "position_value": 399054.0
+    },
+    {
+      "date": "2025-06-06 00:00:00",
+      "total_value": 486106.0845,
+      "cash": 89604.08449999997,
+      "position_value": 396502.0
+    },
+    {
+      "date": "2025-06-09 00:00:00",
+      "total_value": 486058.6085,
+      "cash": 31502.608499999973,
+      "position_value": 454556.0
+    },
+    {
+      "date": "2025-06-10 00:00:00",
+      "total_value": 483443.5378,
+      "cash": 65892.53779999998,
+      "position_value": 417551.0
+    },
+    {
+      "date": "2025-06-11 00:00:00",
+      "total_value": 483408.71699999995,
+      "cash": 27937.716999999975,
+      "position_value": 455471.0
+    },
+    {
+      "date": "2025-06-12 00:00:00",
+      "total_value": 483408.71699999995,
+      "cash": 27937.716999999975,
+      "position_value": 455471.0
+    },
+    {
+      "date": "2025-06-13 00:00:00",
+      "total_value": 482554.057,
+      "cash": 38357.05699999997,
+      "position_value": 444197.0
+    },
+    {
+      "date": "2025-06-16 00:00:00",
+      "total_value": 482385.37899999996,
+      "cash": 17934.37899999997,
+      "position_value": 464451.0
+    },
+    {
+      "date": "2025-06-17 00:00:00",
+      "total_value": 482340.94149999996,
+      "cash": 16200.941499999972,
+      "position_value": 466140.0
+    },
+    {
+      "date": "2025-06-18 00:00:00",
+      "total_value": 481955.2635,
+      "cash": 22311.263499999972,
+      "position_value": 459644.0
+    },
+    {
+      "date": "2025-06-19 00:00:00",
+      "total_value": 480508.6115,
+      "cash": 46351.61149999997,
+      "position_value": 434157.0
+    },
+    {
+      "date": "2025-06-20 00:00:00",
+      "total_value": 480420.69749999995,
+      "cash": 49617.69749999997,
+      "position_value": 430803.0
+    },
+    {
+      "date": "2025-06-23 00:00:00",
+      "total_value": 480420.69749999995,
+      "cash": 49617.69749999997,
+      "position_value": 430803.0
+    },
+    {
+      "date": "2025-06-24 00:00:00",
+      "total_value": 480398.81,
+      "cash": 25820.809999999976,
+      "position_value": 454578.0
+    },
+    {
+      "date": "2025-06-25 00:00:00",
+      "total_value": 480456.103,
+      "cash": 26952.102999999977,
+      "position_value": 453504.0
+    },
+    {
+      "date": "2025-06-26 00:00:00",
+      "total_value": 480339.381,
+      "cash": 37066.38099999998,
+      "position_value": 443273.0
+    },
+    {
+      "date": "2025-06-27 00:00:00",
+      "total_value": 480329.04099999997,
+      "cash": 26376.04099999998,
+      "position_value": 453953.0
+    },
+    {
+      "date": "2025-06-30 00:00:00",
+      "total_value": 477216.0658,
+      "cash": 51049.06579999998,
+      "position_value": 426167.0
+    },
+    {
+      "date": "2025-07-01 00:00:00",
+      "total_value": 477185.3323,
+      "cash": 19551.33229999998,
+      "position_value": 457634.0
+    },
+    {
+      "date": "2025-07-02 00:00:00",
+      "total_value": 477164.8283,
+      "cash": 8522.82829999998,
+      "position_value": 468642.0
+    },
+    {
+      "date": "2025-07-03 00:00:00",
+      "total_value": 477147.3218,
+      "cash": 3492.321799999979,
+      "position_value": 473655.0
+    },
+    {
+      "date": "2025-07-04 00:00:00",
+      "total_value": 477147.3218,
+      "cash": 3492.321799999979,
+      "position_value": 473655.0
+    },
+    {
+      "date": "2025-07-07 00:00:00",
+      "total_value": 477147.3218,
+      "cash": 3492.321799999979,
+      "position_value": 473655.0
+    },
+    {
+      "date": "2025-07-08 00:00:00",
+      "total_value": 477141.8083,
+      "cash": 2459.8082999999788,
+      "position_value": 474682.0
+    },
+    {
+      "date": "2025-07-09 00:00:00",
+      "total_value": 477141.8083,
+      "cash": 2459.8082999999788,
+      "position_value": 474682.0
+    },
+    {
+      "date": "2025-07-10 00:00:00",
+      "total_value": 555391.7683,
+      "cash": 130221.76829999998,
+      "position_value": 425170.0
+    },
+    {
+      "date": "2025-07-11 00:00:00",
+      "total_value": 555297.4636,
+      "cash": 19295.463599999985,
+      "position_value": 536002.0
+    },
+    {
+      "date": "2025-07-14 00:00:00",
+      "total_value": 555289.7651,
+      "cash": 13890.765099999984,
+      "position_value": 541399.0
+    },
+    {
+      "date": "2025-07-15 00:00:00",
+      "total_value": 555289.7651,
+      "cash": 13890.765099999984,
+      "position_value": 541399.0
+    },
+    {
+      "date": "2025-07-16 00:00:00",
+      "total_value": 555282.8656,
+      "cash": 10084.865599999985,
+      "position_value": 545198.0
+    },
+    {
+      "date": "2025-07-17 00:00:00",
+      "total_value": 555282.8656,
+      "cash": 10084.865599999985,
+      "position_value": 545198.0
+    },
+    {
+      "date": "2025-07-18 00:00:00",
+      "total_value": 555276.9406,
+      "cash": 8228.940599999985,
+      "position_value": 547048.0
+    },
+    {
+      "date": "2025-07-21 00:00:00",
+      "total_value": 555270.9026,
+      "cash": 6146.902599999985,
+      "position_value": 549124.0
+    },
+    {
+      "date": "2025-07-22 00:00:00",
+      "total_value": 555310.3600999999,
+      "cash": 9831.360099999985,
+      "position_value": 545479.0
+    },
+    {
+      "date": "2025-07-23 00:00:00",
+      "total_value": 555235.2001,
+      "cash": 8890.200099999987,
+      "position_value": 546345.0
+    },
+    {
+      "date": "2025-07-24 00:00:00",
+      "total_value": 557023.7577,
+      "cash": 46290.75769999999,
+      "position_value": 510733.0
+    },
+    {
+      "date": "2025-07-25 00:00:00",
+      "total_value": 557002.1462,
+      "cash": 23046.14619999999,
+      "position_value": 533956.0
+    },
+    {
+      "date": "2025-07-28 00:00:00",
+      "total_value": 556466.6172,
+      "cash": 40695.61719999999,
+      "position_value": 515771.0
+    },
+    {
+      "date": "2025-07-29 00:00:00",
+      "total_value": 557371.5636,
+      "cash": 57916.563599999994,
+      "position_value": 499455.0
+    },
+    {
+      "date": "2025-07-30 00:00:00",
+      "total_value": 557371.5636,
+      "cash": 57916.563599999994,
+      "position_value": 499455.0
+    },
+    {
+      "date": "2025-07-31 00:00:00",
+      "total_value": 556876.3606,
+      "cash": 82488.36059999999,
+      "position_value": 474388.0
+    },
+    {
+      "date": "2025-08-01 00:00:00",
+      "total_value": 553882.4974,
+      "cash": 109929.4974,
+      "position_value": 443953.0
+    },
+    {
+      "date": "2025-08-04 00:00:00",
+      "total_value": 553882.4974,
+      "cash": 109929.4974,
+      "position_value": 443953.0
+    },
+    {
+      "date": "2025-08-05 00:00:00",
+      "total_value": 553856.1742,
+      "cash": 76999.1742,
+      "position_value": 476857.0
+    },
+    {
+      "date": "2025-08-06 00:00:00",
+      "total_value": 553856.1742,
+      "cash": 76999.1742,
+      "position_value": 476857.0
+    },
+    {
+      "date": "2025-08-07 00:00:00",
+      "total_value": 553021.758,
+      "cash": 123148.75799999999,
+      "position_value": 429873.0
+    },
+    {
+      "date": "2025-08-08 00:00:00",
+      "total_value": 553046.171,
+      "cash": 124200.17099999999,
+      "position_value": 428846.0
+    },
+    {
+      "date": "2025-08-11 00:00:00",
+      "total_value": 553032.9262999999,
+      "cash": 62188.92629999999,
+      "position_value": 490844.0
+    },
+    {
+      "date": "2025-08-12 00:00:00",
+      "total_value": 553349.5623,
+      "cash": 71745.56229999999,
+      "position_value": 481604.0
+    },
+    {
+      "date": "2025-08-13 00:00:00",
+      "total_value": 554447.7543,
+      "cash": 110239.7543,
+      "position_value": 444208.0
+    },
+    {
+      "date": "2025-08-14 00:00:00",
+      "total_value": 554405.1343,
+      "cash": 56922.134300000005,
+      "position_value": 497483.0
+    },
+    {
+      "date": "2025-08-15 00:00:00",
+      "total_value": 554392.5143,
+      "cash": 41669.5143,
+      "position_value": 512723.0
+    },
+    {
+      "date": "2025-08-18 00:00:00",
+      "total_value": 554392.5143,
+      "cash": 41669.5143,
+      "position_value": 512723.0
+    },
+    {
+      "date": "2025-08-19 00:00:00",
+      "total_value": 554382.7753,
+      "cash": 32181.7753,
+      "position_value": 522201.0
+    },
+    {
+      "date": "2025-08-20 00:00:00",
+      "total_value": 555431.0079,
+      "cash": 79190.0079,
+      "position_value": 476241.0
+    },
+    {
+      "date": "2025-08-21 00:00:00",
+      "total_value": 555789.3504,
+      "cash": 88276.3504,
+      "position_value": 467513.0
+    },
+    {
+      "date": "2025-08-22 00:00:00",
+      "total_value": 555772.7152,
+      "cash": 67465.71519999999,
+      "position_value": 488307.0
+    },
+    {
+      "date": "2025-08-25 00:00:00",
+      "total_value": 555749.8827,
+      "cash": 41777.88269999999,
+      "position_value": 513972.0
+    },
+    {
+      "date": "2025-08-26 00:00:00",
+      "total_value": 557784.7322,
+      "cash": 34001.73219999999,
+      "position_value": 523783.0
+    },
+    {
+      "date": "2025-08-27 00:00:00",
+      "total_value": 556963.0586999999,
+      "cash": 31699.05869999999,
+      "position_value": 525264.0
+    },
+    {
+      "date": "2025-08-28 00:00:00",
+      "total_value": 556945.0677,
+      "cash": 15699.067699999992,
+      "position_value": 541246.0
+    },
+    {
+      "date": "2025-08-29 00:00:00",
+      "total_value": 554035.9172,
+      "cash": 36719.917199999996,
+      "position_value": 517316.0
+    },
+    {
+      "date": "2025-09-01 00:00:00",
+      "total_value": 550975.0006,
+      "cash": 64956.0006,
+      "position_value": 486019.0
+    },
+    {
+      "date": "2025-09-02 00:00:00",
+      "total_value": 566343.1636,
+      "cash": 155258.1636,
+      "position_value": 411085.0
+    },
+    {
+      "date": "2025-09-03 00:00:00",
+      "total_value": 567226.9341,
+      "cash": 179364.9341,
+      "position_value": 387862.0
+    },
+    {
+      "date": "2025-09-04 00:00:00",
+      "total_value": 566542.9367,
+      "cash": 142986.93670000002,
+      "position_value": 423556.0
+    },
+    {
+      "date": "2025-09-05 00:00:00",
+      "total_value": 566481.0987,
+      "cash": 115428.09870000002,
+      "position_value": 451053.0
+    },
+    {
+      "date": "2025-09-08 00:00:00",
+      "total_value": 567451.2382,
+      "cash": 127307.2382,
+      "position_value": 440144.0
+    },
+    {
+      "date": "2025-09-09 00:00:00",
+      "total_value": 572538.4304,
+      "cash": 153640.4304,
+      "position_value": 418898.0
+    },
+    {
+      "date": "2025-09-10 00:00:00",
+      "total_value": 572291.4794000001,
+      "cash": 116143.47940000003,
+      "position_value": 456148.0
+    },
+    {
+      "date": "2025-09-11 00:00:00",
+      "total_value": 572905.4909,
+      "cash": 100444.49090000002,
+      "position_value": 472461.0
+    },
+    {
+      "date": "2025-09-12 00:00:00",
+      "total_value": 577141.9539000001,
+      "cash": 138832.95390000002,
+      "position_value": 438309.0
+    },
+    {
+      "date": "2025-09-15 00:00:00",
+      "total_value": 579025.7519,
+      "cash": 154272.75190000003,
+      "position_value": 424753.0
+    },
+    {
+      "date": "2025-09-16 00:00:00",
+      "total_value": 578718.3119000001,
+      "cash": 169205.31190000003,
+      "position_value": 409513.0
+    },
+    {
+      "date": "2025-09-17 00:00:00",
+      "total_value": 576096.1409,
+      "cash": 209228.14090000003,
+      "position_value": 366868.0
+    },
+    {
+      "date": "2025-09-18 00:00:00",
+      "total_value": 574255.4589,
+      "cash": 260625.45890000003,
+      "position_value": 313630.0
+    },
+    {
+      "date": "2025-09-19 00:00:00",
+      "total_value": 574493.0906,
+      "cash": 186881.0906,
+      "position_value": 387612.0
+    },
+    {
+      "date": "2025-09-22 00:00:00",
+      "total_value": 574619.7851,
+      "cash": 192404.7851,
+      "position_value": 382215.0
+    },
+    {
+      "date": "2025-09-23 00:00:00",
+      "total_value": 576711.6607,
+      "cash": 107193.6607,
+      "position_value": 469518.0
+    },
+    {
+      "date": "2025-09-24 00:00:00",
+      "total_value": 578707.1113,
+      "cash": 143039.1113,
+      "position_value": 435668.0
+    },
+    {
+      "date": "2025-09-25 00:00:00",
+      "total_value": 579118.3643,
+      "cash": 167485.36430000002,
+      "position_value": 411633.0
+    },
+    {
+      "date": "2025-09-26 00:00:00",
+      "total_value": 579558.3415,
+      "cash": 131144.3415,
+      "position_value": 448414.0
+    },
+    {
+      "date": "2025-09-29 00:00:00",
+      "total_value": 579558.3415,
+      "cash": 131144.3415,
+      "position_value": 448414.0
+    },
+    {
+      "date": "2025-09-30 00:00:00",
+      "total_value": 579558.3415,
+      "cash": 131144.3415,
+      "position_value": 448414.0
+    },
+    {
+      "date": "2025-10-09 00:00:00",
+      "total_value": 579558.3415,
+      "cash": 131144.3415,
+      "position_value": 448414.0
+    },
+    {
+      "date": "2025-10-10 00:00:00",
+      "total_value": 579527.2055,
+      "cash": 92193.20550000001,
+      "position_value": 487334.0
+    },
+    {
+      "date": "2025-10-13 00:00:00",
+      "total_value": 587526.9992,
+      "cash": 86019.9992,
+      "position_value": 501507.0
+    },
+    {
+      "date": "2025-10-14 00:00:00",
+      "total_value": 587318.4180000001,
+      "cash": 197253.418,
+      "position_value": 390065.0
+    },
+    {
+      "date": "2025-10-15 00:00:00",
+      "total_value": 587217.9076,
+      "cash": 71514.9076,
+      "position_value": 515703.0
+    },
+    {
+      "date": "2025-10-16 00:00:00",
+      "total_value": 583248.9796,
+      "cash": 143584.9796,
+      "position_value": 439664.0
+    },
+    {
+      "date": "2025-10-17 00:00:00",
+      "total_value": 582468.3754,
+      "cash": 222112.37540000002,
+      "position_value": 360356.0
+    },
+    {
+      "date": "2025-10-20 00:00:00",
+      "total_value": 582311.2602,
+      "cash": 27738.26020000005,
+      "position_value": 554573.0
+    },
+    {
+      "date": "2025-10-21 00:00:00",
+      "total_value": 582287.5992,
+      "cash": 10392.599200000051,
+      "position_value": 571895.0
+    },
+    {
+      "date": "2025-10-22 00:00:00",
+      "total_value": 582287.5992,
+      "cash": 10392.599200000051,
+      "position_value": 571895.0
+    },
+    {
+      "date": "2025-10-23 00:00:00",
+      "total_value": 580676.2298000001,
+      "cash": 64253.22980000005,
+      "position_value": 516423.0
+    },
+    {
+      "date": "2025-10-24 00:00:00",
+      "total_value": 584789.7422000001,
+      "cash": 17820.74220000005,
+      "position_value": 566969.0
+    },
+    {
+      "date": "2025-10-27 00:00:00",
+      "total_value": 584782.8402000001,
+      "cash": 14009.840200000051,
+      "position_value": 570773.0
+    },
+    {
+      "date": "2025-10-28 00:00:00",
+      "total_value": 586918.4142,
+      "cash": 27021.41420000005,
+      "position_value": 559897.0
+    },
+    {
+      "date": "2025-10-29 00:00:00",
+      "total_value": 586894.9877,
+      "cash": 10144.98770000005,
+      "position_value": 576750.0
+    },
+    {
+      "date": "2025-10-30 00:00:00",
+      "total_value": 587833.834,
+      "cash": 21253.834000000053,
+      "position_value": 566580.0
+    },
+    {
+      "date": "2025-10-31 00:00:00",
+      "total_value": 587818.947,
+      "cash": 11464.947000000053,
+      "position_value": 576354.0
+    },
+    {
+      "date": "2025-11-03 00:00:00",
+      "total_value": 587339.704,
+      "cash": 19610.704000000056,
+      "position_value": 567729.0
+    },
+    {
+      "date": "2025-11-04 00:00:00",
+      "total_value": 590478.5472,
+      "cash": 43543.54720000006,
+      "position_value": 546935.0
+    },
+    {
+      "date": "2025-11-05 00:00:00",
+      "total_value": 590478.5472,
+      "cash": 43543.54720000006,
+      "position_value": 546935.0
+    },
+    {
+      "date": "2025-11-06 00:00:00",
+      "total_value": 590450.1012,
+      "cash": 16623.101200000063,
+      "position_value": 573827.0
+    },
+    {
+      "date": "2025-11-07 00:00:00",
+      "total_value": 590450.1012,
+      "cash": 16623.101200000063,
+      "position_value": 573827.0
+    },
+    {
+      "date": "2025-11-10 00:00:00",
+      "total_value": 590320.4112000001,
+      "cash": 15993.411200000062,
+      "position_value": 574327.0
+    },
+    {
+      "date": "2025-11-11 00:00:00",
+      "total_value": 591876.9759000001,
+      "cash": 96897.97590000006,
+      "position_value": 494979.0
+    },
+    {
+      "date": "2025-11-12 00:00:00",
+      "total_value": 591853.8255,
+      "cash": 67936.82550000006,
+      "position_value": 523917.0
+    },
+    {
+      "date": "2025-11-13 00:00:00",
+      "total_value": 591830.0875,
+      "cash": 40715.08750000007,
+      "position_value": 551115.0
+    },
+    {
+      "date": "2025-11-14 00:00:00",
+      "total_value": 591802.4745,
+      "cash": 15461.474500000066,
+      "position_value": 576341.0
+    },
+    {
+      "date": "2025-11-17 00:00:00",
+      "total_value": 591802.4745,
+      "cash": 15461.474500000066,
+      "position_value": 576341.0
+    },
+    {
+      "date": "2025-11-18 00:00:00",
+      "total_value": 588135.9114000001,
+      "cash": 85541.91140000007,
+      "position_value": 502594.0
+    },
+    {
+      "date": "2025-11-19 00:00:00",
+      "total_value": 586897.5978000001,
+      "cash": 129699.59780000008,
+      "position_value": 457198.0
+    },
+    {
+      "date": "2025-11-20 00:00:00",
+      "total_value": 586727.5574,
+      "cash": 176911.55740000008,
+      "position_value": 409816.0
+    },
+    {
+      "date": "2025-11-21 00:00:00",
+      "total_value": 588929.2069000001,
+      "cash": 212405.20690000008,
+      "position_value": 376524.0
+    },
+    {
+      "date": "2025-11-24 00:00:00",
+      "total_value": 586564.5970000001,
+      "cash": 258287.59700000007,
+      "position_value": 328277.0
+    },
+    {
+      "date": "2025-11-25 00:00:00",
+      "total_value": 587706.4533,
+      "cash": 251595.45330000005,
+      "position_value": 336111.0
+    },
+    {
+      "date": "2025-11-26 00:00:00",
+      "total_value": 585609.9457,
+      "cash": 288378.94570000004,
+      "position_value": 297231.0
+    },
+    {
+      "date": "2025-11-27 00:00:00",
+      "total_value": 584537.3388,
+      "cash": 327787.3388,
+      "position_value": 256750.0
+    },
+    {
+      "date": "2025-11-28 00:00:00",
+      "total_value": 580440.1534,
+      "cash": 424954.1534,
+      "position_value": 155486.0
+    },
+    {
+      "date": "2025-12-01 00:00:00",
+      "total_value": 583399.4405,
+      "cash": 310623.44049999997,
+      "position_value": 272776.0
+    },
+    {
+      "date": "2025-12-02 00:00:00",
+      "total_value": 583371.2864999999,
+      "cash": 223555.28649999996,
+      "position_value": 359816.0
+    },
+    {
+      "date": "2025-12-03 00:00:00",
+      "total_value": 583753.8858999999,
+      "cash": 179463.88589999994,
+      "position_value": 404290.0
+    },
+    {
+      "date": "2025-12-04 00:00:00",
+      "total_value": 583753.8858999999,
+      "cash": 179463.88589999994,
+      "position_value": 404290.0
+    },
+    {
+      "date": "2025-12-05 00:00:00",
+      "total_value": 583753.8858999999,
+      "cash": 179463.88589999994,
+      "position_value": 404290.0
+    },
+    {
+      "date": "2025-12-08 00:00:00",
+      "total_value": 583662.9317,
+      "cash": 180087.93169999993,
+      "position_value": 403575.0
+    },
+    {
+      "date": "2025-12-09 00:00:00",
+      "total_value": 583640.7260999999,
+      "cash": 47552.72609999991,
+      "position_value": 536088.0
+    },
+    {
+      "date": "2025-12-10 00:00:00",
+      "total_value": 584122.4740999999,
+      "cash": 59579.47409999991,
+      "position_value": 524543.0
+    },
+    {
+      "date": "2025-12-11 00:00:00",
+      "total_value": 584098.8745999999,
+      "cash": 32356.874599999912,
+      "position_value": 551742.0
+    },
+    {
+      "date": "2025-12-12 00:00:00",
+      "total_value": 584370.3960999999,
+      "cash": 49772.39609999991,
+      "position_value": 534598.0
+    },
+    {
+      "date": "2025-12-15 00:00:00",
+      "total_value": 584357.9866,
+      "cash": 34940.98659999991,
+      "position_value": 549417.0
+    },
+    {
+      "date": "2025-12-16 00:00:00",
+      "total_value": 584348.2885999999,
+      "cash": 25535.28859999991,
+      "position_value": 558813.0
+    },
+    {
+      "date": "2025-12-17 00:00:00",
+      "total_value": 582148.5341999999,
+      "cash": 50577.53419999991,
+      "position_value": 531571.0
+    },
+    {
+      "date": "2025-12-18 00:00:00",
+      "total_value": 582128.9056999999,
+      "cash": 31300.905699999905,
+      "position_value": 550828.0
+    },
+    {
+      "date": "2025-12-19 00:00:00",
+      "total_value": 581629.0628999999,
+      "cash": 41758.0628999999,
+      "position_value": 539871.0
+    },
+    {
+      "date": "2025-12-22 00:00:00",
+      "total_value": 581696.1804,
+      "cash": 41025.1803999999,
+      "position_value": 540671.0
+    },
+    {
+      "date": "2025-12-23 00:00:00",
+      "total_value": 581710.5249,
+      "cash": 27438.52489999991,
+      "position_value": 554272.0
+    },
+    {
+      "date": "2025-12-24 00:00:00",
+      "total_value": 581898.3318999999,
+      "cash": 18380.33189999991,
+      "position_value": 563518.0
+    },
+    {
+      "date": "2025-12-25 00:00:00",
+      "total_value": 581884.0848999999,
+      "cash": 9872.08489999991,
+      "position_value": 572012.0
+    },
+    {
+      "date": "2025-12-26 00:00:00",
+      "total_value": 565101.7658999999,
+      "cash": 41139.765899999904,
+      "position_value": 523962.0
+    },
+    {
+      "date": "2025-12-29 00:00:00",
+      "total_value": 565082.1279,
+      "cash": 21844.127899999905,
+      "position_value": 543238.0
+    },
+    {
+      "date": "2025-12-30 00:00:00",
+      "total_value": 565061.8173999999,
+      "cash": 11202.817399999905,
+      "position_value": 553859.0
+    },
+    {
+      "date": "2025-12-31 00:00:00",
+      "total_value": 565061.8173999999,
+      "cash": 11202.817399999905,
+      "position_value": 553859.0
+    },
+    {
+      "date": "2026-01-05 00:00:00",
+      "total_value": 565049.8703999999,
+      "cash": 7296.870399999904,
+      "position_value": 557753.0
+    },
+    {
+      "date": "2026-01-06 00:00:00",
+      "total_value": 565573.2589999998,
+      "cash": 57188.2589999999,
+      "position_value": 508385.0
+    },
+    {
+      "date": "2026-01-07 00:00:00",
+      "total_value": 565663.7906,
+      "cash": 116762.79059999989,
+      "position_value": 448901.0
+    },
+    {
+      "date": "2026-01-08 00:00:00",
+      "total_value": 565408.0687999999,
+      "cash": 47292.06879999989,
+      "position_value": 518116.0
+    },
+    {
+      "date": "2026-01-09 00:00:00",
+      "total_value": 565385.5286999999,
+      "cash": 66451.5286999999,
+      "position_value": 498934.0
+    },
+    {
+      "date": "2026-01-12 00:00:00",
+      "total_value": 565371.2054999999,
+      "cash": 48533.205499999895,
+      "position_value": 516838.0
+    },
+    {
+      "date": "2026-01-13 00:00:00",
+      "total_value": 564909.1144999999,
+      "cash": 18927.1144999999,
+      "position_value": 545982.0
+    },
+    {
+      "date": "2026-01-14 00:00:00",
+      "total_value": 564888.5289999999,
+      "cash": 7735.528999999902,
+      "position_value": 557153.0
+    },
+    {
+      "date": "2026-01-15 00:00:00",
+      "total_value": 564888.5289999999,
+      "cash": 7735.528999999902,
+      "position_value": 557153.0
+    },
+    {
+      "date": "2026-01-16 00:00:00",
+      "total_value": 564305.2689999999,
+      "cash": 34471.2689999999,
+      "position_value": 529834.0
+    },
+    {
+      "date": "2026-01-19 00:00:00",
+      "total_value": 563737.5939999999,
+      "cash": 34323.5939999999,
+      "position_value": 529414.0
+    },
+    {
+      "date": "2026-01-20 00:00:00",
+      "total_value": 562886.4594999999,
+      "cash": 31313.459499999903,
+      "position_value": 531573.0
+    },
+    {
+      "date": "2026-01-21 00:00:00",
+      "total_value": 562482.0244999999,
+      "cash": 41583.024499999905,
+      "position_value": 520899.0
+    },
+    {
+      "date": "2026-01-22 00:00:00",
+      "total_value": 562016.2814999999,
+      "cash": 50721.2814999999,
+      "position_value": 511295.0
+    },
+    {
+      "date": "2026-01-23 00:00:00",
+      "total_value": 561819.8119999999,
+      "cash": 29990.8119999999,
+      "position_value": 531829.0
+    },
+    {
+      "date": "2026-01-26 00:00:00",
+      "total_value": 561810.4739999999,
+      "cash": 21305.4739999999,
+      "position_value": 540505.0
+    },
+    {
+      "date": "2026-01-27 00:00:00",
+      "total_value": 561573.7029999999,
+      "cash": 27799.7029999999,
+      "position_value": 533774.0
+    },
+    {
+      "date": "2026-01-28 00:00:00",
+      "total_value": 561573.7029999999,
+      "cash": 27799.7029999999,
+      "position_value": 533774.0
+    },
+    {
+      "date": "2026-01-29 00:00:00",
+      "total_value": 561573.7029999999,
+      "cash": 27799.7029999999,
+      "position_value": 533774.0
+    },
+    {
+      "date": "2026-01-30 00:00:00",
+      "total_value": 559967.3669999999,
+      "cash": 49980.3669999999,
+      "position_value": 509987.0
+    },
+    {
+      "date": "2026-02-02 00:00:00",
+      "total_value": 558886.7949999999,
+      "cash": 43461.7949999999,
+      "position_value": 515425.0
+    },
+    {
+      "date": "2026-02-03 00:00:00",
+      "total_value": 560419.8999999999,
+      "cash": 72197.89999999988,
+      "position_value": 488222.0
+    },
+    {
+      "date": "2026-02-04 00:00:00",
+      "total_value": 560653.1703999998,
+      "cash": 45652.170399999864,
+      "position_value": 515001.0
+    },
+    {
+      "date": "2026-02-05 00:00:00",
+      "total_value": 561168.6513999999,
+      "cash": 69946.65139999986,
+      "position_value": 491222.0
+    },
+    {
+      "date": "2026-02-06 00:00:00",
+      "total_value": 561100.0433999998,
+      "cash": 51070.04339999985,
+      "position_value": 510030.0
+    },
+    {
+      "date": "2026-02-09 00:00:00",
+      "total_value": 560838.1693999999,
+      "cash": 59380.16939999985,
+      "position_value": 501458.0
+    },
+    {
+      "date": "2026-02-10 00:00:00",
+      "total_value": 565123.6696999999,
+      "cash": 127971.66969999982,
+      "position_value": 437152.0
+    },
+    {
+      "date": "2026-02-11 00:00:00",
+      "total_value": 565062.2160999998,
+      "cash": 51093.21609999983,
+      "position_value": 513969.0
+    },
+    {
+      "date": "2026-02-12 00:00:00",
+      "total_value": 563477.5642999999,
+      "cash": 170129.56429999985,
+      "position_value": 393348.0
+    },
+    {
+      "date": "2026-02-13 00:00:00",
+      "total_value": 563436.9530999998,
+      "cash": 119324.95309999985,
+      "position_value": 444112.0
+    },
+    {
+      "date": "2026-02-24 00:00:00",
+      "total_value": 563392.8890999998,
+      "cash": 64200.889099999855,
+      "position_value": 499192.0
+    },
+    {
+      "date": "2026-02-25 00:00:00",
+      "total_value": 558878.5550999999,
+      "cash": 88786.55509999985,
+      "position_value": 470092.0
+    },
+    {
+      "date": "2026-02-26 00:00:00",
+      "total_value": 559108.7687999998,
+      "cash": 146971.76879999985,
+      "position_value": 412137.0
+    },
+    {
+      "date": "2026-02-27 00:00:00",
+      "total_value": 558720.5212999998,
+      "cash": 111519.52129999983,
+      "position_value": 447201.0
+    },
+    {
+      "date": "2026-03-02 00:00:00",
+      "total_value": 561634.6217999998,
+      "cash": 123429.62179999983,
+      "position_value": 438205.0
+    },
+    {
+      "date": "2026-03-03 00:00:00",
+      "total_value": 560903.9048999998,
+      "cash": 78737.90489999983,
+      "position_value": 482166.0
+    },
+    {
+      "date": "2026-03-04 00:00:00",
+      "total_value": 557616.7878999999,
+      "cash": 100772.78789999984,
+      "position_value": 456844.0
+    },
+    {
+      "date": "2026-03-05 00:00:00",
+      "total_value": 556015.7258999998,
+      "cash": 89480.72589999984,
+      "position_value": 466535.0
+    },
+    {
+      "date": "2026-03-06 00:00:00",
+      "total_value": 555735.2478999998,
+      "cash": 97116.24789999984,
+      "position_value": 458619.0
+    },
+    {
+      "date": "2026-03-09 00:00:00",
+      "total_value": 556273.3096999999,
+      "cash": 50988.30969999984,
+      "position_value": 505285.0
+    },
+    {
+      "date": "2026-03-10 00:00:00",
+      "total_value": 556070.6423999998,
+      "cash": 56786.64239999984,
+      "position_value": 499284.0
+    },
+    {
+      "date": "2026-03-11 00:00:00",
+      "total_value": 556662.4447999998,
+      "cash": 32522.444799999834,
+      "position_value": 524140.0
+    },
+    {
+      "date": "2026-03-12 00:00:00",
+      "total_value": 590269.8655999999,
+      "cash": 179655.86559999984,
+      "position_value": 410614.0
+    },
+    {
+      "date": "2026-03-13 00:00:00",
+      "total_value": 590227.6863999999,
+      "cash": 126889.68639999985,
+      "position_value": 463338.0
+    },
+    {
+      "date": "2026-03-16 00:00:00",
+      "total_value": 589746.9028999999,
+      "cash": 99663.90289999984,
+      "position_value": 490083.0
+    },
+    {
+      "date": "2026-03-17 00:00:00",
+      "total_value": 590032.2603999998,
+      "cash": 102749.26039999984,
+      "position_value": 487283.0
+    },
+    {
+      "date": "2026-03-18 00:00:00",
+      "total_value": 589960.1171999999,
+      "cash": 18771.117199999848,
+      "position_value": 571189.0
+    },
+    {
+      "date": "2026-03-19 00:00:00",
+      "total_value": 589953.1891999999,
+      "cash": 14908.189199999848,
+      "position_value": 575045.0
+    },
+    {
+      "date": "2026-03-20 00:00:00",
+      "total_value": 597484.8435999998,
+      "cash": 35063.84359999985,
+      "position_value": 562421.0
+    },
+    {
+      "date": "2026-03-23 00:00:00",
+      "total_value": 599610.1505999998,
+      "cash": 59479.15059999985,
+      "position_value": 540131.0
+    },
+    {
+      "date": "2026-03-24 00:00:00",
+      "total_value": 597456.7061999999,
+      "cash": 105174.70619999984,
+      "position_value": 492282.0
+    },
+    {
+      "date": "2026-03-25 00:00:00",
+      "total_value": 597456.7061999999,
+      "cash": 105174.70619999984,
+      "position_value": 492282.0
+    }
+  ],
+  "cross_stats": {
+    "golden": 229,
+    "death": 211
+  }
+}

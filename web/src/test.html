@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Trader Agent - 测试页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #06b6d4;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        button {
+            background: #06b6d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0891b2;
+        }
+        input {
+            background: #0f172a;
+            border: 1px solid #334155;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            width: 200px;
+        }
+        #result {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Trader Agent - API 测试</h1>
+
+        <div class="card">
+            <h3>测试分析接口</h3>
+            <input type="text" id="stockCode" value="600519.SH" placeholder="股票代码">
+            <button onclick="testAnalysis()">分析</button>
+            <div id="result"></div>
+        </div>
+
+        <div class="card">
+            <h3>API 状态</h3>
+            <button onclick="testHealth()">健康检查</button>
+            <button onclick="testStrategies()">策略列表</button>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api/v1';
+
+        async function testHealth() {
+            const result = document.getElementById('result');
+            try {
+                const response = await fetch('http://127.0.0.1:8000/health');
+                const data = await response.json();
+                result.textContent = '健康检查: ' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                result.textContent = '错误: ' + error.message;
+            }
+        }
+
+        async function testStrategies() {
+            const result = document.getElementById('result');
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/v1/strategy/');
+                const data = await response.json();
+                result.textContent = '策略列表: ' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                result.textContent = '错误: ' + error.message;
+            }
+        }
+
+        async function testAnalysis() {
+            const stockCode = document.getElementById('stockCode').value;
+            const result = document.getElementById('result');
+            result.textContent = '分析中...';
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/v1/analysis/analyze', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ stock_code: stockCode })
+                });
+                const data = await response.json();
+                result.textContent = '分析结果:\n' + JSON.stringify(data, null, 2);
+            } catch (error) {
+                result.textContent = '错误: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

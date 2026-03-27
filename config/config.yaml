@@ -1,0 +1,130 @@
+# Configuration for AI Trader Agent
+
+# ============================================
+# Account Settings
+# ============================================
+account:
+  initial_cash: 1000000.0  # Initial capital (1M)
+  db_path: data/trading.db  # Database path
+
+# ============================================
+# Model Settings
+# ============================================
+model:
+  api_provider: anthropic  # anthropic or openai
+  api_model: claude-sonnet-4-6
+
+  local_enabled: true
+  local_provider: ollama
+  local_model: qwen2.5:7b-q5_K_M
+  ollama_base_url: http://localhost:11434
+
+  token_budget:
+    system: 2000
+    working_memory: 10000
+    episodic: 30000
+    semantic: 20000
+    market_data: 50000
+    output: 10000
+
+# ============================================
+# Risk Control Settings
+# ============================================
+risk_control:
+  max_position_ratio: 0.30
+  max_single_position: 0.30
+  daily_loss_limit: 0.05
+  circuit_breaker_pause: 3600
+  cooldown_minutes: 30
+  max_daily_trades: 10
+
+# ============================================
+# Survival Level Settings
+# ============================================
+survival:
+  normal:
+    max_position: 0.30
+    trading_interval: 60
+    recovery_delay: 300
+
+  low_compute:
+    max_position: 0.20
+    trading_interval: 300
+    recovery_delay: 300
+
+  critical:
+    max_position: 0.10
+    trading_interval: 600
+    recovery_delay: 600
+
+  dead:
+    max_position: 0.0
+    trading_interval: 0
+
+# ============================================
+# Trading Rules
+# ============================================
+trading:
+  market_start: "09:30:00"
+  market_end: "15:00:00"
+
+  commission_rate: 0.0003
+  min_commission: 5.0
+  stamp_duty_rate: 0.001
+  slippage_rate: 0.0005
+
+  t1_enabled: true
+
+# ============================================
+# Trader Settings (Live Trading)
+# ============================================
+trader:
+  # Trading symbols (stock codes)
+  symbols:
+    - "600519"  # Kweichow Moutai
+
+  # Decision interval (seconds)
+  decision_interval: 60
+
+  # Market hours
+  market_open_hour: 9
+  market_open_minute: 30
+  market_close_hour: 15
+  market_close_minute: 0
+
+  # Auto trading (set to true for real trading)
+  enable_auto_trading: false
+  dry_run: true  # Set to false for real trading
+
+  # Position limits
+  max_position_ratio: 0.30
+
+# ============================================
+# Data Settings
+# ============================================
+data:
+  provider: akshare  # akshare or mock
+  cache_enabled: true
+  cache_ttl: 60
+  rate_limit: 10
+
+# ============================================
+# Logging Settings
+# ============================================
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_enabled: true
+  file_path: logs/trader.log
+  max_bytes: 10485760
+  backup_count: 5
+  console_enabled: true
+
+# ============================================
+# Monitoring Settings
+# ============================================
+monitoring:
+  enabled: false
+  host: 0.0.0.0
+  port: 8000
+  update_interval: 5

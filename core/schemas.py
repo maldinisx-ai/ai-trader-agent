@@ -71,6 +71,56 @@ class ErrorType(str, Enum):
     TIMING = "timing"      # 时机错误
 
 
+class TrendStatus(str, Enum):
+    """趋势状态"""
+    STRONG_BULL = "strong_bull"   # 强势多头 (MA5>MA10>MA20, 间距扩大)
+    BULL = "bull"                 # 多头排列
+    WEAK_BULL = "weak_bull"       # 弱势多头
+    CONSOLIDATION = "consolidation"  # 盘整
+    WEAK_BEAR = "weak_bear"       # 弱势空头
+    BEAR = "bear"                 # 空头排列
+    STRONG_BEAR = "strong_bear"   # 强势空头
+
+
+class VolumeStatus(str, Enum):
+    """量能状态"""
+    HEAVY_VOLUME_UP = "heavy_volume_up"     # 放量上涨
+    HEAVY_VOLUME_DOWN = "heavy_volume_down" # 放量下跌
+    SHRINK_VOLUME_UP = "shrink_volume_up"   # 缩量上涨
+    SHRINK_VOLUME_DOWN = "shrink_volume_down"  # 缩量回调（最佳）
+    NORMAL = "normal"
+
+
+class MACDStatus(str, Enum):
+    """MACD状态"""
+    GOLDEN_CROSS_ZERO = "golden_cross_zero"  # 零轴上金叉
+    GOLDEN_CROSS = "golden_cross"            # 金叉
+    CROSSING_UP = "crossing_up"              # 上穿零轴
+    BULLISH = "bullish"                      # 多头
+    BEARISH = "bearish"                      # 空头
+    CROSSING_DOWN = "crossing_down"          # 下穿零轴
+    DEATH_CROSS = "death_cross"              # 死叉
+
+
+class RSIStatus(str, Enum):
+    """RSI状态"""
+    OVERBOUGHT = "overbought"   # 超买 (>70)
+    STRONG_BUY = "strong_buy"   # 强势 (60-70)
+    NEUTRAL = "neutral"         # 中性 (40-60)
+    WEAK = "weak"               # 弱势 (30-40)
+    OVERSOLD = "oversold"       # 超卖 (<30)
+
+
+class BuySignal(str, Enum):
+    """买入信号"""
+    STRONG_BUY = "strong_buy"   # 强烈买入
+    BUY = "buy"                 # 买入
+    HOLD = "hold"               # 持有
+    WAIT = "wait"               # 观望
+    SELL = "sell"               # 卖出
+    STRONG_SELL = "strong_sell"  # 强烈卖出
+
+
 # ============================================
 # 数据模型
 # ============================================
@@ -196,9 +246,9 @@ class Decision(BaseModel):
     """决策"""
     action: Literal["buy", "sell", "hold", "wait"] = Field(..., description="动作")
     symbol: Optional[str] = Field(None, description="股票代码")
-    quantity: Optional[int] = Field(None, gt=0, multiple_of=100, description="数量")
-    price: Optional[float] = Field(None, gt=0, description="价格")
-    confidence: float = Field(..., ge=0, le=1, description="置信度(0-1)")
+    quantity: Optional[int] = Field(None, description="数量（buy/sell时需要）")
+    price: Optional[float] = Field(None, description="价格（buy/sell时需要）")
+    confidence: float = Field(0.0, ge=0, le=1, description="置信度")
     reasoning: str = Field(..., description="推理过程")
     tools_to_use: List[str] = Field(default_factory=list, description="需要使用的工具")
     is_final: bool = Field(False, description="是否为最终决策")
