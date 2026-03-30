@@ -129,8 +129,8 @@ class PerformanceMetrics:
         return np.mean(wins) if wins else 0.0
 
     def average_loss(self) -> float:
-        """平均亏损"""
-        losses = [t.get("pnl", 0) for t in self.trades if t.get("pnl", 0) < 0]
+        """平均亏损（返回正数，表示亏损金额）"""
+        losses = [abs(t.get("pnl", 0)) for t in self.trades if t.get("pnl", 0) < 0]
         return np.mean(losses) if losses else 0.0
 
     def total_trades(self) -> int:
@@ -255,7 +255,7 @@ def calculate_beta(portfolio_returns: List[float], benchmark_returns: List[float
         return 0.0
 
     covariance = np.cov(portfolio_returns, benchmark_returns)[0][1]
-    benchmark_variance = np.var(benchmark_returns)
+    benchmark_variance = np.var(benchmark_returns, ddof=1)  # 使用样本方差（除以 N-1）
 
     if benchmark_variance == 0:
         return 0.0
