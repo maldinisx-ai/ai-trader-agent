@@ -100,6 +100,10 @@ data/temp/
 data/valuation/
 data/margin/
 data/money_flow/
+data/*.json
+data/*.csv
+data/*.png
+data/*.txt
 logs/*.log
 *.log
 
