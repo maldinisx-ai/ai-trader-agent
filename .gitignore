@@ -74,6 +74,7 @@ dmypy.json
 # --------------------------------------------
 data/quotes/
 data/state/
+data/agent_backtest/
 logs/*.log
 *.log
 
@@ -133,3 +134,4 @@ desktop.ini
 .DS_Store
 .AppleDouble
 .LSOverride
+.gstack/
