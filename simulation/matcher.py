@@ -16,6 +16,7 @@ from core.schemas import (
     Order,
     OrderSide,
     OrderType,
+    OrderStatus,
     MatchResult,
     QuoteData,
 )
@@ -121,6 +122,9 @@ class Matcher:
         # 模拟停牌状态（symbol -> bool）
         self._suspended: Set[str] = set()
 
+        # 活跃订单追踪（order_id -> Order）
+        self._active_orders: Dict[str, Order] = {}
+
     # ============================================
     # 行情管理
     # ============================================
@@ -200,35 +204,43 @@ class Matcher:
             MatchResult: 撮合结果
         """
         try:
+            # 0. 追踪新订单
+            self._active_orders[order.order_id] = order
+
             # 1. 获取实时行情
             quote = self.get_quote(order.symbol)
             if quote is None:
+                self._active_orders.pop(order.order_id, None)
                 return self._reject(order, "股票不存在或无行情数据")
 
             # 2. 检查停牌状态
             if quote.is_suspended or self.is_suspended(order.symbol):
+                self._active_orders.pop(order.order_id, None)
                 return self._reject(order, "股票停牌，禁止交易")
 
             # 3. 检查涨跌停限制
             limit_check = self._check_price_limit(order, quote)
             if limit_check:
+                self._active_orders.pop(order.order_id, None)
                 return self._reject(order, limit_check)
 
             # 4. 检查 T+1 规则
             t1_check = self._check_t1_rule(order)
             if t1_check:
+                self._active_orders.pop(order.order_id, None)
                 return self._reject(order, t1_check)
 
             # 5. 确定成交价格
             fill_price = self._determine_fill_price(order, quote)
             if fill_price is None:
+                self._active_orders.pop(order.order_id, None)
                 return self._reject(order, "无法确定成交价格")
 
             # 6. 计算成交数量
             fill_quantity = self._calculate_fill_quantity(order, quote)
 
             # 7. 返回撮合结果
-            return MatchResult(
+            result = MatchResult(
                 order=order,
                 filled_quantity=fill_quantity,
                 filled_price=fill_price,
@@ -236,9 +248,58 @@ class Matcher:
                 reason="撮合成功",
             )
 
+            # 8. 更新订单状态
+            order.status = OrderStatus.FILLED if result.fully_filled else OrderStatus.PARTIALLY_FILLED
+            order.filled_quantity = fill_quantity
+            order.filled_price = fill_price
+            order.filled_at = datetime.now()
+
+            # 9. 追踪活跃订单（部分成交的订单）
+            if not result.fully_filled:
+                self._active_orders[order.order_id] = order
+            else:
+                self._active_orders.pop(order.order_id, None)
+
+            return result
+
         except Exception as e:
             logger.error(f"[Matcher] 撮合异常: {e}", exc_info=True)
+            self._active_orders.pop(order.order_id, None)
             return self._reject(order, f"撮合异常: {str(e)}")
+
+    async def cancel_order(self, order_id: str) -> Order:
+        """
+        撤销订单
+
+        Args:
+            order_id: 订单ID
+
+        Returns:
+            Order: 更新后的订单对象（状态为 CANCELLED）
+
+        Raises:
+            ValueError: 订单不存在或无法撤销
+        """
+        if order_id not in self._active_orders:
+            raise ValueError(f"订单不存在: {order_id}")
+
+        order = self._active_orders[order_id]
+
+        # 检查订单状态
+        if order.status not in (OrderStatus.PENDING, OrderStatus.PARTIALLY_FILLED):
+            raise ValueError(
+                f"订单无法撤销，当前状态: {order.status} "
+                f"(仅 PENDING 和 PARTIALLY_FILLED 可撤销)"
+            )
+
+        # 更新订单状态
+        order.status = OrderStatus.CANCELLED
+        logger.info(f"[Matcher] 订单已撤销: {order_id}")
+
+        # 从活跃订单中移除
+        self._active_orders.pop(order_id, None)
+
+        return order
 
     def _reject(self, order: Order, reason: str) -> MatchResult:
         """
