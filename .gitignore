@@ -85,6 +85,19 @@ data/download_summary.json
 data/charts/
 data/financial/
 data/fundamentals/
+data/index/
+data/industry/
+data/klines/
+data/by_stock/
+data/etfs/
+data/funds/
+data/futures/
+data/lhb/
+data/market/
+data/spot/
+data/stocks/
+data/temp/
+data/valuation/
 logs/*.log
 *.log
 
