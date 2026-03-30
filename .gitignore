@@ -75,6 +75,15 @@ dmypy.json
 data/quotes/
 data/state/
 data/agent_backtest/
+data/agent_backtest_test/
+data/akshare_progress.json
+data/all_stocks.json
+data/backtest_results.json
+data/batch_progress.json
+data/coverage_report.json
+data/download_summary.json
+data/charts/
+data/financial/
 logs/*.log
 *.log
 
