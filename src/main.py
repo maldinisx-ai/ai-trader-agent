@@ -10,6 +10,7 @@ import asyncio
 import signal
 import sys
 import os
+import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
@@ -32,9 +33,83 @@ from simulation.account import Account
 from simulation.matcher import Matcher
 from tools.data.get_quote import GetQuoteTool
 from tools.trading.place_order import PlaceOrderTool
+from tools.trading.cancel_order import CancelOrderTool
 from tools.trading.get_positions import GetPositionsTool
-from core.tool_executor import ToolExecutor
-from core.schemas import SurvivalLevel
+from core.tool_executor import Tool, ToolExecutor
+from core.schemas import SurvivalLevel, QuoteData
+from core.reflection_storage import ReflectionStorage
+from core.reflection import ReflectionEngine
+
+
+# ============================================
+# 本地数据工具
+# ============================================
+
+class LocalQuoteTool(Tool):
+    """使用本地 CSV 数据的行情工具"""
+
+    def __init__(self, data_dir: str = "data"):
+        super().__init__()
+        self.data_dir = Path(data_dir)
+        self._cache = {}
+
+    @property
+    def name(self) -> str:
+        return "get_quote"
+
+    @property
+    def description(self) -> str:
+        return "获取股票行情（从本地 CSV 文件）"
+
+    @property
+    def parameters_schema(self) -> dict:
+        return {
+            "type": "object",
+            "properties": {
+                "symbol": {"type": "string", "description": "股票代码"},
+            },
+            "required": ["symbol"],
+        }
+
+    async def _execute(self, **kwargs) -> QuoteData:
+        symbol = kwargs.get("symbol", "")
+        if not symbol:
+            raise ValueError("股票代码不能为空")
+
+        # 从缓存获取
+        if symbol in self._cache:
+            return self._cache[symbol]
+
+        # 读取本地 CSV 文件
+        csv_path = self.data_dir / f"klines_{symbol}.csv"
+        if not csv_path.exists():
+            raise FileNotFoundError(f"找不到数据文件: {csv_path}")
+
+        df = pd.read_csv(csv_path)
+        df['date'] = pd.to_datetime(df['date'])
+        df = df.sort_values('date')
+
+        # 获取最新数据
+        latest = df.iloc[-1]
+        prev_close = df.iloc[-2]['close'] if len(df) > 1 else latest['open']
+        change_pct = ((latest['close'] - prev_close) / prev_close) * 100
+
+        quote = QuoteData(
+            symbol=symbol,
+            name="股票" + symbol,
+            price=float(latest['close']),
+            change=round(change_pct, 2),
+            volume=int(latest['volume']),
+            amount=float(latest['amount']),
+            high=float(latest['high']),
+            low=float(latest['low']),
+            upper_limit=float(latest['close']) * 1.1,
+            lower_limit=float(latest['close']) * 0.9,
+        )
+
+        # 缓存结果
+        self._cache[symbol] = quote
+        return quote
 
 
 # ============================================
@@ -119,10 +194,18 @@ def initialize_components(config: dict, mode: str):
     matcher = Matcher()
 
     # 工具执行器
-    use_real_data = config.get("data", {}).get("provider") == "akshare"
+    data_provider = config.get("data", {}).get("provider", "mock")
     tool_executor = ToolExecutor()
-    tool_executor.register(GetQuoteTool(use_real_data=use_real_data))
+
+    if data_provider == "mock":
+        # 使用本地数据
+        tool_executor.register(LocalQuoteTool(data_dir="data"))
+    else:
+        # 使用网络数据
+        tool_executor.register(GetQuoteTool(use_real_data=True))
+
     tool_executor.register(PlaceOrderTool(policy_engine=policy_engine))
+    tool_executor.register(CancelOrderTool(matcher=matcher))
     tool_executor.register(GetPositionsTool(account=account))
 
     return account, policy_engine, survival_rules, matcher, tool_executor
@@ -405,6 +488,130 @@ def monitor(host, port):
         click.echo("错误: 监控面板未安装或 fastapi 未安装")
         click.echo("请运行: pip install fastapi uvicorn")
         sys.exit(1)
+
+
+@cli.command()
+@click.option('--symbol', '-s', default='600519', help='股票代码（单个分析）')
+@click.option('--all', 'scan_all', is_flag=True, help='扫描所有本地股票')
+@click.option('--limit', '-l', default=20, help='扫描股票数量限制（默认20，避免token过多）')
+@click.option('--config', '-c', default='config/config.yaml', help='配置文件路径')
+def ai(symbol, scan_all, limit, config):
+    """测试 AI 决策"""
+    from core.agent_loop import AgentLoop
+    from core.model_router import ModelRouter
+    from core.market_regime import MarketRegimeDetector
+    from core.reflection import ReflectionEngine
+    from core.reflection_storage import ReflectionStorage
+    from tools.data.local_data_loader import LocalDataLoader
+
+    # 加载配置和初始化组件
+    cfg = load_config(config)
+    account, policy_engine, survival_rules, _, tool_executor = initialize_components(cfg, 'demo')
+
+    # 初始化反思引擎
+    reflection_storage = ReflectionStorage(db_path="data/reflections.db")
+    reflection_engine = ReflectionEngine(storage=reflection_storage)
+
+    print("=" * 60)
+    if scan_all:
+        print("AI Trader Agent - 市场扫描")
+    else:
+        print("AI Trader Agent - 决策测试")
+    print("=" * 60)
+
+    # 初始化模型
+    print("\n[初始化] AI 模型...")
+    model_router = ModelRouter()
+
+    async def run_ai():
+        try:
+            await model_router.initialize()
+        except Exception as e:
+            print(f"[错误] 模型初始化失败: {e}")
+            return
+
+        # 初始化 Agent Loop
+        agent_loop = AgentLoop(
+            model_router=model_router,
+            survival_rules=survival_rules,
+            market_detector=MarketRegimeDetector(),
+            tool_executor=tool_executor,
+            policy_engine=policy_engine,
+            reflection_engine=reflection_engine,  # 传入反思引擎
+            max_iterations=3,
+        )
+
+        # 加载市场数据
+        data_loader = LocalDataLoader(data_dir="data")
+
+        if scan_all:
+            # 扫描所有股票（使用限制）
+            market_data = data_loader.load_all_stocks(limit=limit)
+            stock_count = market_data.get("total_count", 0)
+            total_available = len(data_loader.get_available_symbols())
+            print(f"\n[数据] 扫描市场: {stock_count} 只股票 (总共 {total_available} 只，限制 {limit} 只)")
+
+            # 显示概览
+            if "stocks" in market_data:
+                for stock in market_data["stocks"]:
+                    latest = stock["latest"]
+                    print(f"   {stock['symbol']}: ¥{latest['close']:.2f} ({latest['change']:+.2f}%)")
+
+            user_input = f"分析扫描的 {stock_count} 只股票的K线数据、技术指标、行业资金流向等，找出最具交易机会的股票并给出具体建议（买入/卖出/等待，包括股票代码、数量、价格）"
+        else:
+            # 分析单个股票
+            print(f"\n[数据] 加载 {symbol} 的完整市场数据...")
+            market_data = data_loader.load_all_data(symbol)
+
+            # 显示基本行情
+            if "klines" in market_data and "latest" in market_data["klines"]:
+                latest = market_data["klines"]["latest"]
+                print(f"   日期: {latest['date']}")
+                print(f"   价格: ¥{latest['close']:.2f}")
+                print(f"   涨跌: {latest['change']:+.2f}%")
+                print(f"   成交量: {latest['volume']:,} 手")
+
+            user_input = f"分析股票 {symbol} 的K线数据、技术指标、行业资金流向等信息，给出交易建议"
+
+        # 运行决策
+        account_info = account.get_account_info()
+        print(f"\n[账户] 现金: ¥{account_info['cash']:,.2f}")
+
+        print(f"\n[AI] 分析中...")
+        response = await agent_loop.react_loop(
+            user_input=user_input,
+            current_cash=account_info['cash'],
+            total_value=account_info['total_value'],
+            initial_cash=account_info['initial_cash'],
+            positions=account.get_positions(),
+            market_data=market_data,
+        )
+
+        # 输出结果
+        print("\n" + "=" * 60)
+        print("决策结果")
+        print("=" * 60)
+
+        if response.success:
+            print(f"\n状态: 成功")
+            decision = response.final_result['decision']
+            print(f"\n动作: {decision['action'].upper()}")
+            if decision.get('symbol'):
+                print(f"股票: {decision['symbol']}")
+            if decision.get('quantity'):
+                print(f"数量: {decision['quantity']} 股")
+            if decision.get('price'):
+                print(f"价格: ¥{decision['price']:.2f}")
+            print(f"置信度: {decision['confidence']:.2f}")
+            print(f"\n推理:")
+            print(f"  {decision['reasoning']}")
+            print(f"\n执行时间: {response.execution_time:.2f}秒")
+        else:
+            print(f"\n失败: {response.message}")
+
+        print("=" * 60)
+
+    asyncio.run(run_ai())
 
 
 # ============================================

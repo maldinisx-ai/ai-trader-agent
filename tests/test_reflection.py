@@ -8,6 +8,9 @@ TDD 流程: RED → GREEN → REFACTOR
 import pytest
 from datetime import datetime, timedelta
 
+# 确保模块被导入以正确收集覆盖率
+import core.reflection
+import core.schemas
 from core.schemas import Trade, OrderSide, ErrorType, ReflectionRecord
 from core.reflection import ReflectionEngine
 
@@ -20,6 +23,7 @@ class TestReflectionEngine:
         reflection = ReflectionRecord(
             reflection_id="ref_001",
             trade_id="trade_001",
+            symbol="600519",
             loss_amount=-5000.0,
             loss_ratio=-0.05,
             error_type=ErrorType.ENTRY,
@@ -29,6 +33,7 @@ class TestReflectionEngine:
         )
 
         assert reflection.reflection_id == "ref_001"
+        assert reflection.symbol == "600519"
         assert reflection.loss_amount == -5000.0
         assert reflection.error_type == ErrorType.ENTRY
 

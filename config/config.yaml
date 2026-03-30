@@ -5,7 +5,7 @@
 # ============================================
 account:
   initial_cash: 1000000.0  # Initial capital (1M)
-  db_path: data/trading.db  # Database path
+  db_path: data/trading_new.db  # Database path
 
 # ============================================
 # Model Settings
@@ -16,7 +16,7 @@ model:
 
   local_enabled: true
   local_provider: ollama
-  local_model: qwen2.5:7b-q5_K_M
+  local_model: qwen2.5:7b
   ollama_base_url: http://localhost:11434
 
   token_budget:
@@ -103,7 +103,7 @@ trader:
 # Data Settings
 # ============================================
 data:
-  provider: akshare  # akshare or mock
+  provider: mock  # mock (本地数据) or akshare (实时网络数据)
   cache_enabled: true
   cache_ttl: 60
   rate_limit: 10

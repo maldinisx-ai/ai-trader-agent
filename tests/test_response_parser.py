@@ -4,6 +4,10 @@ Response Parser 单元测试
 """
 
 import pytest
+
+# 确保模块被导入以正确收集覆盖率
+import core.response_parser
+import core.schemas
 from core.response_parser import ResponseParser
 from core.schemas import AIModelResponse
 

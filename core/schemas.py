@@ -61,6 +61,7 @@ class PolicyPriority(IntEnum):
     P4_POSITION_LIMIT = 4
     P5_COOLDOWN = 5
     P6_DAILY_LIMIT = 6
+    P7_SCORE_THRESHOLD = 7  # 评分阈值拦截
 
 
 class ErrorType(str, Enum):
@@ -139,6 +140,8 @@ class QuoteData(BaseModel):
     upper_limit: Optional[float] = Field(None, description="涨停价")
     lower_limit: Optional[float] = Field(None, description="跌停价")
     is_suspended: bool = Field(False, description="是否停牌")
+    is_limit_up: bool = Field(False, description="是否涨停")
+    is_limit_down: bool = Field(False, description="是否跌停")
     timestamp: datetime = Field(default_factory=datetime.now, description="时间戳")
 
 
@@ -232,7 +235,7 @@ class Trade(BaseModel):
 
 
 class AgentResponse(BaseModel):
-    """Agent 响应"""
+    """Agent 响应（API 返回格式）"""
     success: bool = Field(..., description="是否成功")
     message: str = Field(..., description="响应消息")
     thought_process: Optional[str] = Field(None, description="思考过程")
@@ -240,6 +243,49 @@ class AgentResponse(BaseModel):
     final_result: Optional[Dict[str, Any]] = Field(None, description="最终结果")
     execution_time: float = Field(..., gt=0, description="执行时间（秒）")
     timestamp: datetime = Field(default_factory=datetime.now, description="时间戳")
+
+
+class AIModelResponse(BaseModel):
+    """AI 模型结构化响应（用于大模型输出解析）
+
+    这是大模型返回的结构化决策格式，用于 ResponseParser 解析。
+    """
+
+    thought: str = Field(..., description="AI 的思考过程")
+    tool_calls: List[Dict[str, Any]] = Field(
+        default_factory=list,
+        description="需要调用的工具列表"
+    )
+    decision: Optional[Literal["buy", "sell", "wait", "hold"]] = Field(
+        default=None,
+        description="最终决策"
+    )
+    symbol: Optional[str] = Field(
+        default=None,
+        description="股票代码"
+    )
+    quantity: Optional[int] = Field(
+        default=None,
+        description="交易数量"
+    )
+    price: Optional[float] = Field(
+        default=None,
+        description="交易价格"
+    )
+    confidence: float = Field(
+        default=0.5,
+        ge=0,
+        le=1,
+        description="置信度 (0-1)"
+    )
+    risk_reason: Optional[str] = Field(
+        default=None,
+        description="风险原因"
+    )
+    is_final: bool = Field(
+        default=False,
+        description="是否为最终决策"
+    )
 
 
 class Decision(BaseModel):
@@ -309,6 +355,7 @@ class ReflectionRecord(BaseModel):
     """反思记录"""
     reflection_id: str = Field(..., description="反思ID")
     trade_id: str = Field(..., description="关联交易ID")
+    symbol: str = Field(..., description="股票代码")
     loss_amount: float = Field(..., description="亏损金额")
     loss_ratio: float = Field(..., description="亏损比例")
     error_type: ErrorType = Field(..., description="错误类型")
@@ -324,6 +371,16 @@ class MarketState(BaseModel):
     confidence: float = Field(..., ge=0, le=1, description="置信度")
     max_position_ratio: float = Field(..., ge=0, le=1, description="建议最大仓位")
     indicators: Dict[str, float] = Field(default_factory=dict, description="技术指标")
+    volatility: float = Field(0.0, ge=0, le=1, description="市场波动率")
+    timestamp: datetime = Field(default_factory=datetime.now, description="更新时间")
+
+
+class AccountState(BaseModel):
+    """账户状态"""
+    total_value: float = Field(..., ge=0, description="总资产")
+    initial_cash: float = Field(..., ge=0, description="初始资金")
+    available_cash: float = Field(..., ge=0, description="可用资金")
+    daily_loss_ratio: Optional[float] = Field(None, ge=0, le=1, description="当日亏损比例")
     timestamp: datetime = Field(default_factory=datetime.now, description="更新时间")
 
 

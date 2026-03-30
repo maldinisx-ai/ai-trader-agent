@@ -705,7 +705,8 @@ class TestGetPositionsTool:
         """测试使用账户对象获取持仓"""
         from simulation.account import Account
 
-        account = Account(initial_cash=100000)
+        # 使用内存数据库确保测试隔离
+        account = Account(initial_cash=100000, db_path=":memory:")
         # 账户刚创建时无持仓
         tool = GetPositionsTool(account=account)
         result = await tool.execute()

@@ -4,6 +4,11 @@ Safe Tool Executor 单元测试
 """
 
 import pytest
+
+# 确保模块被导入以正确收集覆盖率
+import core.safe_tool_executor
+import core.schemas
+import core.tool_executor
 from core.safe_tool_executor import SafeToolExecutor
 from core.schemas import ToolResult, OrderSide
 from core.tool_executor import ToolExecutor

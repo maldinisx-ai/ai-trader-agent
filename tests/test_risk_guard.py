@@ -5,6 +5,10 @@ Risk Guard 单元测试
 
 import pytest
 from datetime import datetime
+
+# 确保模块被导入以正确收集覆盖率
+import core.risk_guard
+import core.schemas
 from core.risk_guard import RiskGuard, RiskDecision
 from core.schemas import AccountState, MarketState, MarketRegime
 

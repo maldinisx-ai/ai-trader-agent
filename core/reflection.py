@@ -46,9 +46,19 @@ class ReflectionEngine:
     LOSS_THRESHOLD = -0.02  # 2% 亏损触发反思
     CONSECUTIVE_LOSS = 3      # 连续3笔亏损触发反思
 
-    def __init__(self):
-        """初始化反思引擎"""
+    def __init__(self, storage=None):
+        """
+        初始化反思引擎
+
+        Args:
+            storage: 反思存储实例（可选，用于持久化）
+        """
         self._reflections: list[ReflectionRecord] = []
+        self.storage = storage  # 反思存储（新增）
+
+        # 从存储加载历史反思（新增）
+        if self.storage:
+            self._load_historical_reflections()
 
     async def reflect_on_loss(
         self,
@@ -81,6 +91,7 @@ class ReflectionEngine:
         reflection = ReflectionRecord(
             reflection_id=f"ref_{trade.trade_id}_{datetime.now().strftime('%Y%m%d%H%M%S')}",
             trade_id=trade.trade_id,
+            symbol=trade.symbol,
             loss_amount=trade.amount * abs(loss_ratio),
             loss_ratio=abs(loss_ratio),
             error_type=error_type,
@@ -92,6 +103,17 @@ class ReflectionEngine:
 
         # 3. 存储反思记录
         self._reflections.append(reflection)
+
+        # 4. 持久化到存储（新增）
+        if self.storage:
+            metadata = {
+                "symbol": trade.symbol,
+                "side": trade.side.value,
+                "shares": trade.shares,
+                "price": trade.price,
+                "max_price": context.get("max_price") if context else None,
+            }
+            self.storage.save_reflection(reflection, metadata=metadata)
 
         return reflection
 
@@ -209,6 +231,21 @@ class ReflectionEngine:
         }
 
         return actions.get(error_type, "加强风险控制")
+
+    def _load_historical_reflections(self) -> None:
+        """
+        从存储加载历史反思记录
+        """
+        if not self.storage:
+            return
+
+        try:
+            # 获取最近的反思记录
+            historical = self.storage.get_all_reflections(limit=100)
+            self._reflections = historical
+        except Exception as e:
+            print(f"[ReflectionEngine] 加载历史反思失败: {e}")
+            self._reflections = []
 
     def get_reflections(self, limit: int = 10) -> list[ReflectionRecord]:
         """

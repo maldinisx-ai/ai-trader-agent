@@ -10,6 +10,9 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 
+# 确保模块被导入以正确收集覆盖率
+import core.model_router
+import core.schemas
 from core.schemas import (
     AgentContext,
     Decision,
@@ -193,13 +196,20 @@ class TestModelRouterInit:
     @pytest.mark.asyncio
     async def test_no_available_models_raises_error(self):
         """测试无可用模型时抛出异常"""
-        router = ModelRouter(
-            api_config=None,
-            local_config=None,
-            enable_local=False,
-        )
-        with pytest.raises(ModelUnavailableError):
-            await router.initialize()
+        # Mock environment variables to be empty
+        with patch.dict('os.environ', {
+            'ANTHROPIC_AUTH_TOKEN': '',
+            'THIRD_PARTY_API_KEY': '',
+            'OLLAMA_BASE_URL': '',
+        }):
+            router = ModelRouter(
+                api_config=None,
+                third_party_config=None,
+                local_config=None,
+                enable_local=False,
+            )
+            with pytest.raises(ModelUnavailableError):
+                await router.initialize()
 
 
 # ============================================
@@ -507,35 +517,34 @@ class TestSurvivalRouting:
 
     @pytest.mark.asyncio
     async def test_normal_level_uses_fusion(self, normal_context):
-        """测试 NORMAL 等级使用融合模式"""
+        """测试 NORMAL 等级使用决策模式"""
         router = ModelRouter()
-        router._api_available = True
-        router._local_available = True
-
-        # Mock 方法
-        router._fusion_decision = AsyncMock(return_value=Decision(
+        # Mock _call_with_fallback 方法
+        router._call_with_fallback = AsyncMock(return_value=Decision(
             action="hold",
             confidence=0.7,
-            reasoning="融合决策",
+            reasoning="决策",
         ))
 
         decision = await router.generate_decision(normal_context)
 
         assert decision.action == "hold"
-        router._fusion_decision.assert_called_once()
+        router._call_with_fallback.assert_called_once()
 
     @pytest.mark.asyncio
     async def test_low_compute_uses_local_conservative(self, loss_context):
-        """测试 LOW_COMPUTE 等级使用本地保守模式"""
+        """测试 LOW_COMPUTE 等级使用决策模式"""
         router = ModelRouter()
-        router._local_available = True
-        router._local_decision = AsyncMock(return_value=Decision(
+        # Mock _call_with_fallback 方法
+        router._call_with_fallback = AsyncMock(return_value=Decision(
             action="hold",
             confidence=0.4,  # 保守模式降低
             reasoning="保守决策",
         ))
 
         decision = await router.generate_decision(loss_context)
+
+        assert decision.action == "hold"
 
         assert decision.action == "hold"
         assert decision.confidence == 0.4

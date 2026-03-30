@@ -16,11 +16,11 @@
 
 from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from core.schemas import (
     Order, QuoteData, PolicyResult, PolicyPriority,
-    OrderSide, SurvivalLevel,
+    OrderSide, SurvivalLevel, OrderStatus,
 )
 
 
@@ -299,6 +299,80 @@ class DailyLimitPolicy(BasePolicy):
         return PolicyResult(allowed=True, priority=self.priority)
 
 
+class ScoreThresholdPolicy(BasePolicy):
+    """
+    P7: 评分阈值拦截
+
+    规则: 评分低于30分的股票禁止买入（防止AI严重幻觉）
+    """
+
+    def __init__(self, min_score: int = 30):
+        super().__init__(PolicyPriority.P7_SCORE_THRESHOLD)
+        self.min_score = min_score
+
+    def check(self, order: Order, stock_score: Optional[int] = None, **kwargs) -> PolicyResult:
+        # 卖出不受评分限制
+        if order.side == OrderSide.SELL:
+            return PolicyResult(allowed=True, priority=self.priority)
+
+        # 如果没有提供评分，跳过检查
+        if stock_score is None:
+            return PolicyResult(allowed=True, priority=self.priority)
+
+        # 检查评分是否低于阈值
+        if stock_score < self.min_score:
+            return PolicyResult(
+                allowed=False,
+                reason=f"评分过低: {stock_score} 分 < 最低 {self.min_score} 分（可能存在严重风险）",
+                policy="ScoreThresholdPolicy",
+                priority=self.priority,
+            )
+
+        return PolicyResult(allowed=True, priority=self.priority)
+
+
+class CancelOrderPolicy(BasePolicy):
+    """
+    撤单风控策略
+
+    规则:
+    - 已成交订单不能撤单
+    - 已拒绝订单不能撤单
+    - 已撤销订单不能重复撤单
+    """
+
+    def __init__(self):
+        super().__init__(priority=PolicyPriority.P3_TRADING_RULES)
+
+    def check(self, order: Order, **kwargs) -> PolicyResult:
+        # 检查订单状态
+        if order.status == OrderStatus.FILLED:
+            return PolicyResult(
+                allowed=False,
+                reason=f"订单已成交，无法撤单",
+                policy="CancelOrderPolicy",
+                priority=self.priority,
+            )
+
+        if order.status == OrderStatus.REJECTED:
+            return PolicyResult(
+                allowed=False,
+                reason=f"订单已被拒绝，无法撤单",
+                policy="CancelOrderPolicy",
+                priority=self.priority,
+            )
+
+        if order.status == OrderStatus.CANCELLED:
+            return PolicyResult(
+                allowed=False,
+                reason=f"订单已撤销，无需重复撤单",
+                policy="CancelOrderPolicy",
+                priority=self.priority,
+            )
+
+        return PolicyResult(allowed=True, priority=self.priority)
+
+
 class PolicyEngine:
     """
     风控引擎
@@ -316,6 +390,7 @@ class PolicyEngine:
         circuit_pause_until: Optional[datetime] = None,
         cooldown_minutes: int = 30,
         max_daily_trades: int = 10,
+        min_score_threshold: int = 30,
     ):
         """
         初始化风控引擎
@@ -329,6 +404,7 @@ class PolicyEngine:
             circuit_pause_until: 熔断暂停截止时间
             cooldown_minutes: 冷却时间（分钟）
             max_daily_trades: 最大单日交易笔数
+            min_score_threshold: 最低评分阈值（P7拦截）
         """
         self.cash = cash
         self.total_value = total_value or cash
@@ -348,11 +424,13 @@ class PolicyEngine:
             PositionLimitPolicy(max_position_ratio, self.total_value),
             CooldownPolicy(cooldown_minutes),
             DailyLimitPolicy(max_daily_trades),
+            ScoreThresholdPolicy(min_score_threshold),
         ]
 
         # 状态跟踪
         self.daily_trade_count = 0
         self.last_trades: dict[str, tuple[datetime, OrderSide]] = {}  # symbol -> (time, side)
+        self.stock_scores: dict[str, int] = {}  # symbol -> score (新增)
 
     def validate_order(
         self,
@@ -378,6 +456,9 @@ class PolicyEngine:
 
         # 按优先级执行所有策略
         for policy in sorted(self.policies, key=lambda p: p.priority):
+            # 获取股票评分（用于P7拦截）
+            stock_score = self.stock_scores.get(order.symbol)
+
             result = policy.check(
                 order,
                 quote=quote,
@@ -385,6 +466,7 @@ class PolicyEngine:
                 last_trade_time=last_trade_time,
                 last_trade_side=last_trade_side,
                 daily_trade_count=self.daily_trade_count,
+                stock_score=stock_score,
             )
 
             if not result.allowed:
@@ -443,3 +525,26 @@ class PolicyEngine:
         if reset_daily_count:
             self.daily_trade_count = 0
             self.last_trades.clear()
+
+    def update_stock_scores(self, scores: Dict[str, int]):
+        """
+        更新股票评分
+
+        Args:
+            scores: 股票评分字典 {symbol: score}
+        """
+        self.stock_scores.update(scores)
+
+    def validate_cancel_order(self, order: Order) -> PolicyResult:
+        """
+        验证撤单请求
+
+        Args:
+            order: 待撤单的订单
+
+        Returns:
+            PolicyResult: 验证结果
+        """
+        # 使用撤单风控策略
+        cancel_policy = CancelOrderPolicy()
+        return cancel_policy.check(order)

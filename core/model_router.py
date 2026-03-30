@@ -85,6 +85,7 @@ class APIProvider(str, Enum):
     ANTHROPIC = "anthropic"  # Claude
     OPENAI = "openai"        # OpenAI
     ZHIPU = "zhipu"          # 智谱 GLM
+    ALIYUN = "aliyun"        # 阿里云百炼
 
 
 @dataclass
@@ -98,6 +99,7 @@ class ModelConfig:
     temperature: float = 0.7
     timeout: int = 30
     api_provider: Optional[APIProvider] = None  # API 提供商 (仅 API 模型需要)
+    priority: int = 0  # 降级优先级 (数字越小优先级越高)
 
 
 # 默认模型配置
@@ -211,7 +213,7 @@ class ModelRouter:
         third_party_config: Optional[ModelConfig] = None,
         local_config: Optional[ModelConfig] = None,
         token_budget: Optional[TokenBudget] = None,
-        enable_local: bool = True,
+        enable_local: bool = False,  # 默认不启用本地模型
     ):
         """
         初始化模型路由器
@@ -223,9 +225,10 @@ class ModelRouter:
             token_budget: Token 预算
             enable_local: 是否启用本地模型
         """
-        self.api_config = api_config or self.API_MODEL
-        self.third_party_config = third_party_config or self.THIRD_PARTY_MODEL
-        self.local_config = local_config or self.LOCAL_MODEL
+        # 只有明确传入配置才使用，否则从环境变量读取
+        self.api_config = api_config
+        self.third_party_config = third_party_config
+        self.local_config = local_config
         self.token_budget = token_budget or self.TOKEN_BUDGET
         self.enable_local = enable_local
 
@@ -234,27 +237,101 @@ class ModelRouter:
         self._daily_cost: float = 0.0
         self._daily_limit: int = 1_000_000  # 每日 100 万 Token 限制
 
+        # API 提供商配置列表 (按优先级排序)
+        self._api_providers: List[ModelConfig] = []
+        self._api_clients: List[Dict[str, Any]] = []  # 存储客户端和配置
+
         # 初始化客户端
         self._api_client: Optional[AsyncAnthropic] = None
         self._third_party_client: Optional[AsyncOpenAI] = None
         self._local_client: Optional[AsyncOpenAI] = None
 
         # 模型可用性
-        self._api_available: bool = True
+        self._api_available: bool = False
         self._third_party_available: bool = False
         self._local_available: bool = False
 
+        # 数据详细程度配置
+        # True = 完整数据（本地模型）, False = 摘要数据（API模型）
+        self.use_full_data: bool = False
+
     async def initialize(self) -> None:
         """初始化模型客户端并检查可用性"""
+        # 如果没有传入任何配置，从环境变量自动配置
+        if not self.api_config and not self.third_party_config and not self.local_config:
+            await self._initialize_from_env()
+        else:
+            # 否则从传入的配置初始化（兼容旧代码）
+            await self._initialize_from_configs()
+
+    async def _initialize_from_env(self) -> None:
+        """从环境变量自动配置（目前只支持阿里云百炼）"""
+        self._api_providers = []
+        self._api_clients = []
+
+        # 阿里云百炼 (唯一配置的 API)
+        aliyun_auth_token = os.getenv("ANTHROPIC_AUTH_TOKEN")
+        aliyun_base_url = os.getenv("ANTHROPIC_BASE_URL", "https://coding.dashscope.aliyuncs.com/apps/anthropic")
+        aliyun_model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20240529")
+
+        if aliyun_auth_token and aliyun_auth_token != "sk-ant-xxx":
+            try:
+                client = AsyncAnthropic(api_key=aliyun_auth_token, base_url=aliyun_base_url)
+                config = ModelConfig(
+                    model_type=ModelType.API,
+                    model_name=aliyun_model,
+                    api_key=aliyun_auth_token,
+                    base_url=aliyun_base_url,
+                    api_provider=APIProvider.ALIYUN,
+                    priority=0
+                )
+                self._api_providers.append(config)
+                self._api_clients.append({"client": client, "config": config, "available": True})
+                self._api_available = True
+                self._api_client = client  # 设置兼容旧代码的客户端
+                print(f"[ModelRouter] 阿里云百炼 已配置: {aliyun_model}")
+            except Exception as e:
+                print(f"[ModelRouter] 阿里云百炼初始化失败: {e}")
+                raise ModelUnavailableError(f"无法初始化阿里云百炼: {e}")
+        else:
+            raise ModelUnavailableError(
+                "未配置阿里云百炼 API。请设置 ANTHROPIC_AUTH_TOKEN 和 ANTHROPIC_BASE_URL 环境变量。"
+            )
+
+        # 验证至少有一个模型可用
+        available_count = sum(1 for item in self._api_clients if item["available"])
+        if available_count == 0:
+            raise ModelUnavailableError(
+                "没有可用的模型。请配置 ANTHROPIC_AUTH_TOKEN。"
+            )
+
+        print(f"[ModelRouter] 初始化完成，可用模型数: {available_count}")
+        for item in self._api_clients:
+            if item["available"]:
+                provider = item["config"].api_provider or "Local"
+                model = item["config"].model_name
+                print(f"  - {provider.value if hasattr(provider, 'value') else provider}: {model}")
+
+    async def _test_local_connection(self, client: Any, base_url: str) -> None:
+        """测试本地模型连接"""
+        try:
+            async with httpx.AsyncClient(timeout=5.0) as http_client:
+                response = await http_client.get(f"{base_url}/api/tags")
+                response.raise_for_status()
+        except Exception as e:
+            raise ModelUnavailableError(f"无法连接到 Ollama: {e}")
+
+    async def _initialize_from_configs(self) -> None:
+        """从传入的配置初始化（兼容旧代码）"""
         # 初始化 Claude API 客户端
-        if self.api_config.api_key and self.api_config.api_provider == APIProvider.ANTHROPIC:
+        if self.api_config and self.api_config.api_key and self.api_config.api_provider == APIProvider.ANTHROPIC:
             self._api_client = AsyncAnthropic(api_key=self.api_config.api_key)
             self._api_available = True
         else:
             self._api_available = False
 
         # 初始化第三方 API 客户端 (GLM/OpenAI)
-        if self.third_party_config.api_key:
+        if self.third_party_config and self.third_party_config.api_key:
             provider = self.third_party_config.api_provider or APIProvider.ZHIPU
             if provider in [APIProvider.OPENAI, APIProvider.ZHIPU]:
                 self._third_party_client = AsyncOpenAI(
@@ -262,6 +339,8 @@ class ModelRouter:
                     api_key=self.third_party_config.api_key,
                 )
                 self._third_party_available = True
+            else:
+                self._third_party_available = False
         else:
             self._third_party_available = False
 
@@ -273,7 +352,7 @@ class ModelRouter:
                     api_key="ollama",  # Ollama 不需要真实 key
                 )
                 # 测试连接
-                await self._test_local_connection()
+                await self._test_local_connection(self._local_client, self.local_config.base_url)
                 self._local_available = True
             except Exception as e:
                 self._local_available = False
@@ -287,18 +366,6 @@ class ModelRouter:
             raise ModelUnavailableError(
                 "没有可用的模型。请配置 ANTHROPIC_API_KEY、THIRD_PARTY_API_KEY 或启动 Ollama。"
             )
-
-    async def _test_local_connection(self) -> None:
-        """测试本地模型连接"""
-        if not self._local_client:
-            return
-
-        try:
-            async with httpx.AsyncClient(timeout=5.0) as client:
-                response = await client.get(f"{self.local_config.base_url}/api/tags")
-                response.raise_for_status()
-        except Exception as e:
-            raise ModelUnavailableError(f"无法连接到 Ollama: {e}")
 
     async def generate_decision(
         self,
@@ -333,15 +400,156 @@ class ModelRouter:
                 f"每日 Token 预算已耗尽: {self._daily_tokens} / {self._daily_limit}"
             )
 
-        # 根据生存等级选择策略
-        if context.survival_level == SurvivalLevel.NORMAL:
-            return await self._fusion_decision(context, memories, market_data)
-        elif context.survival_level == SurvivalLevel.LOW_COMPUTE:
-            return await self._local_decision(context, conservative=True)
-        elif context.survival_level == SurvivalLevel.CRITICAL:
-            return await self._local_decision(context, conservative=True)
+        # 使用新的自动降级决策方法
+        return await self._call_with_fallback(context, memories, market_data)
+
+    async def _call_with_fallback(
+        self,
+        context: AgentContext,
+        memories: Optional[Dict[str, Any]] = None,
+        market_data: Optional[Dict[str, Any]] = None,
+    ) -> Decision:
+        """
+        调用模型，支持自动降级
+
+        按优先级尝试所有配置的 API 提供商：
+        1. 阿里云百炼 (priority 0)
+        2. 智谱 GLM (priority 1)
+        3. Claude API (priority 2)
+        4. 本地 Ollama (priority 3)
+        """
+        last_error = None
+
+        # 按优先级尝试所有可用的 API
+        for item in self._api_clients:
+            if not item["available"]:
+                continue
+
+            client = item["client"]
+            config = item["config"]
+            provider = config.api_provider or "Local"
+
+            try:
+                print(f"[ModelRouter] 尝试使用: {provider.value if hasattr(provider, 'value') else provider} ({config.model_name})")
+
+                decision = await self._call_client(client, config, context, memories, market_data)
+                print(f"[ModelRouter] 成功使用: {provider.value if hasattr(provider, 'value') else provider}")
+                return decision
+
+            except Exception as e:
+                last_error = e
+                error_msg = str(e)
+                print(f"[ModelRouter] {provider.value if hasattr(provider, 'value') else provider} 失败: {error_msg[:100]}")
+
+                # 标记为不可用（临时）
+                item["available"] = False
+
+                # 继续尝试下一个
+                continue
+
+        # 所有模型都失败，抛出异常
+        raise ModelCallError(
+            f"所有模型均不可用。最后错误: {str(last_error)[:200] if last_error else 'Unknown'}"
+        )
+
+    async def _call_client(
+        self,
+        client: Any,
+        config: ModelConfig,
+        context: AgentContext,
+        memories: Optional[Dict[str, Any]] = None,
+        market_data: Optional[Dict[str, Any]] = None,
+    ) -> Decision:
+        """
+        调用单个客户端
+
+        根据客户端类型选择调用方式
+        """
+        # 根据模型类型设置数据详细程度
+        if config.model_type == ModelType.LOCAL:
+            # 本地模型：使用完整数据（无额外成本）
+            self.use_full_data = True
         else:
-            raise SystemHaltedError(f"未知生存等级: {context.survival_level}")
+            # API 模型：使用摘要数据（节省 Token）
+            self.use_full_data = False
+
+        # 构建提示词
+        prompt = self._build_prompt(context, memories, market_data)
+
+        # 根据客户端类型调用
+        if isinstance(client, AsyncAnthropic):
+            # Anthropic 兼容接口 (阿里云百炼 / Claude)
+            return await self._call_anthropic_client(client, config, prompt, context)
+        elif isinstance(client, AsyncOpenAI):
+            if config.model_type == ModelType.LOCAL:
+                # 本地模型使用 Ollama 原生接口
+                return await self._call_ollama_client(client, config, prompt)
+            else:
+                # 第三方 API (智谱 GLM 等)
+                return await self._call_openai_client(client, config, prompt)
+        else:
+            raise ModelCallError(f"不支持的客户端类型: {type(client)}")
+
+    async def _call_anthropic_client(
+        self,
+        client: AsyncAnthropic,
+        config: ModelConfig,
+        prompt: str,
+        context: AgentContext,
+    ) -> Decision:
+        """调用 Anthropic 兼容接口"""
+        response = await client.messages.create(
+            model=config.model_name,
+            max_tokens=config.max_tokens,
+            temperature=config.temperature,
+            messages=[{"role": "user", "content": prompt}],
+        )
+
+        # 兼容 ThinkingBlock 和 TextBlock
+        content = ""
+        for block in response.content:
+            if hasattr(block, 'text'):
+                content += block.text
+            elif hasattr(block, 'thinking'):
+                content += block.thinking or ""
+            elif hasattr(block, 'content'):
+                content += str(block.content or "")
+
+        return self._parse_decision(content, model_name=config.model_name)
+
+    async def _call_openai_client(
+        self,
+        client: AsyncOpenAI,
+        config: ModelConfig,
+        prompt: str,
+    ) -> Decision:
+        """调用 OpenAI 兼容接口 (智谱 GLM 等)"""
+        response = await client.chat.completions.create(
+            model=config.model_name,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=config.max_tokens,
+            temperature=config.temperature,
+        )
+
+        content = response.choices[0].message.content or ""
+        return self._parse_decision(content, model_name=config.model_name)
+
+    async def _call_ollama_client(
+        self,
+        client: AsyncOpenAI,
+        config: ModelConfig,
+        prompt: str,
+    ) -> Decision:
+        """调用本地 Ollama 模型"""
+        response = await client.chat.completions.create(
+            model=config.model_name,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=config.max_tokens,
+            temperature=config.temperature,
+        )
+
+        content = response.choices[0].message.content or ""
+        return self._parse_decision(content, model_name=config.model_name)
 
     async def _fusion_decision(
         self,
@@ -657,8 +865,20 @@ class ModelRouter:
 
         # 添加市场数据
         if market_data:
+            from tools.data.local_data_loader import format_market_data_for_ai
+
             prompt += "\n## 市场数据\n"
-            prompt += f"\n{market_data}\n"
+
+            # 检查是否已经是格式化的数据
+            if isinstance(market_data, str):
+                prompt += f"\n{market_data}\n"
+            elif isinstance(market_data, dict):
+                # 使用新的格式化函数，传递 use_full_data 标志
+                formatted_data = format_market_data_for_ai(market_data, full_data=self.use_full_data)
+                prompt += f"\n{formatted_data}\n"
+            else:
+                # 旧格式兼容
+                prompt += f"\n{market_data}\n"
 
         # 保守模式提示
         if conservative:

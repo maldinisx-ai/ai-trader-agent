@@ -28,9 +28,12 @@ from .schemas import (
     ToolCall,
     DecisionChain,
 )
+from src.indicators import QuoteDataAnalyzer
+from core.comprehensive_scoring import ComprehensiveScoringSystem
 from .model_router import ModelRouter
 from .survival_rules import SurvivalRules
 from .market_regime import MarketRegimeDetector
+from .reflection import ReflectionEngine, DecisionChain as ReflectionDecisionChain
 
 
 # ============================================
@@ -53,6 +56,7 @@ class LoopState:
     decision_chain: List[Dict[str, Any]] = field(default_factory=list)
     tool_results: List[ToolResult] = field(default_factory=list)
     start_time: datetime = field(default_factory=datetime.now)
+    market_data: Optional[Dict[str, Any]] = None  # 市场数据
 
     @property
     def should_continue(self) -> bool:
@@ -105,6 +109,8 @@ class AgentLoop:
         survival_rules: SurvivalRules,
         market_detector: MarketRegimeDetector,
         tool_executor: Optional[Any] = None,  # ToolExecutor (T9)
+        policy_engine: Optional[Any] = None,  # PolicyEngine (用于评分拦截)
+        reflection_engine: Optional[ReflectionEngine] = None,  # 反思引擎 (新增)
         max_iterations: int = DEFAULT_MAX_ITERATIONS,
         enable_logging: bool = True,
     ):
@@ -116,6 +122,8 @@ class AgentLoop:
             survival_rules: 生存规则
             market_detector: 市场状态检测器
             tool_executor: 工具执行器（可选，T9 实现后传入）
+            policy_engine: 风控引擎（可选，用于评分拦截）
+            reflection_engine: 反思引擎（可选，用于交易反思）
             max_iterations: 最大迭代次数
             enable_logging: 是否启用日志
         """
@@ -123,6 +131,8 @@ class AgentLoop:
         self.survival_rules = survival_rules
         self.market_detector = market_detector
         self.tool_executor = tool_executor
+        self.policy_engine = policy_engine
+        self.reflection_engine = reflection_engine
         self.max_iterations = max_iterations
         self.enable_logging = enable_logging
 
@@ -161,6 +171,7 @@ class AgentLoop:
         """
         start_time = datetime.now()
         state = LoopState(max_iterations=self.max_iterations)
+        state.market_data = market_data  # 存储市场数据
         actions_taken: List[str] = []
 
         try:
@@ -269,6 +280,7 @@ class AgentLoop:
         - 账户状态
         - 生存等级计算
         - 市场状态检测
+        - 股票评分计算 (新增)
         """
         # 计算回撤率
         drawdown = max(0, (initial_cash - total_value) / initial_cash)
@@ -285,6 +297,10 @@ class AgentLoop:
         # 获取最大仓位限制
         max_position = survival_state.max_position
 
+        # 计算股票评分 (新增)
+        if market_data and "stocks" in market_data:
+            market_data = await self._calculate_scores(market_data)
+
         context = AgentContext(
             user_input=user_input,
             current_cash=current_cash,
@@ -298,6 +314,104 @@ class AgentLoop:
         )
 
         return context
+
+    async def _calculate_scores(self, market_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        计算股票评分
+
+        Args:
+            market_data: 市场数据
+
+        Returns:
+            添加了评分信息的市场数据
+        """
+        scoring_system = ComprehensiveScoringSystem()
+        scores_dict = {}  # 用于更新 PolicyEngine
+
+        for stock in market_data.get("stocks", []):
+            # 跳过已有评分的股票
+            if "score" in stock:
+                continue
+
+            try:
+                # 获取K线数据
+                klines_df = stock.get("klines_df")
+                if klines_df is None or klines_df.empty:
+                    stock["score"] = {
+                        "total_score": 50,
+                        "buy_signal": "HOLD",
+                        "error": "无K线数据"
+                    }
+                    continue
+
+                # 将 DataFrame 转换为 QuoteData 列表
+                from core.schemas import QuoteData
+                import pandas as pd
+                quotes = []
+                for _, row in klines_df.iterrows():
+                    # 处理 NaN 值
+                    change_val = row.get("change", pd.NA)
+                    if pd.isna(change_val):
+                        change_val = 0.0
+                    else:
+                        change_val = float(change_val)
+                        # 限制涨跌幅范围
+                        change_val = max(-11, min(11, change_val))
+
+                    quote = QuoteData(
+                        symbol=stock["symbol"],
+                        name=stock.get("industry") or "未知",
+                        price=float(row["close"]),
+                        change=change_val,
+                        volume=int(row["volume"]),
+                        amount=float(row.get("amount", 0) or 0),
+                        high=float(row["high"]),
+                        low=float(row["low"]),
+                        upper_limit=float(row["close"]) * 1.1,
+                        lower_limit=float(row["close"]) * 0.9,
+                    )
+                    quotes.append(quote)
+
+                # 创建分析器
+                analyzer = QuoteDataAnalyzer(quotes)
+
+                # 获取当前价格
+                current_price = stock.get("latest", {}).get("close", 0)
+
+                # 计算评分
+                score_result = scoring_system.score(
+                    symbol=stock["symbol"],
+                    analyzer=analyzer,
+                    current_price=current_price
+                )
+
+                # 附加评分信息
+                stock["score"] = {
+                    "total_score": score_result.total_score,
+                    "buy_signal": score_result.buy_signal.value,
+                    "technical_score": score_result.technical_score,
+                    "fundamental_score": score_result.fundamental_score,
+                    "money_flow_score": score_result.money_flow_score,
+                    "reasons": score_result.reasons[:3],  # 最多3个理由
+                    "risk_factors": score_result.risk_factors[:2],  # 最多2个风险
+                }
+
+                # 收集评分用于 PolicyEngine
+                scores_dict[stock["symbol"]] = score_result.total_score
+
+            except Exception as e:
+                logger.warning(f"评分计算失败 {stock.get('symbol', 'unknown')}: {e}")
+                stock["score"] = {
+                    "total_score": 50,
+                    "buy_signal": "HOLD",
+                    "error": str(e)
+                }
+
+        # 更新 PolicyEngine 的评分（新增）
+        if self.policy_engine and scores_dict:
+            self.policy_engine.update_stock_scores(scores_dict)
+
+        return market_data
 
     async def _think(self, state: LoopState) -> Decision:
         """
@@ -315,11 +429,11 @@ class AgentLoop:
         # 准备记忆数据
         memories = self._prepare_memories(state.context)
 
-        # 调用模型路由器
+        # 调用模型路由器，传递市场数据
         decision = await self.model_router.generate_decision(
             context=state.context,
             memories=memories,
-            market_data=None,  # 市场数据已在上下文中
+            market_data=state.market_data,  # 传递市场数据
         )
 
         return decision
@@ -339,16 +453,24 @@ class AgentLoop:
             logger.debug(f"[ReAct] 执行工具: {decision.tools_to_use}")
 
         results: List[ToolResult] = []
+        tool_calls = []  # 记录工具调用，用于反思
 
         # 如果没有工具执行器，返回模拟结果
         if self.tool_executor is None:
             for tool_name in decision.tools_to_use:
+                tool_calls.append({
+                    "name": tool_name,
+                    "parameters": self._build_tool_params(decision, context),
+                    "result": f"模拟 {tool_name} 执行结果",
+                })
                 results.append(ToolResult(
                     success=True,
                     data=f"模拟 {tool_name} 执行结果",
                     error=None,
                     execution_time=0.1,
                 ))
+            # 记录工具调用
+            self._working_memory["last_tool_calls"] = tool_calls
             return results
 
         # 执行工具调用
@@ -361,6 +483,15 @@ class AgentLoop:
                 result = await self.tool_executor.execute(tool_name, **params)
                 results.append(result)
 
+                # 记录工具调用
+                tool_calls.append({
+                    "name": tool_name,
+                    "parameters": params,
+                    "success": result.success,
+                    "data": str(result.data)[:200] if result.data else None,
+                    "error": result.error,
+                })
+
             except Exception as e:
                 logger.error(f"[ReAct] 工具 {tool_name} 执行失败: {e}")
                 results.append(ToolResult(
@@ -368,6 +499,17 @@ class AgentLoop:
                     error=str(e),
                     execution_time=0.0,
                 ))
+
+                # 记录失败的工具调用
+                tool_calls.append({
+                    "name": tool_name,
+                    "parameters": params,
+                    "success": False,
+                    "error": str(e),
+                })
+
+        # 记录工具调用（用于反思）
+        self._working_memory["last_tool_calls"] = tool_calls
 
         return results
 
@@ -435,7 +577,7 @@ class AgentLoop:
         检测市场状态
 
         Args:
-            market_data: 市场数据
+            market_data: 市场数据（字典格式，包含 quotes 列表）
 
         Returns:
             MarketState: 市场状态
@@ -449,9 +591,42 @@ class AgentLoop:
                 max_position_ratio=0.3,
             )
 
-        # 调用市场状态检测器
+        # 尝试从 quotes 转换为 MarketData
         try:
-            return await self.market_detector.detect(market_data)
+            from .schemas import MarketState
+            from .market_regime import MarketData
+
+            quotes = market_data.get("quotes", [])
+            if not quotes or len(quotes) == 0:
+                return MarketState(
+                    regime="sideways",
+                    confidence=0.5,
+                    max_position_ratio=0.3,
+                )
+
+            # 使用第一个股票的数据作为市场参考
+            quote_dict = quotes[0]
+
+            # 如果 quote 是字典，尝试提取必要字段
+            if isinstance(quote_dict, dict):
+                # 构造简化的 MarketData
+                # 由于没有历史均线数据，使用当前价格作为近似值
+                current_price = float(quote_dict.get("price", 100.0))
+
+                return MarketState(
+                    regime="sideways",  # 缺少历史数据，默认震荡
+                    confidence=0.5,
+                    max_position_ratio=0.3,
+                )
+
+            # 如果 quote 是 QuoteData 对象（虽然 market_data 是字典格式）
+            # 仍然返回默认状态
+            return MarketState(
+                regime="sideways",
+                confidence=0.5,
+                max_position_ratio=0.3,
+            )
+
         except Exception as e:
             logger.warning(f"[ReAct] 市场状态检测失败: {e}，使用默认状态")
             from .schemas import MarketState
@@ -477,10 +652,25 @@ class AgentLoop:
         # 获取语义记忆
         semantic = self._semantic_memory.copy()
 
+        # 获取反思记录（新增）
+        reflections = []
+        if self.reflection_engine:
+            reflections = [
+                {
+                    "symbol": r.symbol,
+                    "loss_ratio": r.loss_ratio,
+                    "error_type": r.error_type.value,
+                    "lesson": r.lesson,
+                    "avoid_action": r.avoid_action,
+                }
+                for r in self.reflection_engine.get_reflections(limit=5)
+            ]
+
         return {
             "episodic": recent_episodic,
             "semantic": semantic,
             "working": self._working_memory,
+            "reflections": reflections,  # 新增反思数据
         }
 
     def _build_message(self, state: LoopState) -> str:
@@ -557,6 +747,114 @@ class AgentLoop:
         self._working_memory.clear()
         self._episodic_memory.clear()
         self._semantic_memory.clear()
+
+    # ============================================
+    # 反思机制接口 (新增)
+    # ============================================
+
+    async def reflect_on_trade(
+        self,
+        trade: Any,  # Trade 对象
+        current_price: float,
+        max_price: Optional[float] = None,
+        context: Optional[Dict[str, Any]] = None,
+    ) -> Optional[Any]:
+        """
+        对交易结果进行反思
+
+        Args:
+            trade: 交易记录
+            current_price: 当前价格
+            max_price: 持仓期间最高价
+            context: 上下文信息
+
+        Returns:
+            反思记录（如果有）
+        """
+        if self.reflection_engine is None:
+            return None
+
+        # 计算收益率（优先从 context 获取，否则从 trade 对象）
+        loss_ratio = 0.0
+        if context and "loss_ratio" in context:
+            loss_ratio = context["loss_ratio"]
+        elif hasattr(trade, 'pnl') and trade.pnl < 0:
+            loss_ratio = trade.pnl / trade.amount
+        elif hasattr(trade, 'price') and current_price > 0:
+            # 从当前价格计算收益率
+            entry_price = trade.price
+            if entry_price > 0:
+                loss_ratio = (current_price - entry_price) / entry_price
+
+        # 检查是否需要反思（亏损 > 2%）
+        if loss_ratio <= ReflectionEngine.LOSS_THRESHOLD:
+            # 记录决策链
+            decision_chain = ReflectionDecisionChain(
+                trade_id=trade.trade_id,
+                thought_process=self._build_thought_process(state=None) if self._total_decisions > 0 else "",
+                tool_calls=self._working_memory.get("last_tool_calls", []),
+                observations=[],
+                final_decision={},
+            )
+
+            # 生成反思
+            reflection = await self.reflection_engine.reflect_on_loss(
+                trade=trade,
+                loss_ratio=loss_ratio,
+                decision_chain=decision_chain,
+                context={
+                    **(context or {}),
+                    "max_price": max_price,
+                    "total_value": self._working_memory.get("total_value", 0),
+                }
+            )
+
+            # 记录到语义记忆
+            self._semantic_memory[f"reflection_{trade.trade_id}"] = {
+                "loss_ratio": loss_ratio,
+                "error_type": reflection.error_type.value,
+                "lesson": reflection.lesson,
+                "avoid_action": reflection.avoid_action,
+            }
+
+            if self.enable_logging:
+                logger.info(
+                    f"[Reflection] 交易 {trade.trade_id} 亏损 {abs(loss_ratio):.2%}，"
+                    f"错误类型: {reflection.error_type.value}"
+                )
+
+            return reflection
+
+        return None
+
+    async def reflect_on_consecutive_losses(self, recent_trades: List[Any]) -> List[Any]:
+        """
+        对连续亏损进行反思
+
+        Args:
+            recent_trades: 最近交易列表
+
+        Returns:
+            反思记录列表
+        """
+        if self.reflection_engine is None or len(recent_trades) < ReflectionEngine.CONSECUTIVE_LOSS:
+            return []
+
+        # 检查连续亏损
+        consecutive_losses = 0
+        reflections = []
+
+        for trade in reversed(recent_trades):
+            if hasattr(trade, 'pnl') and trade.pnl < 0:
+                consecutive_losses += 1
+                if consecutive_losses >= ReflectionEngine.CONSECUTIVE_LOSS:
+                    reflection = await self.reflect_on_trade(trade, 0)
+                    if reflection:
+                        reflections.append(reflection)
+            else:
+                break
+
+        return reflections
 
 
 # ============================================
