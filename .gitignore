@@ -166,6 +166,7 @@ sessions/
 test_*.py
 show_*.py
 coverage.json
+*.bat
 
 # --------------------------------------------
 # OS Specific
