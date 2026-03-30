@@ -84,6 +84,7 @@ data/coverage_report.json
 data/download_summary.json
 data/charts/
 data/financial/
+data/fundamentals/
 logs/*.log
 *.log
 
