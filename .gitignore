@@ -98,6 +98,8 @@ data/spot/
 data/stocks/
 data/temp/
 data/valuation/
+data/margin/
+data/money_flow/
 logs/*.log
 *.log
 
