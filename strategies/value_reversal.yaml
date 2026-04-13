@@ -1,0 +1,66 @@
+# 价值反转策略
+name: value_reversal
+display_name: 价值反转策略
+description: 寻找被低估的优质股票，在底部区域布局
+category: reversal
+core_rules: [3, 5]
+required_tools:
+  - get_daily_history
+  - get_financial_indicator
+  - analyze_trend
+aliases: [价值投资, 超跌反弹, 左侧交易]
+default_active: false
+default_priority: 8
+market_regimes: [trending_down, bearish, sideways]
+
+instructions: |
+  **价值反转策略 (Value Reversal Strategy)**
+
+  适用场景：
+  - 市场低迷期，寻找被错杀的优质股
+  - 长期持有，等待价值回归
+
+  分析框架：
+
+  1. **价值评估**
+     - 使用 `get_financial_indicator` 获取财务指标
+     - PE < 15 或处于历史30%分位以下
+     - PB < 1.5（金融股 PB < 0.8）
+     - ROE > 10% 且持续稳定
+     - 股息率 > 3%
+     - 负债率 < 60%
+
+  2. **底部确认**
+     - 使用 `get_daily_history` 分析价格走势
+     - 股价从高点回调超过30%
+     - 横盘震荡超过3个月
+     - 成交量持续萎缩
+     - RSI < 30 出现超卖
+
+  3. **左侧布局**
+     - 分批建仓，不急于一次性买入
+     - 首次买入：总仓位30%
+     - 每跌10%加仓一次，每次20%
+     - 最大仓位不超过80%
+
+  4. **持有与退出**
+     - 耐心持有，等待价值回归
+     - 止损：基本面恶化或亏损超过20%
+     - 止盈：
+       * 涨幅50%减仓一半
+       * 涨幅100%全部止盈
+       * 或PE回到历史中位以上
+
+  5. **风险提示**
+     - 反转可能需要较长时间
+     - 需要关注公司基本面变化
+     - 避开财务造假嫌疑股票
+     - 避开ST股票
+
+  评分调整建议：
+  - 低估值（PE<10, PB<1）：+15
+  - 高股息率（>5%）：+10
+  - ROE>15%：+10
+  - 超跌（回调>40%）：+12
+  - 负债率>70%：-10
+  - ROE<8%：-8

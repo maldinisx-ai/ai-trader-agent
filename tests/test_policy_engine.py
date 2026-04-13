@@ -8,6 +8,9 @@ TDD 流程: RED → GREEN → REFACTOR
 import pytest
 from datetime import datetime, timedelta
 
+# 确保模块被导入以正确收集覆盖率
+import core.policy_engine
+import core.schemas
 from core.schemas import (
     Order, OrderSide, OrderType, OrderStatus,
     PolicyResult, PolicyPriority, SurvivalLevel,

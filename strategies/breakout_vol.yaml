@@ -1,0 +1,58 @@
+# 放量突破策略
+name: breakout_vol
+display_name: 放量突破策略
+description: 捕捉关键阻力位的放量突破信号
+category: pattern
+core_rules: [1, 4]
+required_tools:
+  - get_daily_history
+  - analyze_trend
+aliases: [突破, 放量, 突破买点]
+default_active: false
+default_priority: 9
+market_regimes: [trending_up, sideways]
+
+instructions: |
+  **放量突破策略 (Breakout Volume Strategy)**
+
+  适用场景：
+  - 股价在关键阻力位横盘整理
+  - 寻求放量突破的入场机会
+
+  分析框架：
+
+  1. **平台整理**
+     - 使用 `get_daily_history` 识别横盘平台
+     - 横盘时间：15-40个交易日
+     - 振幅控制在15%以内
+     - 成交量逐步萎缩
+
+  2. **突破确认**
+     - 放量突破平台高点
+     - 当日成交量 > 近20日均量的1.5倍
+     - 收盘价站稳突破位上方3%以上
+     - 突破后不快速回落
+
+  3. **买入时机**
+     - 突破当日收盘前买入
+     - 或突破次日回踩确认后买入
+     - 回踩不破突破位
+
+  4. **假突破识别**
+     - 突破但成交量不足
+     - 突破后快速回落
+     - 尾盘拉升突破
+     - 利好消息刺激的一日游
+
+  5. **止盈止损**
+     - 止损：突破位下方3%
+     - 止盈：
+       * 突破后+10%减仓一半
+       * +20%全部止盈
+     - 跌破买入价立即止损
+
+  评分调整建议：
+  - 真实放量突破（量比>1.5）：+18
+  - 横盘时间超过30天：+8
+  - 假突破信号：-15
+  - 突破后快速回落：-12

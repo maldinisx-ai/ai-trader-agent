@@ -74,6 +74,36 @@ dmypy.json
 # --------------------------------------------
 data/quotes/
 data/state/
+data/agent_backtest/
+data/agent_backtest_test/
+data/akshare_progress.json
+data/all_stocks.json
+data/backtest_results.json
+data/batch_progress.json
+data/coverage_report.json
+data/download_summary.json
+data/charts/
+data/financial/
+data/fundamentals/
+data/index/
+data/industry/
+data/klines/
+data/by_stock/
+data/etfs/
+data/funds/
+data/futures/
+data/lhb/
+data/market/
+data/spot/
+data/stocks/
+data/temp/
+data/valuation/
+data/margin/
+data/money_flow/
+data/*.json
+data/*.csv
+data/*.png
+data/*.txt
 logs/*.log
 *.log
 
@@ -126,6 +156,19 @@ session/
 sessions/
 
 # --------------------------------------------
+# Claude Code
+# --------------------------------------------
+.claude/
+
+# --------------------------------------------
+# Test & Demo Scripts
+# --------------------------------------------
+test_*.py
+show_*.py
+coverage.json
+*.bat
+
+# --------------------------------------------
 # OS Specific
 # --------------------------------------------
 Thumbs.db
@@ -133,3 +176,4 @@ desktop.ini
 .DS_Store
 .AppleDouble
 .LSOverride
+.gstack/
